@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DEENWAY Seerah: سيرة النبي محمد ﷺ كاملة - كل التفاصيل عن حياته، أزواجه، أبنائه، أحفاده، غزواته، أخلاقه، معجزاته">
+    <meta name="description" content="DEENWAY Seerah: سيرة النبي محمد ﷺ كاملة - كل التفاصيل عن حياته، أزواجه، أبنائه، أحفاده، غزواته، أخلاقه، معجزاته، كتب السيرة">
     
     <!-- SEO Meta Tags -->
     <title>DEENWAY Seerah | السيرة النبوية الكاملة</title>
     <meta name="title" content="DEENWAY Seerah | السيرة النبوية الكاملة">
-    <meta name="description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل: حياته، أزواجه، أبنائه، أحفاده، غزواته، أخلاقه، معجزاته">
-    <meta name="keywords" content="سيرة النبي محمد, حياة الرسول, أزواج النبي, أبناء النبي, أحفاد النبي, غزوات النبي, أخلاق النبي, معجزات النبي, السيرة النبوية الشاملة">
+    <meta name="description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل: حياته، أزواجه، أبنائه، أحفاده، غزواته، أخلاقه، معجزاته، كتب السيرة">
+    <meta name="keywords" content="سيرة النبي محمد, حياة الرسول, أزواج النبي, أبناء النبي, أحفاد النبي, غزوات النبي, أخلاق النبي, معجزات النبي, كتب السيرة النبوية, مصادر السيرة">
     <meta property="og:title" content="DEENWAY Seerah | السيرة النبوية الكاملة">
     <meta property="og:description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل">
     <meta property="og:url" content="https://seerah.ondeenway.org">
@@ -26,7 +26,7 @@
       "name": "DEENWAY Seerah",
       "alternateName": "السيرة النبوية الكاملة",
       "url": "https://seerah.ondeenway.org",
-      "description": "سيرة النبي محمد ﷺ كاملة مع كل التفاصيل: حياته، أزواجه، أبنائه، أحفاده، غزواته، أخلاقه، معجزاته",
+      "description": "سيرة النبي محمد ﷺ كاملة مع كل التفاصيل: حياته، أزواجه، أبنائه، أحفاده، غزواته، أخلاقه، معجزاته، كتب السيرة",
       "publisher": {
         "@type": "Organization",
         "name": "DEENWAY",
@@ -592,32 +592,49 @@
             color: #007bff;
         }
 
-        /* المعجزات والأخلاق */
-        .miracles-grid, .ethics-grid {
+        /* المعجزات والأخلاق وكتب السيرة */
+        .miracles-grid, .ethics-grid, .books-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
 
-        .miracle-card, .ethic-card {
+        .miracle-card, .ethic-card, .book-card {
             background-color: white;
             padding: 25px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             border: 1px solid var(--light-gray);
             transition: var(--transition);
+            height: 100%;
         }
 
-        .miracle-card:hover, .ethic-card:hover {
+        .miracle-card:hover, .ethic-card:hover, .book-card:hover {
             border-color: var(--accent-color);
             transform: translateY(-5px);
         }
 
-        .miracle-card h4, .ethic-card h4 {
+        .miracle-card h4, .ethic-card h4, .book-card h4 {
             color: var(--primary-color);
             margin-bottom: 15px;
             font-size: 1.4rem;
+        }
+
+        .book-author {
+            color: var(--gray-color);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .book-period {
+            background-color: var(--light-gray);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--gray-color);
+            display: inline-block;
+            margin-top: 10px;
         }
 
         /* الشخصيات */
@@ -970,6 +987,7 @@
             .grandchildren-grid,
             .miracles-grid,
             .ethics-grid,
+            .books-grid,
             .characters-grid {
                 grid-template-columns: 1fr;
             }
@@ -1186,6 +1204,15 @@
                     <p>الصحابة الكرام وأهل بيت النبي والمنافقين</p>
                     <span class="section-count">+100 شخصية</span>
                 </a>
+                
+                <a href="#books" class="section-card">
+                    <div class="section-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>كتب السيرة النبوية</h3>
+                    <p>أهم المصادر والمراجع في السيرة النبوية</p>
+                    <span class="section-count">+20 كتاب</span>
+                </a>
             </div>
         </div>
     </section>
@@ -1202,7 +1229,7 @@
         <div class="container">
             <!-- سيتم ملؤها بالجافاسكريبت -->
         </div>
-</section>
+    </section>
 
     <!-- صفحة الأخلاق -->
     <section id="ethics-detail" class="section detail-page" style="display: none;">
@@ -1225,6 +1252,13 @@
         </div>
     </section>
 
+    <!-- صفحة كتب السيرة -->
+    <section id="books-detail" class="section detail-page" style="display: none;">
+        <div class="container">
+            <!-- سيتم ملؤها بالجافاسكريبت -->
+        </div>
+    </section>
+
     <!-- فوتر -->
     <footer class="main-footer" id="contact">
         <div class="container">
@@ -1236,6 +1270,7 @@
                         <li><a href="#family"><i class="fas fa-home"></i> الأسرة النبوية</a></li>
                         <li><a href="#battles"><i class="fas fa-shield-alt"></i> الغزوات</a></li>
                         <li><a href="#ethics"><i class="fas fa-heart"></i> الأخلاق</a></li>
+                        <li><a href="#books"><i class="fas fa-book"></i> كتب السيرة</a></li>
                     </ul>
                 </div>
                 
@@ -1325,6 +1360,14 @@
     <!-- الشخصيات -->
     <url>
         <loc>https://seerah.ondeenway.org/#characters</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- كتب السيرة -->
+    <url>
+        <loc>https://seerah.ondeenway.org/#books</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -1946,6 +1989,133 @@
                         info: 'رفض الخروج إلى تبوك بحجة أنه يفتن بالنساء'
                     }
                 ]
+            },
+            
+            // كتب السيرة النبوية
+            'books': {
+                title: 'كتب السيرة النبوية',
+                subtitle: 'أهم المصادر والمراجع في السيرة النبوية',
+                
+                classicalBooks: [
+                    {
+                        name: 'سيرة ابن هشام',
+                        author: 'عبد الملك بن هشام',
+                        period: 'القرن 3 هـ',
+                        description: 'أشهر كتب السيرة، اختصار لسيرة ابن إسحاق التي فقدت',
+                        importance: 'المصدر الرئيسي للسيرة، اعتمد عليه معظم من جاء بعده'
+                    },
+                    {
+                        name: 'السيرة النبوية لابن كثير',
+                        author: 'إسماعيل بن كثير',
+                        period: 'القرن 8 هـ',
+                        description: 'جزء من كتاب البداية والنهاية، يجمع بين السيرة والتفسير والتاريخ',
+                        importance: 'يجمع بين الرواية والدراية، مع التحليل والاستنباط'
+                    },
+                    {
+                        name: 'زاد المعاد في هدي خير العباد',
+                        author: 'ابن قيم الجوزية',
+                        period: 'القرن 8 هـ',
+                        description: 'كتاب في هدي النبي ﷺ وسننه في العبادات والمعاملات',
+                        importance: 'يركز على الجوانب العملية والتربوية في السيرة'
+                    },
+                    {
+                        name: 'الشفا بتعريف حقوق المصطفى',
+                        author: 'القاضي عياض',
+                        period: 'القرن 6 هـ',
+                        description: 'كتاب في حقوق النبي ﷺ ومكانته وصفاته',
+                        importance: 'أشهر كتب المناقب والشمائل'
+                    },
+                    {
+                        name: 'الروض الأنف في شرح السيرة النبوية',
+                        author: 'السهيلي',
+                        period: 'القرن 6 هـ',
+                        description: 'شرح مفصل لسيرة ابن هشام',
+                        importance: 'يشرح الغريب ويوضح المشكل في السيرة'
+                    },
+                    {
+                        name: 'سبل الهدى والرشاد في سيرة خير العباد',
+                        author: 'الصالحي الشامي',
+                        period: 'القرن 10 هـ',
+                        description: 'موسوعة كبيرة في السيرة النبوية في 12 مجلداً',
+                        importance: 'أضخم كتاب في السيرة يجمع معظم ما كتب فيها'
+                    }
+                ],
+                
+                modernBooks: [
+                    {
+                        name: 'الرحيق المختوم',
+                        author: 'صفي الرحمن المباركفوري',
+                        period: 'القرن 14 هـ',
+                        description: 'سيرة موجزة دقيقة، حازت على الجائزة الأولى في مسابقة السيرة',
+                        importance: 'أشهر كتب السيرة المعاصرة، ترجم إلى عشرات اللغات'
+                    },
+                    {
+                        name: 'فقه السيرة',
+                        author: 'محمد الغزالي',
+                        period: 'القرن 14 هـ',
+                        description: 'دراسة للسيرة مع استنباط الدروس والعبر',
+                        importance: 'يركز على الجوانب التربوية والعملية'
+                    },
+                    {
+                        name: 'السيرة النبوية: دروس وعبر',
+                        author: 'مصطفى السباعي',
+                        period: 'القرن 14 هـ',
+                        description: 'دراسة تحليلية للسيرة النبوية',
+                        importance: 'يجمع بين السرد التاريخي والتحليل الموضوعي'
+                    },
+                    {
+                        name: 'السيرة النبوية الصحيحة',
+                        author: 'أكرم ضياء العمري',
+                        period: 'القرن 14 هـ',
+                        description: 'محاولة لإعادة كتابة السيرة وفق منهج المحدثين',
+                        importance: 'يميز بين الصحيح والضعيف في روايات السيرة'
+                    },
+                    {
+                        name: 'السيرة النبوية كما جاءت في الأحاديث الصحيحة',
+                        author: 'محمد بن محمد أبو شهبة',
+                        period: 'القرن 14 هـ',
+                        description: 'سيرة تعتمد فقط على الأحاديث الصحيحة',
+                        importance: 'منهج صارم في انتقاء الروايات'
+                    },
+                    {
+                        name: 'نور اليقين في سيرة سيد المرسلين',
+                        author: 'محمد الخضري',
+                        period: 'القرن 14 هـ',
+                        description: 'سيرة موجزة ميسرة',
+                        importance: 'من أفضل الكتب المختصرة في السيرة'
+                    }
+                ],
+                
+                referenceBooks: [
+                    {
+                        name: 'المغازي',
+                        author: 'الواقدي',
+                        period: 'القرن 3 هـ',
+                        description: 'أقدم كتاب مفصل في مغازي النبي ﷺ',
+                        importance: 'مصدر رئيسي للأحداث العسكرية'
+                    },
+                    {
+                        name: 'طبقات ابن سعد',
+                        author: 'محمد بن سعد',
+                        period: 'القرن 3 هـ',
+                        description: 'الجزء الخاص بالنبي ﷺ وأصحابه من كتاب الطبقات الكبرى',
+                        importance: 'موسوعة في تراجم الصحابة وأخبارهم'
+                    },
+                    {
+                        name: 'دلائل النبوة',
+                        author: 'البيهقي',
+                        period: 'القرن 5 هـ',
+                        description: 'كتاب في معجزات النبي ﷺ وأدلة نبوته',
+                        importance: 'أشمل كتاب في معجزات النبي ﷺ'
+                    },
+                    {
+                        name: 'عيون الأثر في فنون المغازي والشمائل والسير',
+                        author: 'ابن سيد الناس',
+                        period: 'القرن 8 هـ',
+                        description: 'كتاب يجمع بين السيرة والشمائل والمغازي',
+                        importance: 'جمع بين عدة فنون في السيرة'
+                    }
+                ]
             }
         };
 
@@ -2062,7 +2232,8 @@
                 hash.startsWith('#battles') || 
                 hash.startsWith('#ethics') || 
                 hash.startsWith('#miracles') || 
-                hash.startsWith('#characters')) {
+                hash.startsWith('#characters') ||
+                hash.startsWith('#books')) {
                 
                 const sectionId = hash.substring(1);
                 loadSectionDetail(sectionId);
@@ -2100,6 +2271,7 @@
             document.getElementById('ethics-detail').style.display = 'none';
             document.getElementById('miracles-detail').style.display = 'none';
             document.getElementById('characters-detail').style.display = 'none';
+            document.getElementById('books-detail').style.display = 'none';
             
             // إظهار صفحة التفاصيل المناسبة
             const detailPage = document.getElementById(`${sectionId}-detail`);
@@ -2139,6 +2311,8 @@
                 content += buildMiraclesContent(data);
             } else if (sectionId === 'characters') {
                 content += buildCharactersContent(data);
+            } else if (sectionId === 'books') {
+                content += buildBooksContent(data);
             }
             
             content += `
@@ -2478,6 +2652,82 @@
             return content;
         }
         
+        // بناء محتوى كتب السيرة
+        function buildBooksContent(data) {
+            let content = `
+                <div class="detail-section">
+                    <h3>كتب السيرة الكلاسيكية</h3>
+                    <p>أهم كتب السيرة التي ألفها العلماء المتقدمون، وهي المصادر الأساسية للسيرة النبوية</p>
+                    <div class="books-grid">
+            `;
+            
+            data.classicalBooks.forEach(book => {
+                content += `
+                    <div class="book-card">
+                        <h4>${book.name}</h4>
+                        <p class="book-author">المؤلف: ${book.author} (${book.period})</p>
+                        <p>${book.description}</p>
+                        <p><strong>أهميته:</strong> ${book.importance}</p>
+                        <span class="book-period">${book.period}</span>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>كتب السيرة المعاصرة</h3>
+                    <p>كتب السيرة التي ألفها العلماء المعاصرون، وهي تعتمد على الكتب الكلاسيكية مع منهجية معاصرة</p>
+                    <div class="books-grid">
+            `;
+            
+            data.modernBooks.forEach(book => {
+                content += `
+                    <div class="book-card">
+                        <h4>${book.name}</h4>
+                        <p class="book-author">المؤلف: ${book.author} (${book.period})</p>
+                        <p>${book.description}</p>
+                        <p><strong>أهميته:</strong> ${book.importance}</p>
+                        <span class="book-period">${book.period}</span>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>كتب المراجع والمصادر</h3>
+                    <p>كتب متخصصة في جوانب معينة من السيرة، مثل المغازي والشمائل والدلائل</p>
+                    <div class="books-grid">
+            `;
+            
+            data.referenceBooks.forEach(book => {
+                content += `
+                    <div class="book-card">
+                        <h4>${book.name}</h4>
+                        <p class="book-author">المؤلف: ${book.author} (${book.period})</p>
+                        <p>${book.description}</p>
+                        <p><strong>أهميته:</strong> ${book.importance}</p>
+                        <span class="book-period">${book.period}</span>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                    <p style="margin-top: 20px; font-style: italic; color: var(--gray-color);">
+                        هذه الكتب تشكل المرجعية العلمية للسيرة النبوية، وكل كتاب منها يضيف زاوية جديدة لفهم حياة النبي ﷺ
+                    </p>
+                </div>
+            `;
+            
+            return content;
+        }
+        
         // عرض الصفحة الرئيسية
         function showMainPage() {
             // إظهار جميع الأقسام الرئيسية
@@ -2491,6 +2741,7 @@
             document.getElementById('ethics-detail').style.display = 'none';
             document.getElementById('miracles-detail').style.display = 'none';
             document.getElementById('characters-detail').style.display = 'none';
+            document.getElementById('books-detail').style.display = 'none';
         }
         
         // التمرير إلى قسم معين
