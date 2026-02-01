@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DEENWAY Seerah: رحلة تفاعلية مع السيرة النبوية - تقدم بأسلوب معاصر يستكشف حياة النبي ﷺ كقصة حية متكاملة">
+    <meta name="description" content="DEENWAY Seerah: سيرة النبي محمد ﷺ كاملة - كل التفاصيل عن حياته، أزواجه، أبنائه، غزواته، شخصيات حياته">
     
     <!-- SEO Meta Tags -->
-    <title>DEENWAY Seerah | الرحلة النبوية التفاعلية</title>
-    <meta name="title" content="DEENWAY Seerah | الرحلة النبوية التفاعلية">
-    <meta name="description" content="رحلة تفاعلية مع السيرة النبوية - تقدم بأسلوب معاصر يستكشف حياة النبي ﷺ كقصة حية متكاملة عبر خرائط ذهنية وتجربة زمنية تفاعلية">
-    <meta name="keywords" content="السيرة النبوية, حياة النبي محمد, السيرة بأسلوب حديث, الرحلة النبوية, خرائط ذهنية للسيرة, سيرة تفاعلية, دروس من السيرة, أحداث السيرة النبوية">
-    <meta property="og:title" content="DEENWAY Seerah | الرحلة النبوية التفاعلية">
-    <meta property="og:description" content="رحلة تفاعلية مع السيرة النبوية - تقدم بأسلوب معاصر يستكشف حياة النبي ﷺ كقصة حية متكاملة">
+    <title>DEENWAY Seerah | السيرة النبوية الكاملة</title>
+    <meta name="title" content="DEENWAY Seerah | السيرة النبوية الكاملة">
+    <meta name="description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل: حياته، أزواجه، أبنائه، غزواته، معجزاته، شخصيات حياته">
+    <meta name="keywords" content="سيرة النبي محمد, حياة الرسول, أزواج النبي, أبناء النبي, غزوات النبي, معجزات النبي, الصحابة, السيرة النبوية الشاملة">
+    <meta property="og:title" content="DEENWAY Seerah | السيرة النبوية الكاملة">
+    <meta property="og:description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل">
     <meta property="og:url" content="https://seerah.ondeenway.org">
     <meta property="og:type" content="website">
     
@@ -24,9 +24,9 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "DEENWAY Seerah",
-      "alternateName": "الرحلة النبوية التفاعلية",
+      "alternateName": "السيرة النبوية الكاملة",
       "url": "https://seerah.ondeenway.org",
-      "description": "رحلة تفاعلية مع السيرة النبوية تقدم بأسلوب معاصر يستكشف حياة النبي ﷺ كقصة حية متكاملة",
+      "description": "سيرة النبي محمد ﷺ كاملة مع كل التفاصيل: حياته، أزواجه، أبنائه، غزواته، معجزاته، شخصيات حياته",
       "publisher": {
         "@type": "Organization",
         "name": "DEENWAY",
@@ -55,20 +55,19 @@
         }
 
         :root {
-            --primary-color: #1a5f4b; /* أخضر داكن عميق */
-            --secondary-color: #0d3b2e; /* أخضر أعمق للظلال */
-            --accent-color: #d4af37; /* ذهبي دافئ */
-            --accent-light: #f2e8c9; /* ذهبي فاتح للخلفيات */
+            --primary-color: #1a5f4b;
+            --secondary-color: #0d3b2e;
+            --accent-color: #d4af37;
+            --accent-light: #f2e8c9;
             --light-color: #f8f9fa;
-            --dark-color: #1a2c3a; /* أزرق داكن بدل الأسود */
+            --dark-color: #1a2c3a;
             --gray-color: #5d6d7e;
             --light-gray: #f1f3f5;
-            --journey-color: #2c786c; /* لمسار الرحلة */
+            --timeline-color: #2c786c;
             --border-radius: 12px;
             --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --transition: all 0.4s ease;
             --hero-gradient: linear-gradient(135deg, #1a5f4b 0%, #0d3b2e 100%);
-            --journey-gradient: linear-gradient(to right, #1a5f4b, #2c786c, #3a9b84);
         }
 
         html {
@@ -110,6 +109,7 @@
         img {
             max-width: 100%;
             height: auto;
+            border-radius: var(--border-radius);
         }
 
         h1, h2, h3, h4 {
@@ -251,7 +251,7 @@
             font-style: italic;
         }
 
-        /* البانر الرئيسي (Hero Section) */
+        /* البانر الرئيسي */
         .hero {
             background: var(--hero-gradient);
             color: white;
@@ -262,12 +262,6 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-
-        .hero.hidden {
-            display: none;
         }
 
         .hero::before {
@@ -298,338 +292,120 @@
             padding: 0 20px;
         }
 
-        /* قسم الخرائط الذهنية */
-        .mindmaps-section {
+        /* الخريطة الذهنية البسيطة */
+        .mindmap-section {
             background-color: #f8f5e6;
         }
 
-        .mindmap-container {
-            position: relative;
-            min-height: 600px;
-            margin: 50px 0;
-        }
-
-        .mindmap-main-node {
-            position: absolute;
-            top: 50%;
-            right: 50%;
-            transform: translate(50%, -50%);
-            background: var(--hero-gradient);
-            color: white;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
+        .simple-timeline {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            box-shadow: 0 10px 30px rgba(26, 95, 75, 0.3);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .mindmap-main-node:hover {
-            transform: translate(50%, -50%) scale(1.05);
-            box-shadow: 0 15px 40px rgba(26, 95, 75, 0.4);
-        }
-
-        .mindmap-main-node i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .mindmap-main-node h3 {
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 0;
-        }
-
-        .mindmap-branch {
-            position: absolute;
-            width: 200px;
-            padding: 25px;
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 5;
-            border: 2px solid transparent;
-        }
-
-        .mindmap-branch:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-            border-color: var(--primary-color);
-        }
-
-        .mindmap-branch i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .mindmap-branch h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--dark-color);
-        }
-
-        .mindmap-branch p {
-            font-size: 0.95rem;
-            color: var(--gray-color);
-            margin-bottom: 0;
-        }
-
-        .mindmap-connection {
-            position: absolute;
-            height: 3px;
-            background: linear-gradient(to left, var(--primary-color), var(--accent-color));
-            transform-origin: 0 0;
-            z-index: 1;
-        }
-
-        /* قسم الرحلة الزمنية */
-        .journey-section {
-            background-color: var(--light-color);
-        }
-
-        .journey-container {
-            position: relative;
-            padding: 50px 0;
-        }
-
-        .journey-timeline {
-            position: relative;
+            gap: 30px;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .journey-line {
-            position: absolute;
-            top: 0;
-            right: 50%;
-            transform: translateX(50%);
-            width: 4px;
-            height: 100%;
-            background: var(--journey-gradient);
-            border-radius: 2px;
-        }
-
-        .journey-stop {
-            position: relative;
-            margin-bottom: 100px;
+        .timeline-item {
             display: flex;
-            align-items: center;
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease;
-        }
-
-        .journey-stop.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .journey-stop:nth-child(even) {
-            flex-direction: row-reverse;
-            text-align: left;
-        }
-
-        .journey-stop:nth-child(even) .journey-content {
-            margin-right: 0;
-            margin-left: 50px;
-        }
-
-        .journey-stop:nth-child(even) .journey-year {
-            right: auto;
-            left: -60px;
-        }
-
-        .journey-dot {
-            position: absolute;
-            top: 30px;
-            right: 50%;
-            transform: translateX(50%);
-            width: 24px;
-            height: 24px;
-            background-color: white;
-            border: 4px solid var(--journey-color);
-            border-radius: 50%;
-            z-index: 2;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .journey-dot:hover {
-            transform: translateX(50%) scale(1.3);
-            background-color: var(--accent-color);
-        }
-
-        .journey-content {
-            width: calc(50% - 50px);
-            margin-right: 50px;
-            background-color: white;
+            align-items: flex-start;
+            gap: 30px;
             padding: 30px;
+            background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             transition: var(--transition);
             border-right: 5px solid var(--primary-color);
         }
 
-        .journey-stop:nth-child(even) .journey-content {
-            border-right: none;
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .journey-content:hover {
+        .timeline-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
 
-        .journey-year {
-            position: absolute;
-            top: 20px;
-            right: -60px;
-            background: var(--journey-gradient);
+        .timeline-year {
+            background: var(--primary-color);
             color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(44, 120, 108, 0.3);
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 1.2rem;
+            min-width: 120px;
+            text-align: center;
         }
 
-        .journey-content h3 {
-            font-size: 1.5rem;
+        .timeline-content h3 {
             color: var(--primary-color);
             margin-bottom: 15px;
+            font-size: 1.5rem;
         }
 
-        .journey-content p {
-            color: var(--gray-color);
-            margin-bottom: 20px;
-        }
-
-        .journey-lessons {
-            background-color: var(--accent-light);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .journey-lessons h4 {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .journey-lessons ul {
-            padding-right: 20px;
-        }
-
-        .journey-lessons li {
-            margin-bottom: 8px;
-            position: relative;
-        }
-
-        .journey-lessons li::before {
-            content: "•";
-            color: var(--accent-color);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-right: -1em;
-        }
-
-        /* قسم المراحل التفصيلية */
-        .stages-section {
-            background-color: white;
-        }
-
-        .stages-grid {
+        /* أقسام السيرة */
+        .sections-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
 
-        .stage-card {
+        .section-card {
             background-color: white;
             border-radius: var(--border-radius);
             padding: 35px;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
             border: 1px solid var(--light-gray);
+            text-align: center;
             height: 100%;
-            position: relative;
-            overflow: hidden;
         }
 
-        .stage-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-        }
-
-        .stage-card:hover {
+        .section-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             border-color: var(--primary-color);
         }
 
-        .stage-icon {
+        .section-icon {
             background: linear-gradient(135deg, rgba(26, 95, 75, 0.1) 0%, rgba(13, 59, 46, 0.1) 100%);
             width: 80px;
             height: 80px;
-            border-radius: 20px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
+            margin: 0 auto 25px;
             color: var(--primary-color);
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
-        .stage-card h3 {
+        .section-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--dark-color);
         }
 
-        .stage-card p {
+        .section-card p {
             color: var(--gray-color);
             margin-bottom: 25px;
             font-size: 1.05rem;
         }
 
-        .stage-period {
+        .section-count {
             display: inline-block;
             background-color: var(--primary-color);
             color: white;
-            padding: 5px 15px;
+            padding: 8px 20px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-top: 10px;
         }
 
-        /* صفحات تفاصيل المرحلة */
-        .stage-detail-page {
+        /* صفحة التفاصيل */
+        .detail-page {
             padding: 80px 0;
             min-height: 70vh;
         }
 
-        .page-header {
-            margin-bottom: 50px;
-        }
-
-        .stage-detail-header {
+        .detail-header {
             background: var(--hero-gradient);
             color: white;
             padding: 60px 0;
@@ -638,18 +414,18 @@
             text-align: center;
         }
 
-        .stage-detail-header h1 {
+        .detail-header h1 {
             color: white;
             font-size: 2.8rem;
             margin-bottom: 20px;
         }
 
-        .stage-detail-header .period {
+        .detail-header .subtitle {
             font-size: 1.3rem;
             opacity: 0.9;
         }
 
-        .stage-content {
+        .detail-content {
             background-color: white;
             padding: 50px;
             border-radius: var(--border-radius);
@@ -659,19 +435,19 @@
             border: 1px solid var(--light-gray);
         }
 
-        .stage-section {
+        .detail-section {
             margin-bottom: 50px;
             padding-bottom: 40px;
             border-bottom: 1px solid var(--light-gray);
         }
 
-        .stage-section:last-child {
+        .detail-section:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
 
-        .stage-section h3 {
+        .detail-section h3 {
             color: var(--primary-color);
             margin-bottom: 25px;
             font-size: 1.8rem;
@@ -679,7 +455,7 @@
             padding-bottom: 15px;
         }
 
-        .stage-section h3::after {
+        .detail-section h3::after {
             content: '';
             position: absolute;
             width: 80px;
@@ -689,61 +465,192 @@
             right: 0;
         }
 
-        .key-events {
+        /* أزواج النبي */
+        .wives-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
 
-        .key-event {
-            background-color: #f8f9fa;
+        .wife-card {
+            background-color: white;
             padding: 25px;
             border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             border-right: 4px solid var(--accent-color);
             transition: var(--transition);
         }
 
-        .key-event:hover {
+        .wife-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .key-event h4 {
+        .wife-card h4 {
             color: var(--secondary-color);
             margin-bottom: 15px;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
 
-        .key-event p {
-            margin-bottom: 0;
+        .wife-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .wife-tag {
+            background-color: var(--light-gray);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
             color: var(--gray-color);
         }
 
-        .reflection-box {
-            background-color: var(--accent-light);
-            padding: 35px;
+        /* أبناء النبي */
+        .children-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .child-card {
+            background-color: #f8f9fa;
+            padding: 25px;
             border-radius: var(--border-radius);
-            margin: 40px 0;
-            border-right: 5px solid var(--accent-color);
-            position: relative;
+            border: 1px solid var(--light-gray);
+            transition: var(--transition);
+            text-align: center;
         }
 
-        .reflection-box::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 5rem;
-            color: var(--accent-color);
-            opacity: 0.2;
-            font-family: serif;
+        .child-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
         }
 
-        .reflection-box h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+        .child-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .child-card h4 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* غزوات النبي */
+        .battles-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .battles-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .battles-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .battles-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .battles-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .battle-result {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .victory {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+        }
+
+        .treaty {
+            background-color: rgba(0, 123, 255, 0.1);
+            color: #007bff;
+        }
+
+        /* المعجزات */
+        .miracles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .miracle-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .miracle-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .miracle-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* الشخصيات */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .character-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--light-gray);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .character-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .character-role {
+            background-color: var(--light-gray);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-top: 10px;
+            display: inline-block;
         }
 
         .back-link {
@@ -763,85 +670,6 @@
             background-color: var(--primary-color);
             color: white;
             transform: translateX(-5px);
-        }
-
-        /* مؤشر التقدم */
-        .journey-progress {
-            position: fixed;
-            top: 100px;
-            left: 30px;
-            z-index: 999;
-            background-color: white;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            width: 200px;
-            display: none;
-        }
-
-        .journey-progress.show {
-            display: block;
-        }
-
-        .progress-title {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: var(--dark-color);
-            text-align: center;
-        }
-
-        .progress-bar {
-            height: 8px;
-            background-color: var(--light-gray);
-            border-radius: 4px;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: var(--journey-gradient);
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-
-        .progress-text {
-            font-size: 0.9rem;
-            color: var(--gray-color);
-            text-align: center;
-        }
-
-        /* التلميحات السياقية */
-        .context-hint {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: white;
-            padding: 15px 25px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            border-right: 4px solid var(--accent-color);
-            max-width: 300px;
-            z-index: 999;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-
-        .context-hint.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .context-hint h5 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .context-hint p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
         }
 
         /* الفوتر */
@@ -957,7 +785,6 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-style: italic;
         }
 
         /* زر العودة للأعلى */
@@ -997,62 +824,66 @@
             height: 80px;
         }
 
-        /* قسم التطوير */
-        .development-message {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: var(--light-gray);
-            border-radius: var(--border-radius);
-            margin: 50px 0;
-        }
-
-        .development-icon {
-            font-size: 4rem;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            opacity: 0.7;
-        }
-
-        /* التأملات والاقتباسات */
-        .quote-section {
-            background-color: #f8f5e6;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .quote-container {
-            max-width: 800px;
-            margin: 0 auto;
+        /* خط زمني بسيط */
+        .timeline-container {
             position: relative;
+            max-width: 900px;
+            margin: 50px auto;
         }
 
-        .quote-text {
-            font-family: 'El Messiri', serif;
-            font-size: 1.8rem;
-            line-height: 1.6;
-            color: var(--secondary-color);
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        .quote-author {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .quote-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            opacity: 0.3;
+        .timeline-line {
             position: absolute;
-            top: -20px;
-            right: 0;
+            top: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
         }
 
-        /* Sitemap container مخفي */
-        .sitemap-container {
-            display: none;
+        .timeline-event {
+            position: relative;
+            margin-bottom: 60px;
+            width: 45%;
+        }
+
+        .timeline-event:nth-child(odd) {
+            margin-right: 55%;
+        }
+
+        .timeline-event:nth-child(even) {
+            margin-left: 55%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            right: -12px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .timeline-event:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -12px;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-right: 4px solid var(--primary-color);
+        }
+
+        .timeline-event:nth-child(even) .timeline-content {
+            border-right: none;
+            border-left: 4px solid var(--accent-color);
         }
 
         /* التجاوب مع الشاشات */
@@ -1075,22 +906,28 @@
                 padding: 80px 0;
             }
             
-            .mindmap-container {
-                min-height: 500px;
+            .timeline-line {
+                right: 30px;
             }
             
-            .journey-content {
-                width: calc(60% - 30px);
+            .timeline-event {
+                width: calc(100% - 60px);
+                margin-right: 60px !important;
+                margin-left: 0 !important;
             }
             
-            .journey-stop:nth-child(even) .journey-content {
-                width: calc(60% - 30px);
-                margin-right: 0;
-                margin-left: 30px;
+            .timeline-dot {
+                right: -42px;
             }
             
-            .journey-progress {
-                display: none !important;
+            .timeline-event:nth-child(even) .timeline-dot {
+                right: -42px;
+                left: auto;
+            }
+            
+            .timeline-content {
+                border-right: 4px solid var(--primary-color) !important;
+                border-left: none !important;
             }
         }
 
@@ -1124,70 +961,30 @@
                 height: 50px;
             }
             
-            .context-hint {
-                right: 15px;
-                bottom: 15px;
-                max-width: 280px;
+            .sections-grid {
+                grid-template-columns: 1fr;
             }
             
-            .mindmap-container {
-                display: none;
+            .wives-grid,
+            .children-grid,
+            .miracles-grid,
+            .characters-grid {
+                grid-template-columns: 1fr;
             }
             
-            .journey-timeline {
-                padding-right: 0;
+            .battles-table {
+                display: block;
+                overflow-x: auto;
             }
             
-            .journey-line {
-                right: 30px;
-            }
-            
-            .journey-dot {
-                right: 30px;
-            }
-            
-            .journey-stop, .journey-stop:nth-child(even) {
-                flex-direction: column;
-                text-align: right;
-                margin-bottom: 70px;
-            }
-            
-            .journey-content {
-                width: 100%;
-                margin-right: 0;
-                margin-top: 40px;
-            }
-            
-            .journey-stop:nth-child(even) .journey-content {
-                width: 100%;
-                margin-left: 0;
-                margin-top: 40px;
-            }
-            
-            .journey-year {
-                position: relative;
-                right: auto;
-                left: auto;
-                display: inline-block;
-                margin-bottom: 15px;
-            }
-            
-            .development-icon {
-                font-size: 3rem;
-            }
-            
-            .quote-text {
-                font-size: 1.5rem;
+            .detail-content {
+                padding: 30px;
             }
         }
 
         @media (max-width: 576px) {
             .container {
                 padding: 0 15px;
-            }
-            
-            .stages-grid {
-                grid-template-columns: 1fr;
             }
             
             .hero {
@@ -1208,11 +1005,12 @@
                 padding: 60px 0;
             }
             
-            .stage-card, .key-event {
+            .section-card {
                 padding: 25px;
             }
             
-            .stage-content, .stage-detail-header {
+            .detail-content,
+            .detail-header {
                 padding: 30px 20px;
             }
             
@@ -1225,10 +1023,6 @@
                 font-size: 1rem;
                 padding: 12px 20px;
             }
-            
-            .key-events {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -1240,7 +1034,7 @@
                 <div class="logo">
                     <a href="/" style="color: inherit; text-decoration: none;">
                         <h1>DEENWAY <span class="logo-highlight">Seerah</span></h1>
-                        <p class="tagline">رحلة تفاعلية مع السيرة النبوية</p>
+                        <p class="tagline">السيرة النبوية الشاملة</p>
                     </a>
                 </div>
             </div>
@@ -1250,91 +1044,164 @@
     <!-- مسافة للهيدر الثابت -->
     <div class="header-spacer"></div>
 
-    <!-- مؤشر التقدم في الرحلة -->
-    <div class="journey-progress" id="journeyProgress">
-        <div class="progress-title">تقدمك في الرحلة</div>
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-        </div>
-        <div class="progress-text" id="progressText">0% من الرحلة</div>
-    </div>
-
-    <!-- تلميحات سياقية -->
-    <div class="context-hint" id="contextHint">
-        <h5>تلميح استكشافي</h5>
-        <p id="hintText">ابدأ رحلتك بالنقر على المراحل الرئيسية في الخريطة الذهنية</p>
-    </div>
-
-    <!-- البانر الرئيسي (يظهر فقط في الصفحة الرئيسية) -->
+    <!-- البانر الرئيسي -->
     <section class="hero" id="heroSection">
         <div class="container">
             <div class="hero-content">
-                <h2 class="hero-title">رحلة تفاعلية مع السيرة النبوية<br>تعيشها ولا تقرأها فقط</h2>
-                <a href="#mindmaps" class="btn btn-primary" id="exploreBtn">ابدأ الرحلة الآن</a>
+                <h2 class="hero-title">سيرة النبي محمد ﷺ<br>كاملة بكل تفاصيلها</h2>
+                <a href="#sections" class="btn btn-primary" id="exploreBtn">استكشف السيرة النبوية</a>
             </div>
         </div>
     </section>
 
-    <!-- قسم الخرائط الذهنية -->
-    <section id="mindmaps" class="section mindmaps-section">
+    <!-- الخط الزمني البسيط -->
+    <section id="timeline" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">الخريطة الذهنية للسيرة النبوية</h2>
-                <p class="section-subtitle">استكشف المراحل الكبرى من حياة النبي ﷺ عبر خرائط ذهنية تفاعلية تظهر الأسباب والنتائج والدروس</p>
+                <h2 class="section-title">الخط الزمني لحياة النبي ﷺ</h2>
+                <p class="section-subtitle">رحلة حياة النبي محمد ﷺ من الميلاد إلى الوفاة</p>
             </div>
             
-            <div class="mindmap-container" id="mindmapContainer">
-                <!-- سيتم إنشاء الخريطة الذهنية بالجافاسكريبت -->
-            </div>
-            
-            <div class="stages-grid" id="stagesGrid">
-                <!-- المراحل ستظهر هنا على الأجهزة الصغيرة -->
-            </div>
-        </div>
-    </section>
-
-    <!-- الرحلة الزمنية التفاعلية -->
-    <section id="journey" class="section journey-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">الرحلة الزمنية النبوية</h2>
-                <p class="section-subtitle">عش أحداث السيرة النبوية كما لو كنت جزءاً منها عبر مسار زمني تفاعلي</p>
-            </div>
-            
-            <div class="journey-container">
-                <div class="journey-timeline" id="journeyTimeline">
-                    <!-- سيتم إنشاء الرحلة الزمنية بالجافاسكريبت -->
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>الميلاد (571 م)</h3>
+                        <p>ولد النبي محمد ﷺ في مكة يوم الإثنين 12 ربيع الأول عام الفيل. توفي أبوه عبد الله قبل ولادته، وربته أمه آمنة بنت وهب ثم جده عبد المطلب.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>حادثة شق الصدر (575 م)</h3>
+                        <p>شق جبريل صدر النبي ﷺ وهو طفل وغسل قلبه بماء زمزن في إناء من ذهب، ثم أعاده إلى مكانه.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>وفاة الأم والجد (577 م)</h3>
+                        <p>توفيت أمه آمنة وهو في السادسة من عمره، ثم توفي جده عبد المطلب وهو في الثامنة، فكفله عمه أبو طالب.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>الرعي ثم التجارة (582-595 م)</h3>
+                        <p>رعى الغنم في صغره، ثم اشتغل بالتجارة مع عمه، واشتهر بالصدق والأمانة حتى لقب بـ "الصادق الأمين".</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>الزواج من خديجة (595 م)</h3>
+                        <p>تزوج خديجة بنت خويلد وهو في الخامسة والعشرين من عمره، وكانت تبلغ الأربعين، وعاش معها 25 سنة.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>بدء الوحي (610 م)</h3>
+                        <p>نزل الوحي على النبي ﷺ في غار حراء وهو في الأربعين من عمره، وكانت أول آية: "اقرأ باسم ربك الذي خلق".</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>الهجرة إلى المدينة (622 م)</h3>
+                        <p>هاجر النبي ﷺ من مكة إلى المدينة بعد اشتداد الأذى من قريش، وكانت بداية التاريخ الهجري.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>وفاة النبي ﷺ (632 م)</h3>
+                        <p>توفي النبي ﷺ يوم الاثنين 12 ربيع الأول سنة 11 هـ، عن عمر 63 سنة، ودفن في حجرة عائشة بالمسجد النبوي.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم الاقتباسات والتأملات -->
-    <section class="quote-section">
-        <div class="container">
-            <div class="quote-container">
-                <div class="quote-icon">❝</div>
-                <p class="quote-text" id="currentQuote">إنما بعثت لأتمم مكارم الأخلاق</p>
-                <p class="quote-author" id="quoteAuthor">رسول الله ﷺ</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم المراحل التفصيلية -->
-    <section id="stages" class="section stages-section">
+    <!-- أقسام السيرة -->
+    <section id="sections" class="section" style="background-color: #f8f5e6;">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">مراحل السيرة النبوية</h2>
-                <p class="section-subtitle">استكشف كل مرحلة من حياة النبي ﷺ بالتفصيل مع الأحداث والدروس والقيم</p>
+                <h2 class="section-title">أقسام السيرة النبوية</h2>
+                <p class="section-subtitle">استكشف كل جوانب حياة النبي ﷺ بالتفصيل</p>
             </div>
-            <div class="stages-grid" id="detailedStagesGrid">
-                <!-- سيتم ملؤها بالجافاسكريبت -->
+            <div class="sections-grid">
+                <a href="#family" class="section-card">
+                    <div class="section-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>الأسرة النبوية</h3>
+                    <p>أزواج النبي ﷺ وأبناؤه وبناته وأحفاده وسيرتهم</p>
+                    <span class="section-count">13 زوجة</span>
+                </a>
+                
+                <a href="#battles" class="section-card">
+                    <div class="section-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>الغزوات والمعارك</h3>
+                    <p>غزوات النبي ﷺ وسراياه وأهم الأحداث العسكرية</p>
+                    <span class="section-count">28 غزوة</span>
+                </a>
+                
+                <a href="#miracles" class="section-card">
+                    <div class="section-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>المعجزات والخصائص</h3>
+                    <p>معجزات النبي ﷺ وخصائصه ومكارم أخلاقه</p>
+                    <span class="section-count">+100 معجزة</span>
+                </a>
+                
+                <a href="#characters" class="section-card">
+                    <div class="section-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>شخصيات السيرة</h3>
+                    <p>الصحابة الكرام وأهل بيت النبي والمنافقين</p>
+                    <span class="section-count">+100 شخصية</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- صفحة تفاصيل المرحلة -->
-    <section id="stage-detail-container" class="section stage-detail-page" style="display: none;">
+    <!-- صفحة الأسرة النبوية -->
+    <section id="family-detail" class="section detail-page" style="display: none;">
+        <div class="container">
+            <!-- سيتم ملؤها بالجافاسكريبت -->
+        </div>
+    </section>
+
+    <!-- صفحة الغزوات -->
+    <section id="battles-detail" class="section detail-page" style="display: none;">
+        <div class="container">
+            <!-- سيتم ملؤها بالجافاسكريبت -->
+        </div>
+    </section>
+
+    <!-- صفحة المعجزات -->
+    <section id="miracles-detail" class="section detail-page" style="display: none;">
+        <div class="container">
+            <!-- سيتم ملؤها بالجافاسكريبت -->
+        </div>
+    </section>
+
+    <!-- صفحة الشخصيات -->
+    <section id="characters-detail" class="section detail-page" style="display: none;">
         <div class="container">
             <!-- سيتم ملؤها بالجافاسكريبت -->
         </div>
@@ -1347,22 +1214,21 @@
                 <div class="footer-section">
                     <h4>روابط سريعة</h4>
                     <ul class="footer-links">
-                        <li><a href="https://www.ondeenway.org" target="_blank"><i class="fas fa-external-link-alt"></i> DEENWAY</a></li>
-                        <li><a href="https://quran.ondeenway.org" target="_blank"><i class="fas fa-external-link-alt"></i> DEENWAY Quran</a></li>
-                        <li><a href="https://fiqh.ondeenway.org" target="_blank"><i class="fas fa-external-link-alt"></i> DEENWAY Fiqh</a></li>
-                        <li><a href="https://hadiths.ondeenway.org" target="_blank"><i class="fas fa-external-link-alt"></i> DEENWAY Hadiths</a></li>
+                        <li><a href="#timeline"><i class="fas fa-history"></i> الخط الزمني</a></li>
+                        <li><a href="#family"><i class="fas fa-home"></i> الأسرة النبوية</a></li>
+                        <li><a href="#battles"><i class="fas fa-shield-alt"></i> الغزوات</a></li>
+                        <li><a href="#miracles"><i class="fas fa-star"></i> المعجزات</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <div class="footer-logo">
                         <h3>DEENWAY <span class="logo-highlight">Seerah</span></h3>
-                        <p class="tagline">رحلة تفاعلية مع السيرة النبوية</p>
+                        <p class="tagline">السيرة النبوية الشاملة</p>
                     </div>
                     <div class="social-links">
                         <a href="https://www.instagram.com/ondeenwayorg" aria-label="انستغرام" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.facebook.com/ondeenwayorg" aria-label="فيسبوك" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@ondeenwayorg" aria-label="تيكتوك" target="_blank"><i class="fab fa-tiktok"></i></a>
                         <a href="https://wa.me/212649106356" aria-label="واتساب" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
@@ -1398,380 +1264,481 @@
         <priority>1.0</priority>
     </url>
     
-    <!-- صفحة الخرائط الذهنية -->
+    <!-- الخط الزمني -->
     <url>
-        <loc>https://seerah.ondeenway.org/#mindmaps</loc>
+        <loc>https://seerah.ondeenway.org/#timeline</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
-    <!-- صفحة الرحلة الزمنية -->
+    <!-- الأسرة النبوية -->
     <url>
-        <loc>https://seerah.ondeenway.org/#journey</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- صفحة المراحل -->
-    <url>
-        <loc>https://seerah.ondeenway.org/#stages</loc>
+        <loc>https://seerah.ondeenway.org/#family</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
-    <!-- مراحل السيرة التفصيلية -->
+    <!-- الغزوات -->
     <url>
-        <loc>https://seerah.ondeenway.org/#stage/makkah-period</loc>
+        <loc>https://seerah.ondeenway.org/#battles</loc>
         <lastmod>2024-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     
+    <!-- المعجزات -->
     <url>
-        <loc>https://seerah.ondeenway.org/#stage/prophethood</loc>
+        <loc>https://seerah.ondeenway.org/#miracles</loc>
         <lastmod>2024-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     
+    <!-- الشخصيات -->
     <url>
-        <loc>https://seerah.ondeenway.org/#stage/madinah-period</loc>
+        <loc>https://seerah.ondeenway.org/#characters</loc>
         <lastmod>2024-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://seerah.ondeenway.org/#stage/conquests</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://seerah.ondeenway.org/#stage/farewell</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- صفحة الاتصال -->
-    <url>
-        <loc>https://seerah.ondeenway.org/#contact</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     
 </urlset>
     </div>
 
     <script>
-        // بيانات السيرة النبوية
+        // بيانات السيرة النبوية الشاملة
         const seerahData = {
-            // المراحل الرئيسية للخريطة الذهنية
-            'mindmapStages': [
-                {
-                    id: 'makkah-period',
-                    title: 'المكي',
-                    description: 'من الميلاد إلى الهجرة',
-                    icon: 'fas fa-kaaba',
-                    position: { top: '30%', right: '10%' },
-                    angle: -30,
-                    color: '#1a5f4b'
-                },
-                {
-                    id: 'prophethood',
-                    title: 'النبوة',
-                    description: 'بدء الوحي والدعوة',
-                    icon: 'fas fa-book-quran',
-                    position: { top: '15%', right: '35%' },
-                    angle: -10,
-                    color: '#2c786c'
-                },
-                {
-                    id: 'madinah-period',
-                    title: 'المدني',
-                    description: 'من الهجرة إلى الوفاة',
-                    icon: 'fas fa-mosque',
-                    position: { top: '50%', right: '35%' },
-                    angle: 10,
-                    color: '#3a9b84'
-                },
-                {
-                    id: 'conquests',
-                    title: 'الفتوحات',
-                    description: 'انتصارات الإسلام',
-                    icon: 'fas fa-shield-alt',
-                    position: { top: '70%', right: '10%' },
-                    angle: 30,
-                    color: '#d4af37'
-                },
-                {
-                    id: 'legacy',
-                    title: 'الإرث',
-                    description: 'الأخلاق والمنهج',
-                    icon: 'fas fa-hands-helping',
-                    position: { top: '70%', right: '60%' },
-                    angle: 50,
-                    color: '#0d3b2e'
-                }
-            ],
-            
-            // الرحلة الزمنية
-            'journeyTimeline': [
-                {
-                    id: 'birth',
-                    year: '571 م',
-                    title: 'ميلاد النبي ﷺ',
-                    description: 'وُلد النبي محمد ﷺ في مكة في عام الفيل يتيماً، حيث توفي أبوه عبد الله قبل ولادته. نشأ في كنف جده عبد المطلب ثم عمه أبي طالب.',
-                    lessons: [
-                        'الاعتماد على الله في كل الظروف',
-                        'مكانة اليتيم في الإسلام ورعايته',
-                        'التوكل على الله مع الأخذ بالأسباب'
-                    ],
-                    position: 0
-                },
-                {
-                    id: 'revelation',
-                    year: '610 م',
-                    title: 'بدء الوحي',
-                    description: 'نزل الوحي على النبي ﷺ في غار حراء وهو في الأربعين من عمره، وكانت أول آية نزلت: "اقرأ باسم ربك الذي خلق".',
-                    lessons: [
-                        'أهمية العلم والتعلم في الإسلام',
-                        'الصبر على تربية النفوس',
-                        'التدرج في تبليغ الدعوة'
-                    ],
-                    position: 20
-                },
-                {
-                    id: 'migration',
-                    year: '622 م',
-                    title: 'الهجرة إلى المدينة',
-                    description: 'هاجر النبي ﷺ من مكة إلى المدينة بعد اشتداد الأذى من قريش، وكانت هذه الهجرة بداية التاريخ الإسلامي.',
-                    lessons: [
-                        'التضحية في سبيل الدين',
-                        'أهمية التخطيط والسرية',
-                        'الأخوة بين المهاجرين والأنصار'
-                    ],
-                    position: 40
-                },
-                {
-                    id: 'constitution',
-                    year: '623 م',
-                    title: 'دستور المدينة',
-                    description: 'وضع النبي ﷺ دستوراً للمدينة ينظم العلاقة بين المسلمين واليهود وسكان المدينة، ويعتبر أول دستور مدني في التاريخ.',
-                    lessons: [
-                        'العدل مع غير المسلمين',
-                        'تنظيم المجتمع على أسس مدنية',
-                        'المساواة بين جميع المواطنين'
-                    ],
-                    position: 60
-                },
-                {
-                    id: 'conquest',
-                    year: '630 م',
-                    title: 'فتح مكة',
-                    description: 'دخل النبي ﷺ مكة فاتحاً دون قتال، وعفا عن أهلها الذين آذوه وأخرجوه، قائلاً: "اذهبوا فأنتم الطلقاء".',
-                    lessons: [
-                        'العفو عند المقدرة',
-                        'النصر بالرحمة لا بالعنف',
-                        'تحويل العداوة إلى محبة'
-                    ],
-                    position: 80
-                },
-                {
-                    id: 'farewell',
-                    year: '632 م',
-                    title: 'حجة الوداع',
-                    description: 'ألقى النبي ﷺ خطبة الوداع في حجة الوداع، موجهاً وصاياه الأخيرة للأمة، ثم توفي بعدها بثلاثة أشهر.',
-                    lessons: [
-                        'المساواة بين جميع البشر',
-                        'حرمة الدماء والأموال والأعراض',
-                        'العدل بين النساء'
-                    ],
-                    position: 100
-                }
-            ],
-            
-            // المراحل التفصيلية
-            'detailedStages': {
-                'makkah-period': {
-                    id: 'makkah-period',
-                    title: 'الفترة المكية',
-                    period: 'من الميلاد 571م إلى الهجرة 622م',
-                    duration: '53 سنة',
-                    icon: 'fas fa-kaaba',
-                    color: '#1a5f4b',
-                    overview: 'تمثل الفترة المكية النشأة والنبوة والدعوة السرية والجهرية في مكة، وهي فترة التأسيس والتربية تحت وطأة الاضطهاد.',
-                    keyEvents: [
-                        {
-                            title: 'ولادة النبي ﷺ',
-                            description: 'ولد النبي ﷺ في عام الفيل يتيماً، ورباه جده عبد المطلب ثم عمه أبو طالب.'
-                        },
-                        {
-                            title: 'حادثة شق الصدر',
-                            description: 'شق جبريل صدر النبي ﷺ وهو طفل وغسل قلبه في إناء من ذهب بماء زمزم.'
-                        },
-                        {
-                            title: 'الرعي ثم التجارة',
-                            description: 'عمل النبي ﷺ في رعي الأغنام ثم في التجارة مع السيدة خديجة رضي الله عنها.'
-                        },
-                        {
-                            title: 'حلف الفضول',
-                            description: 'شارك النبي ﷺ في حلف الفضول لنصرة المظلوم قبل البعثة.'
-                        },
-                        {
-                            title: 'إعادة بناء الكعبة',
-                            description: 'شارك النبي ﷺ في إعادة بناء الكعبة ووضع الحجر الأسود بعد نزاع القبائل.'
-                        }
-                    ],
-                    challenges: [
-                        'الاضطهاد والتعذيب من قريش',
-                        'حصار المسلمين في شعب أبي طالب',
-                        'وفاة عمه أبو طالب وزوجته خديجة',
-                        'رفض دعوته من قبل معظم أهل مكة'
-                    ],
-                    lessons: [
-                        'الصبر على الأذى في سبيل الدعوة',
-                        'التدرج في تبليغ الرسالة',
-                        'أهمية الدعوة السرية عند الحاجة',
-                        'التوكل على الله في الشدائد'
-                    ],
-                    reflections: 'الفترة المكية تمثل مدرسة الصبر والثبات، حيث تلقى النبي ﷺ والمسلمون الأوائل أقسى أنواع التعذيب والاضطهاد، ولكنهم صبروا وثبتوا، مما جعل الدعوة أقوى وأرسخ.'
-                },
-                'prophethood': {
-                    id: 'prophethood',
-                    title: 'عهد النبوة والدعوة',
-                    period: 'من البعثة 610م إلى الهجرة 622م',
-                    duration: '13 سنة',
-                    icon: 'fas fa-book-quran',
-                    color: '#2c786c',
-                    overview: 'بدأت ببدء الوحي في غار حراء، وشملت الدعوة السرية والجهرية، وإسلام السابقين الأولين، ومواجهة قريش.',
-                    keyEvents: [
-                        {
-                            title: 'نزول الوحي',
-                            description: 'نزل جبريل على النبي ﷺ في غار حراء بأول آيات القرآن: "اقرأ باسم ربك الذي خلق".'
-                        },
-                        {
-                            title: 'الدعوة السرية',
-                            description: 'دعا النبي ﷺ إلى الإسلام سراً لمدة ثلاث سنوات، فأسلم السابقون الأولون.'
-                        },
-                        {
-                            title: 'الدعوة الجهرية',
-                            description: 'بدأ النبي ﷺ الدعوة جهراً بدعوة عشيرته الأقربين ثم كل قريش.'
-                        },
-                        {
-                            title: 'الإسراء والمعراج',
-                            description: 'أسري بالنبي ﷺ من مكة إلى القدس ثم عرج به إلى السماوات العلى.'
-                        },
-                        {
-                            title: 'بيعة العقبة',
-                            description: 'بايع الأنصار النبي ﷺ في العقبة على نصرته والهجرة إليهم.'
-                        }
-                    ],
-                    challenges: [
-                        'سخرية قريش واستهزاؤهم بالدعوة',
-                        'تعذيب المسلمين الأوائل',
-                        'حصار المسلمين في شعب أبي طالب',
-                        'وفاة خديجة وأبي طالب في عام الحزن'
-                    ],
-                    lessons: [
-                        'أهمية التربية الإيمانية المتدرجة',
-                        'الصبر على أذى الكفار',
-                        'الاعتماد على الله في الشدائد',
-                        'التمسك بالحق رغم كل التحديات'
-                    ],
-                    reflections: 'عهد النبوة يعلّمنا أن الدعوة تحتاج إلى صبر طويل وحكمة في التبليغ، وأن النجاح لا يأتي بين ليلة وضحاها، بل يحتاج إلى تضحيات جسام وإيمان راسخ.'
-                },
-                'madinah-period': {
-                    id: 'madinah-period',
-                    title: 'العصر المدني',
-                    period: 'من الهجرة 622م إلى الوفاة 632م',
-                    duration: '10 سنوات',
-                    icon: 'fas fa-mosque',
-                    color: '#3a9b84',
-                    overview: 'تمثل مرحلة بناء الدولة الإسلامية وتأسيس المجتمع الجديد، والجهاد في سبيل الله، وانتشار الإسلام.',
-                    keyEvents: [
-                        {
-                            title: 'الهجرة إلى المدينة',
-                            description: 'هاجر النبي ﷺ من مكة إلى المدينة، وكانت بداية التاريخ الهجري.'
-                        },
-                        {
-                            title: 'بناء المسجد النبوي',
-                            description: 'أول عمل قام به النبي ﷺ في المدينة هو بناء المسجد النبوي.'
-                        },
-                        {
-                            title: 'المؤاخاة بين المهاجرين والأنصار',
-                            description: 'آخى النبي ﷺ بين المهاجرين والأنصار لتعزيز التكافل الاجتماعي.'
-                        },
-                        {
-                            title: 'غزوة بدر',
-                            description: 'أول معركة فاصلة بين المسلمين وكفار قريش، انتصر فيها المسلمون.'
-                        },
-                        {
-                            title: 'صلح الحديبية',
-                            description: 'عقد النبي ﷺ صلحاً مع قريش كان فتحاً مبيناً للإسلام.'
-                        }
-                    ],
-                    challenges: [
-                        'التهديدات الخارجية من قريش والقبائل',
-                        'نفاق بعض المنافقين في المدينة',
-                        'الحروب المتتالية للدفاع عن الدولة',
-                        'المجاعة والأزمات الاقتصادية'
-                    ],
-                    lessons: [
-                        'بناء المجتمع على أسس إيمانية',
-                        'التخطيط الاستراتيجي في الدفاع',
-                        'المرونة في التعامل مع الأعداء',
-                        'العدل والرحمة حتى مع الخصوم'
-                    ],
-                    reflections: 'العصر المدني يقدم نموذجاً كاملاً لبناء دولة إسلامية متكاملة، تعتمد على العدل والشورى والتكافل، وتوازن بين متطلبات الدنيا والآخرة.'
-                }
+            // الأسرة النبوية
+            'family': {
+                title: 'الأسرة النبوية',
+                subtitle: 'أزواج النبي ﷺ وأبناؤه وبناته وأحفاده',
+                
+                // أزواج النبي ﷺ
+                wives: [
+                    {
+                        name: 'خديجة بنت خويلد',
+                        info: 'أولى زوجات النبي ﷺ، تزوجها قبل البعثة وعمرها 40 سنة وهو 25 سنة',
+                        marriageYear: '595 م (قبل البعثة)',
+                        children: 'القاسم، عبد الله، زينب، رقية، أم كلثوم، فاطمة',
+                        death: '3 قبل الهجرة',
+                        notes: 'أول من آمن بالنبي ﷺ، سميت بـ "أم المؤمنين"'
+                    },
+                    {
+                        name: 'سودة بنت زمعة',
+                        info: 'تزوجها النبي ﷺ بعد وفاة خديجة، كانت أرملة',
+                        marriageYear: '3 قبل الهجرة',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '54 هـ',
+                        notes: 'وهبت يومها لعائشة رضي الله عنها'
+                    },
+                    {
+                        name: 'عائشة بنت أبي بكر',
+                        info: 'البكر الوحيدة التي تزوجها النبي ﷺ',
+                        marriageYear: '1 هـ',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '58 هـ',
+                        notes: 'أفقه نساء الأمة، روت 2210 حديثاً'
+                    },
+                    {
+                        name: 'حفصة بنت عمر',
+                        info: 'ابنة عمر بن الخطاب، كانت أرملة',
+                        marriageYear: '3 هـ',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '45 هـ',
+                        notes: 'حافظة القرآن، أول من جمع المصحف'
+                    },
+                    {
+                        name: 'زينب بنت خزيمة',
+                        info: 'تزوجها النبي ﷺ بعد معركة بدر، توفيت بعد شهرين',
+                        marriageYear: '3 هـ',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '4 هـ',
+                        notes: 'سميت بـ "أم المساكين" لكثرة إحسانها'
+                    },
+                    {
+                        name: 'أم سلمة',
+                        info: 'هند بنت أبي أمية، كانت أرملة وأم أولاد',
+                        marriageYear: '4 هـ',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '61 هـ',
+                        notes: 'آخر زوجات النبي ﷺ وفاة'
+                    },
+                    {
+                        name: 'زينب بنت جحش',
+                        info: 'ابنة عمة النبي ﷺ، طلقها زيد بن حارثة فتزوجها النبي',
+                        marriageYear: '5 هـ',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '20 هـ',
+                        notes: 'نزلت فيها آية الحجاب'
+                    },
+                    {
+                        name: 'جويرية بنت الحارث',
+                        info: 'سبية من بني المصطلق، تزوجها النبي ﷺ فأعتق قومها',
+                        marriageYear: '6 هـ',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '56 هـ',
+                        notes: 'بسبب زواجها أطلق سراح 100 أسير'
+                    },
+                    {
+                        name: 'مارية القبطية',
+                        info: 'أهداها المقوقس حاكم مصر للنبي ﷺ',
+                        marriageYear: '7 هـ',
+                        children: 'إبراهيم',
+                        death: '16 هـ',
+                        notes: 'أم إبراهيم، كانت جارية فأعتقها'
+                    },
+                    {
+                        name: 'أم حبيبة',
+                        info: 'رملة بنت أبي سفيان، هاجرت إلى الحبشة',
+                        marriageYear: '7 هـ',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '44 هـ',
+                        notes: 'ابنة أبي سفيان، أسلمت قبل أبيها'
+                    },
+                    {
+                        name: 'صفية بنت حيي',
+                        info: 'سبية من يهود خيبر، تزوجها النبي ﷺ بعد فتح خيبر',
+                        marriageYear: '7 هـ',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '50 هـ',
+                        notes: 'ابنة زعيم يهود خيبر'
+                    },
+                    {
+                        name: 'ميمونة بنت الحارث',
+                        info: 'آخر زوجات النبي ﷺ، تزوجها في عمرة القضاء',
+                        marriageYear: '7 هـ',
+                        children: 'لم تلد للنبي ﷺ',
+                        death: '51 هـ',
+                        notes: 'تزوجها في مكة وأتم نسك العمرة'
+                    }
+                ],
+                
+                // أبناء النبي ﷺ
+                children: [
+                    {
+                        name: 'القاسم',
+                        mother: 'خديجة',
+                        birth: 'قبل البعثة',
+                        death: '2 سنة',
+                        notes: 'به يكنى النبي ﷺ (أبو القاسم)'
+                    },
+                    {
+                        name: 'عبد الله',
+                        mother: 'خديجة',
+                        birth: 'قبل البعثة',
+                        death: 'طفلاً',
+                        notes: 'يسمى الطيب والطاهر'
+                    },
+                    {
+                        name: 'إبراهيم',
+                        mother: 'مارية القبطية',
+                        birth: '8 هـ',
+                        death: '10 هـ (18 شهراً)',
+                        notes: 'ولد بالمدينة، توفي وهو رضيع'
+                    },
+                    {
+                        name: 'زينب',
+                        mother: 'خديجة',
+                        birth: 'قبل البعثة بـ 10 سنوات',
+                        death: '8 هـ',
+                        notes: 'كبرى بنات النبي ﷺ، تزوجت أبي العاص'
+                    },
+                    {
+                        name: 'رقية',
+                        mother: 'خديجة',
+                        birth: 'قبل البعثة بـ 7 سنوات',
+                        death: '2 هـ',
+                        notes: 'تزوجت عثمان بن عفان، توفيت يوم بدر'
+                    },
+                    {
+                        name: 'أم كلثوم',
+                        mother: 'خديجة',
+                        birth: 'قبل البعثة بـ 6 سنوات',
+                        death: '9 هـ',
+                        notes: 'تزوجت عثمان بعد وفاة أختها رقية'
+                    },
+                    {
+                        name: 'فاطمة',
+                        mother: 'خديجة',
+                        birth: 'قبل البعثة بـ 5 سنوات',
+                        death: '11 هـ',
+                        notes: 'سيدة نساء العالمين، تزوجت علي بن أبي طالب'
+                    }
+                ]
             },
             
-            // الاقتباسات والتأملات
-            'quotes': [
-                {
-                    text: 'إنما بعثت لأتمم مكارم الأخلاق',
-                    author: 'رسول الله ﷺ'
-                },
-                {
-                    text: 'الراحمون يرحمهم الرحمن، ارحموا من في الأرض يرحمكم من في السماء',
-                    author: 'رسول الله ﷺ'
-                },
-                {
-                    text: 'لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه',
-                    author: 'رسول الله ﷺ'
-                },
-                {
-                    text: 'المسلم من سلم المسلمون من لسانه ويده',
-                    author: 'رسول الله ﷺ'
-                },
-                {
-                    text: 'إن الله لا ينظر إلى صوركم وأموالكم، ولكن ينظر إلى قلوبكم وأعمالكم',
-                    author: 'رسول الله ﷺ'
-                }
-            ],
+            // الغزوات والمعارك
+            'battles': {
+                title: 'غزوات النبي ﷺ',
+                subtitle: 'الغزوات والسرايا والمعارك التي شارك فيها النبي ﷺ',
+                
+                battles: [
+                    {
+                        name: 'غزوة الأبواء (ودان)',
+                        date: 'صفر 2 هـ',
+                        location: 'وادي الفرع بين مكة والمدينة',
+                        muslims: '200',
+                        enemy: 'قريش وبني ضمرة',
+                        result: 'معاهدة',
+                        notes: 'أول غزوة غزاها النبي ﷺ'
+                    },
+                    {
+                        name: 'غزوة بدر الكبرى',
+                        date: 'رمضان 2 هـ',
+                        location: 'بدر بين مكة والمدينة',
+                        muslims: '313',
+                        enemy: 'قريش (1000 مقاتل)',
+                        result: 'نصر',
+                        notes: 'أول معركة فاصلة في الإسلام'
+                    },
+                    {
+                        name: 'غزوة أحد',
+                        date: 'شوال 3 هـ',
+                        location: 'جبل أحد بالمدينة',
+                        muslims: '700',
+                        enemy: 'قريش (3000 مقاتل)',
+                        result: 'هزيمة ثم انتصار',
+                        notes: 'استشهد 70 صحابياً'
+                    },
+                    {
+                        name: 'غزوة الخندق',
+                        date: 'شوال 5 هـ',
+                        location: 'المدينة المنورة',
+                        muslims: '3000',
+                        enemy: 'قريش وبني قريظة وغطفان (10000)',
+                        result: 'نصر',
+                        notes: 'حفر الخندق حول المدينة'
+                    },
+                    {
+                        name: 'غزوة بني قريظة',
+                        date: 'ذي القعدة 5 هـ',
+                        location: 'ضواحي المدينة',
+                        muslims: '3000',
+                        enemy: 'بني قريظة',
+                        result: 'نصر',
+                        notes: 'نقض يهود بني قريظة العهد'
+                    },
+                    {
+                        name: 'غزوة بني المصطلق',
+                        date: 'شعبان 6 هـ',
+                        location: 'المريسيع',
+                        muslims: '700',
+                        enemy: 'بني المصطلق',
+                        result: 'نصر',
+                        notes: 'أسروا 2000 من النساء والأطفال'
+                    },
+                    {
+                        name: 'صلح الحديبية',
+                        date: 'ذي القعدة 6 هـ',
+                        location: 'الحديبية قرب مكة',
+                        muslims: '1400',
+                        enemy: 'قريش',
+                        result: 'صلح',
+                        notes: 'عقد صلح لمدة 10 سنوات'
+                    },
+                    {
+                        name: 'غزوة خيبر',
+                        date: 'محرم 7 هـ',
+                        location: 'خيبر شمال المدينة',
+                        muslims: '1600',
+                        enemy: 'يهود خيبر',
+                        result: 'نصر',
+                        notes: 'فتح حصون خيبر'
+                    },
+                    {
+                        name: 'غزوة مؤتة',
+                        date: 'جمادى الأولى 8 هـ',
+                        location: 'مؤتة بالأردن',
+                        muslims: '3000',
+                        enemy: 'الروم والعرب (200000)',
+                        result: 'انسحاب',
+                        notes: 'أول مواجهة مع الروم'
+                    },
+                    {
+                        name: 'فتح مكة',
+                        date: 'رمضان 8 هـ',
+                        location: 'مكة المكرمة',
+                        muslims: '10000',
+                        enemy: 'قريش',
+                        result: 'نصر',
+                        notes: 'دخل النبي ﷺ مكة فاتحاً'
+                    },
+                    {
+                        name: 'غزوة حنين',
+                        date: 'شوال 8 هـ',
+                        location: 'وادي حنين',
+                        muslims: '12000',
+                        enemy: 'هوازن وثقيف',
+                        result: 'نصر',
+                        notes: 'انتصر المسلمون بعد تراجع أولي'
+                    },
+                    {
+                        name: 'غزوة تبوك',
+                        date: 'رجب 9 هـ',
+                        location: 'تبوك شمال الحجاز',
+                        muslims: '30000',
+                        enemy: 'الروم',
+                        result: 'نصر',
+                        notes: 'آخر غزوة غزاها النبي ﷺ'
+                    }
+                ],
+                
+                saraya: [
+                    {
+                        name: 'سرية حمزة بن عبد المطلب',
+                        date: 'رمضان 1 هـ',
+                        leader: 'حمزة بن عبد المطلب',
+                        target: 'قافلة قريش',
+                        result: 'مواجهة بدون قتال'
+                    },
+                    {
+                        name: 'سرية عبيدة بن الحارث',
+                        date: 'شوال 1 هـ',
+                        leader: 'عبيدة بن الحارث',
+                        target: 'قافلة قريش',
+                        result: 'مواجهة بدون قتال'
+                    },
+                    {
+                        name: 'سرية نخلة',
+                        date: 'رجب 2 هـ',
+                        leader: 'عبد الله بن جحش',
+                        target: 'قافلة قريش',
+                        result: 'قتل عمرو بن الحضرمي'
+                    }
+                ]
+            },
             
-            // التلميحات السياقية
-            'hints': [
-                'انقر على أي مرحلة في الخريطة الذهنية لاستكشافها بالتفصيل',
-                'استكشف الرحلة الزمنية لتعيش أحداث السيرة كما حدثت',
-                'اقرأ التأملات والدروس المستفادة من كل مرحلة',
-                'استخدم مؤشر التقدم لمتابعة مكانك في الرحلة',
-                'انقر على النقاط الزمنية للانتقال إلى الأحداث التفصيلية'
-            ]
+            // المعجزات والخصائص
+            'miracles': {
+                title: 'معجزات النبي ﷺ',
+                subtitle: 'معجزات النبي ﷺ وخصائصه ومكارم أخلاقه',
+                
+                miracles: [
+                    {
+                        name: 'انشقاق القمر',
+                        description: 'انشقاق القمر إلى شقين في مكة لما طلب المشركون منه معجزة',
+                        reference: 'سورة القمر الآية 1',
+                        notes: 'رآه الناس في مكة والطائف'
+                    },
+                    {
+                        name: 'الإسراء والمعراج',
+                        description: 'أسري بالنبي ﷺ من المسجد الحرام إلى المسجد الأقصى ثم عرج به إلى السماوات',
+                        reference: 'سورة الإسراء الآية 1',
+                        notes: 'حدث في ليلة واحدة'
+                    },
+                    {
+                        name: 'نبع الماء من بين أصابعه',
+                        description: 'تفجر الماء من بين أصابعه ﷺ في عدة مواطن',
+                        reference: 'صحيح البخاري',
+                        notes: 'حدث في غزوة الحديبية والجيش كله شرب'
+                    },
+                    {
+                        name: 'تكثير الطعام',
+                        description: 'تكثير الطعام القليل ليأكل منه الجيش الكثير',
+                        reference: 'صحيح البخاري',
+                        notes: 'حدث في عدة مواطن'
+                    },
+                    {
+                        name: 'حنين الجذع',
+                        description: 'حنين الجذع الذي كان يخطب عليه النبي ﷺ لما تركوه وبنوا له منبراً',
+                        reference: 'صحيح البخاري',
+                        notes: 'سمعه جميع من في المسجد'
+                    },
+                    {
+                        name: 'إبراء المرضى',
+                        description: 'شفاء المرضى بريقه ﷺ أو دعائه',
+                        reference: 'صحيح البخاري',
+                        notes: 'كشفاء علي بن أبي طالب من رمد عينيه'
+                    }
+                ],
+                
+                characteristics: [
+                    {
+                        name: 'الخاتم النبوي',
+                        description: 'خاتم النبوة بين كتفيه ﷺ كبيضة حمامة'
+                    },
+                    {
+                        name: 'عدم ظهور ظله',
+                        description: 'كان نوراً لا ظل له في الشمس'
+                    },
+                    {
+                        name: 'طيب رائحته',
+                        description: 'كانت رائحته ﷺ أطيب من المسك'
+                    },
+                    {
+                        name: 'عدم تأثره بالذباب',
+                        description: 'كان الذباب لا يقرب منه ﷺ'
+                    }
+                ]
+            },
+            
+            // شخصيات السيرة
+            'characters': {
+                title: 'شخصيات السيرة النبوية',
+                subtitle: 'الصحابة الكرام وأهل بيت النبي والمنافقين',
+                
+                companions: [
+                    {
+                        name: 'أبو بكر الصديق',
+                        role: 'أول الخلفاء الراشدين',
+                        info: 'أول من آمن من الرجال، رافق النبي ﷺ في الهجرة'
+                    },
+                    {
+                        name: 'عمر بن الخطاب',
+                        role: 'ثاني الخلفاء الراشدين',
+                        info: 'الفاروق، أسلم في السنة السادسة من البعثة'
+                    },
+                    {
+                        name: 'عثمان بن عفان',
+                        role: 'ثالث الخلفاء الراشدين',
+                        info: 'ذي النورين، تزوج رقية ثم أم كلثوم بنات النبي'
+                    },
+                    {
+                        name: 'علي بن أبي طالب',
+                        role: 'رابع الخلفاء الراشدين',
+                        info: 'ابن عم النبي ﷺ، تزوج فاطمة الزهراء'
+                    },
+                    {
+                        name: 'حمزة بن عبد المطلب',
+                        role: 'أسد الله وأسد رسوله',
+                        info: 'عم النبي ﷺ، استشهد في غزوة أحد'
+                    },
+                    {
+                        name: 'جعفر بن أبي طالب',
+                        role: 'ذي الجناحين',
+                        info: 'ابن عم النبي ﷺ، استشهد في غزوة مؤتة'
+                    }
+                ],
+                
+                ahlulBayt: [
+                    {
+                        name: 'فاطمة الزهراء',
+                        role: 'ابنة النبي ﷺ',
+                        info: 'سيدة نساء العالمين، تزوجت علي بن أبي طالب'
+                    },
+                    {
+                        name: 'الحسن بن علي',
+                        role: 'سبط النبي ﷺ',
+                        info: 'ريحانة النبي ﷺ، تولى الخلافة بعد أبيه'
+                    },
+                    {
+                        name: 'الحسين بن علي',
+                        role: 'سبط النبي ﷺ',
+                        info: 'ريحانة النبي ﷺ، استشهد في كربلاء'
+                    }
+                ],
+                
+                hypocrites: [
+                    {
+                        name: 'عبد الله بن أبي بن سلول',
+                        role: 'رأس المنافقين',
+                        info: 'زعيم الخزرج، حاول الفتنة في عدة مواطن'
+                    }
+                ]
+            }
         };
-
-        // متغيرات حالة
-        let currentStage = '';
-        let currentHintIndex = 0;
-        let currentQuoteIndex = 0;
-        let journeyProgress = 0;
 
         // تهيئة الموقع
         document.addEventListener('DOMContentLoaded', function() {
@@ -1785,26 +1752,13 @@
             setupBackToTop();
             setupHeaderScroll();
             setupExploreButton();
-            setupMindmap();
-            setupJourneyTimeline();
-            setupDetailedStages();
-            setupContextHints();
-            setupQuotes();
+            setupSectionCards();
             
             // معالجة الروابط الأولية
             processHash();
             
             // إضافة حدث لتغيير الهاش
             window.addEventListener('hashchange', processHash);
-            
-            // إضافة حدث للتمرير لمتابعة التقدم
-            window.addEventListener('scroll', updateJourneyProgress);
-            
-            // إظهار التلميح الأول بعد 3 ثوان
-            setTimeout(showNextHint, 3000);
-            
-            // تغيير الاقتباس كل 15 ثانية
-            setInterval(showNextQuote, 15000);
         });
         
         // إظهار Sitemap
@@ -1852,251 +1806,25 @@
             exploreBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                const targetSection = document.getElementById('mindmaps');
+                const targetSection = document.getElementById('sections');
                 
-                // التمرير إلى قسم الخرائط الذهنية
+                // التمرير إلى قسم الأقسام
                 window.scrollTo({
                     top: targetSection.offsetTop - 100,
                     behavior: 'smooth'
                 });
-                
-                // إظهار تلميح
-                showHint('انقر على أي مرحلة في الخريطة الذهنية لاستكشافها بالتفصيل');
             });
         }
         
-        // إعداد الخريطة الذهنية
-        function setupMindmap() {
-            const mindmapContainer = document.getElementById('mindmapContainer');
-            const stagesGrid = document.getElementById('stagesGrid');
-            
-            // إضافة العقدة الرئيسية
-            const mainNode = document.createElement('div');
-            mainNode.className = 'mindmap-main-node';
-            mainNode.innerHTML = `
-                <i class="fas fa-star"></i>
-                <h3>السيرة النبوية</h3>
-            `;
-            mainNode.addEventListener('click', function() {
-                showHint('السيرة النبوية رحلة حياة كاملة، اختر مرحلة لتبدأ رحلتك');
-            });
-            mindmapContainer.appendChild(mainNode);
-            
-            // إضافة الفروع للشاشات الكبيرة
-            seerahData.mindmapStages.forEach(stage => {
-                // إنشاء الفرع للخريطة الذهنية
-                const branch = document.createElement('div');
-                branch.className = 'mindmap-branch';
-                branch.style.top = stage.position.top;
-                branch.style.right = stage.position.right;
-                branch.id = `mindmap-branch-${stage.id}`;
-                branch.innerHTML = `
-                    <i class="${stage.icon}"></i>
-                    <h4>${stage.title}</h4>
-                    <p>${stage.description}</p>
-                `;
-                
-                branch.addEventListener('click', function() {
-                    loadStageDetail(stage.id);
-                });
-                
-                mindmapContainer.appendChild(branch);
-                
-                // إنشاء خط الاتصال
-                const connection = document.createElement('div');
-                connection.className = 'mindmap-connection';
-                
-                // حساب إحداثيات الخط
-                const mainNodeRect = mainNode.getBoundingClientRect();
-                const branchRect = branch.getBoundingClientRect();
-                const containerRect = mindmapContainer.getBoundingClientRect();
-                
-                const x1 = mainNodeRect.right - containerRect.right + mainNodeRect.width/2;
-                const y1 = mainNodeRect.top - containerRect.top + mainNodeRect.height/2;
-                const x2 = branchRect.right - containerRect.right + branchRect.width/2;
-                const y2 = branchRect.top - containerRect.top + branchRect.height/2;
-                
-                const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-                const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
-                
-                connection.style.width = `${length}px`;
-                connection.style.top = `${y1}px`;
-                connection.style.right = `${containerRect.width/2 - x1}px`;
-                connection.style.transform = `rotate(${angle}deg)`;
-                
-                mindmapContainer.appendChild(connection);
-                
-                // إضافة المرحلة للشاشات الصغيرة
-                const stageCard = document.createElement('div');
-                stageCard.className = 'stage-card';
-                stageCard.innerHTML = `
-                    <div class="stage-icon" style="background: linear-gradient(135deg, ${stage.color}15, ${stage.color}30); color: ${stage.color};">
-                        <i class="${stage.icon}"></i>
-                    </div>
-                    <h3>${stage.title}</h3>
-                    <p>${stage.description}</p>
-                    <a href="#stage/${stage.id}" class="stage-period">استكشاف المرحلة</a>
-                `;
-                
-                stageCard.addEventListener('click', function() {
-                    loadStageDetail(stage.id);
-                });
-                
-                stagesGrid.appendChild(stageCard);
-            });
-        }
-        
-        // إعداد الرحلة الزمنية
-        function setupJourneyTimeline() {
-            const journeyTimeline = document.getElementById('journeyTimeline');
-            
-            // إضافة الخط الزمني
-            const timelineLine = document.createElement('div');
-            timelineLine.className = 'journey-line';
-            journeyTimeline.appendChild(timelineLine);
-            
-            // إضافة المحطات
-            seerahData.journeyTimeline.forEach(event => {
-                const stop = document.createElement('div');
-                stop.className = 'journey-stop';
-                stop.id = `journey-stop-${event.id}`;
-                stop.innerHTML = `
-                    <div class="journey-dot" data-event="${event.id}"></div>
-                    <div class="journey-content">
-                        <span class="journey-year">${event.year}</span>
-                        <h3>${event.title}</h3>
-                        <p>${event.description}</p>
-                        <div class="journey-lessons">
-                            <h4>الدروس المستفادة:</h4>
-                            <ul>
-                                ${event.lessons.map(lesson => `<li>${lesson}</li>`).join('')}
-                            </ul>
-                        </div>
-                    </div>
-                `;
-                
-                journeyTimeline.appendChild(stop);
-                
-                // إضافة حدث النقرة على النقطة
-                stop.querySelector('.journey-dot').addEventListener('click', function() {
-                    const eventId = this.getAttribute('data-event');
-                    showEventDetail(eventId);
+        // إعداد بطاقات الأقسام
+        function setupSectionCards() {
+            document.querySelectorAll('.section-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    loadSectionDetail(targetId);
                 });
             });
-            
-            // إظهار المحطات عند التمرير
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.3 });
-            
-            document.querySelectorAll('.journey-stop').forEach(stop => {
-                observer.observe(stop);
-            });
-        }
-        
-        // إعداد المراحل التفصيلية
-        function setupDetailedStages() {
-            const detailedStagesGrid = document.getElementById('detailedStagesGrid');
-            
-            Object.values(seerahData.detailedStages).forEach(stage => {
-                const stageCard = document.createElement('div');
-                stageCard.className = 'stage-card';
-                stageCard.innerHTML = `
-                    <div class="stage-icon" style="background: linear-gradient(135deg, ${stage.color}15, ${stage.color}30); color: ${stage.color};">
-                        <i class="${stage.icon}"></i>
-                    </div>
-                    <h3>${stage.title}</h3>
-                    <p>${stage.overview.substring(0, 120)}...</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
-                        <span class="stage-period">${stage.period}</span>
-                        <a href="#stage/${stage.id}" style="color: ${stage.color}; font-weight: 600;">المزيد</a>
-                    </div>
-                `;
-                
-                stageCard.addEventListener('click', function() {
-                    loadStageDetail(stage.id);
-                });
-                
-                detailedStagesGrid.appendChild(stageCard);
-            });
-        }
-        
-        // إعداد التلميحات السياقية
-        function setupContextHints() {
-            // تبديل التلميحات كل 20 ثانية
-            setInterval(showNextHint, 20000);
-        }
-        
-        // إظهار التلميح التالي
-        function showNextHint() {
-            const hints = seerahData.hints;
-            currentHintIndex = (currentHintIndex + 1) % hints.length;
-            showHint(hints[currentHintIndex]);
-        }
-        
-        // إظهار تلميح معين
-        function showHint(text) {
-            const hintElement = document.getElementById('contextHint');
-            const hintText = document.getElementById('hintText');
-            
-            hintText.textContent = text;
-            
-            // إظهار التلميح
-            hintElement.classList.add('show');
-            
-            // إخفاء التلميح بعد 5 ثوان
-            setTimeout(() => {
-                hintElement.classList.remove('show');
-            }, 5000);
-        }
-        
-        // إعداد الاقتباسات
-        function setupQuotes() {
-            // تبديل الاقتباسات
-            showNextQuote();
-        }
-        
-        // إظهار الاقتباس التالي
-        function showNextQuote() {
-            const quotes = seerahData.quotes;
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-            const quote = quotes[currentQuoteIndex];
-            
-            document.getElementById('currentQuote').textContent = quote.text;
-            document.getElementById('quoteAuthor').textContent = quote.author;
-        }
-        
-        // تحديث مؤشر التقدم في الرحلة
-        function updateJourneyProgress() {
-            const journeySection = document.getElementById('journey');
-            const progressElement = document.getElementById('journeyProgress');
-            const progressFill = document.getElementById('progressFill');
-            const progressText = document.getElementById('progressText');
-            
-            const sectionTop = journeySection.offsetTop;
-            const sectionHeight = journeySection.offsetHeight;
-            const scrollPosition = window.scrollY;
-            const windowHeight = window.innerHeight;
-            
-            // إظهار أو إخفاء مؤشر التقدم
-            if (scrollPosition > sectionTop - windowHeight/2 && scrollPosition < sectionTop + sectionHeight) {
-                progressElement.classList.add('show');
-                
-                // حساب النسبة المئوية للرحلة
-                const scrollProgress = scrollPosition - sectionTop + windowHeight/2;
-                const maxProgress = sectionHeight - windowHeight/2;
-                journeyProgress = Math.min(100, Math.max(0, (scrollProgress / maxProgress) * 100));
-                
-                // تحديث المؤشر
-                progressFill.style.width = `${journeyProgress}%`;
-                progressText.textContent = `${Math.round(journeyProgress)}% من الرحلة`;
-            } else {
-                progressElement.classList.remove('show');
-            }
         }
         
         // معالجة الهاش وتحميل المحتوى المناسب
@@ -2108,28 +1836,26 @@
                 return;
             }
             
-            if (hash === '#mindmaps') {
+            if (hash === '#timeline') {
                 showMainPage();
-                scrollToSection('mindmaps');
+                scrollToSection('timeline');
                 return;
             }
             
-            if (hash === '#journey') {
+            if (hash === '#sections') {
                 showMainPage();
-                scrollToSection('journey');
+                scrollToSection('sections');
                 return;
             }
             
-            if (hash === '#stages') {
-                showMainPage();
-                scrollToSection('stages');
-                return;
-            }
-            
-            // معالجة روابط المراحل
-            if (hash.startsWith('#stage/')) {
-                const stageId = hash.split('/')[1];
-                loadStageDetail(stageId);
+            // معالجة روابط الأقسام التفصيلية
+            if (hash.startsWith('#family') || 
+                hash.startsWith('#battles') || 
+                hash.startsWith('#miracles') || 
+                hash.startsWith('#characters')) {
+                
+                const sectionId = hash.substring(1);
+                loadSectionDetail(sectionId);
                 return;
             }
             
@@ -2143,105 +1869,322 @@
             }
         }
         
-        // تحميل تفاصيل المرحلة
-        function loadStageDetail(stageId) {
-            const stageData = seerahData.detailedStages[stageId];
+        // تحميل تفاصيل القسم
+        function loadSectionDetail(sectionId) {
+            const sectionData = seerahData[sectionId];
             
-            if (!stageData) {
-                // إذا لم توجد المرحلة، عرض الصفحة الرئيسية
-                window.location.hash = '#stages';
+            if (!sectionData) {
+                // إذا لم يوجد القسم، عرض الصفحة الرئيسية
+                window.location.hash = '#sections';
                 return;
             }
             
-            currentStage = stageId;
+            // إخفاء الأقسام الرئيسية
+            document.getElementById('heroSection').style.display = 'none';
+            document.getElementById('timeline').style.display = 'none';
+            document.getElementById('sections').style.display = 'none';
+            
+            // إخفاء جميع صفحات التفاصيل
+            document.getElementById('family-detail').style.display = 'none';
+            document.getElementById('battles-detail').style.display = 'none';
+            document.getElementById('miracles-detail').style.display = 'none';
+            document.getElementById('characters-detail').style.display = 'none';
+            
+            // إظهار صفحة التفاصيل المناسبة
+            const detailPage = document.getElementById(`${sectionId}-detail`);
+            detailPage.style.display = 'block';
             
             // تحديث محتوى صفحة التفاصيل
-            const stageDetailContainer = document.getElementById('stage-detail-container');
-            stageDetailContainer.innerHTML = `
-                <div class="stage-detail-header">
-                    <h1>${stageData.title}</h1>
-                    <p class="period">${stageData.period} (${stageData.duration})</p>
+            updateDetailPage(sectionId, sectionData);
+            
+            // التمرير للأعلى
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // تحديث الهاش
+            window.location.hash = `#${sectionId}`;
+        }
+        
+        // تحديث محتوى صفحة التفاصيل
+        function updateDetailPage(sectionId, data) {
+            const detailPage = document.getElementById(`${sectionId}-detail`);
+            
+            let content = `
+                <div class="detail-header">
+                    <h1>${data.title}</h1>
+                    <p class="subtitle">${data.subtitle}</p>
                 </div>
                 
-                <div class="stage-content">
-                    <div class="stage-section">
-                        <h3>نظرة عامة</h3>
-                        <p>${stageData.overview}</p>
-                    </div>
-                    
-                    <div class="stage-section">
-                        <h3>الأحداث الرئيسية</h3>
-                        <div class="key-events">
-                            ${stageData.keyEvents.map(event => `
-                                <div class="key-event">
-                                    <h4>${event.title}</h4>
-                                    <p>${event.description}</p>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                    
-                    <div class="stage-section">
-                        <h3>التحديات</h3>
-                        <ul>
-                            ${stageData.challenges.map(challenge => `<li>${challenge}</li>`).join('')}
-                        </ul>
-                    </div>
-                    
-                    <div class="stage-section">
-                        <h3>الدروس المستفادة</h3>
-                        <ul>
-                            ${stageData.lessons.map(lesson => `<li>${lesson}</li>`).join('')}
-                        </ul>
-                    </div>
-                    
-                    <div class="reflection-box">
-                        <h4>تأمل في الرحلة</h4>
-                        <p>${stageData.reflections}</p>
-                    </div>
-                    
-                    <a href="#stages" class="back-link">
-                        <i class="fas fa-arrow-right"></i> العودة إلى مراحل السيرة
+                <div class="detail-content">
+            `;
+            
+            // بناء المحتوى حسب نوع القسم
+            if (sectionId === 'family') {
+                content += buildFamilyContent(data);
+            } else if (sectionId === 'battles') {
+                content += buildBattlesContent(data);
+            } else if (sectionId === 'miracles') {
+                content += buildMiraclesContent(data);
+            } else if (sectionId === 'characters') {
+                content += buildCharactersContent(data);
+            }
+            
+            content += `
+                    <a href="#sections" class="back-link">
+                        <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
                     </a>
                 </div>
             `;
             
-            // إخفاء الأقسام الأخرى وإظهار صفحة التفاصيل
-            document.querySelector('.mindmaps-section').style.display = 'none';
-            document.querySelector('.journey-section').style.display = 'none';
-            document.querySelector('.stages-section').style.display = 'none';
-            document.querySelector('.quote-section').style.display = 'none';
-            document.getElementById('heroSection').style.display = 'none';
-            stageDetailContainer.style.display = 'block';
-            
-            // التمرير للأعلى
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            
-            // إظهار تلميح
-            showHint('اقرأ التأملات والدروس المستفادة من هذه المرحلة التاريخية');
+            detailPage.querySelector('.container').innerHTML = content;
         }
         
-        // إظهار تفاصيل حدث معين
-        function showEventDetail(eventId) {
-            const event = seerahData.journeyTimeline.find(e => e.id === eventId);
+        // بناء محتوى الأسرة النبوية
+        function buildFamilyContent(data) {
+            let content = `
+                <div class="detail-section">
+                    <h3>أزواج النبي ﷺ</h3>
+                    <div class="wives-grid">
+            `;
             
-            if (!event) return;
+            data.wives.forEach(wife => {
+                content += `
+                    <div class="wife-card">
+                        <h4>${wife.name}</h4>
+                        <p>${wife.info}</p>
+                        <div class="wife-info">
+                            <span class="wife-tag">التزوج: ${wife.marriageYear}</span>
+                            <span class="wife-tag">الأولاد: ${wife.children}</span>
+                            <span class="wife-tag">الوفاة: ${wife.death}</span>
+                        </div>
+                        <p style="margin-top: 10px; font-style: italic; color: var(--primary-color);">${wife.notes}</p>
+                    </div>
+                `;
+            });
             
-            // إنشاء نافذة منبثقة أو عرض التفاصيل
-            alert(`حدث: ${event.title}\n\n${event.description}\n\nالدروس:\n${event.lessons.join('\n')}`);
+            content += `
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>أبناء النبي ﷺ</h3>
+                    <div class="children-grid">
+            `;
+            
+            data.children.forEach(child => {
+                const icon = child.name === 'إبراهيم' ? 'fas fa-male' : 
+                           child.name.includes('زينب') || child.name.includes('رقية') || 
+                           child.name.includes('فاطمة') || child.name.includes('أم كلثوم') ? 
+                           'fas fa-female' : 'fas fa-child';
+                
+                content += `
+                    <div class="child-card">
+                        <div class="child-icon">
+                            <i class="${icon}"></i>
+                        </div>
+                        <h4>${child.name}</h4>
+                        <p><strong>الأم:</strong> ${child.mother}</p>
+                        <p><strong>الميلاد:</strong> ${child.birth}</p>
+                        <p><strong>الوفاة:</strong> ${child.death}</p>
+                        <p style="margin-top: 10px; color: var(--primary-color);">${child.notes}</p>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                </div>
+            `;
+            
+            return content;
+        }
+        
+        // بناء محتوى الغزوات
+        function buildBattlesContent(data) {
+            let content = `
+                <div class="detail-section">
+                    <h3>غزوات النبي ﷺ</h3>
+                    <table class="battles-table">
+                        <thead>
+                            <tr>
+                                <th>الغزوة</th>
+                                <th>التاريخ</th>
+                                <th>المكان</th>
+                                <th>قوات المسلمين</th>
+                                <th>العدو</th>
+                                <th>النتيجة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+            
+            data.battles.forEach(battle => {
+                const resultClass = battle.result === 'نصر' ? 'victory' : 
+                                  battle.result === 'صلح' ? 'treaty' : '';
+                
+                content += `
+                    <tr>
+                        <td><strong>${battle.name}</strong></td>
+                        <td>${battle.date}</td>
+                        <td>${battle.location}</td>
+                        <td>${battle.muslims}</td>
+                        <td>${battle.enemy}</td>
+                        <td><span class="battle-result ${resultClass}">${battle.result}</span></td>
+                    </tr>
+                `;
+            });
+            
+            content += `
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 20px; font-style: italic; color: var(--gray-color);">
+                        شارك النبي ﷺ في 28 غزوة، قاتل في 9 منها بنفسه
+                    </p>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>السرايا</h3>
+                    <p>السرايا هي البعوث العسكرية التي كان النبي ﷺ يبعثها ولم يشارك فيها بنفسه</p>
+                    <div style="margin-top: 20px;">
+            `;
+            
+            data.saraya.forEach(sariya => {
+                content += `
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: var(--border-radius); margin-bottom: 10px;">
+                        <h4 style="margin-bottom: 5px; color: var(--primary-color);">${sariya.name}</h4>
+                        <p><strong>التاريخ:</strong> ${sariya.date} | <strong>القائد:</strong> ${sariya.leader} | <strong>النتيجة:</strong> ${sariya.result}</p>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                </div>
+            `;
+            
+            return content;
+        }
+        
+        // بناء محتوى المعجزات
+        function buildMiraclesContent(data) {
+            let content = `
+                <div class="detail-section">
+                    <h3>معجزات النبي ﷺ</h3>
+                    <div class="miracles-grid">
+            `;
+            
+            data.miracles.forEach(miracle => {
+                content += `
+                    <div class="miracle-card">
+                        <h4>${miracle.name}</h4>
+                        <p>${miracle.description}</p>
+                        <p><strong>الدليل:</strong> ${miracle.reference}</p>
+                        <p style="margin-top: 10px; color: var(--primary-color); font-style: italic;">${miracle.notes}</p>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>خصائص النبي ﷺ</h3>
+                    <div class="miracles-grid">
+            `;
+            
+            data.characteristics.forEach(char => {
+                content += `
+                    <div class="miracle-card">
+                        <h4>${char.name}</h4>
+                        <p>${char.description}</p>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                </div>
+            `;
+            
+            return content;
+        }
+        
+        // بناء محتوى الشخصيات
+        function buildCharactersContent(data) {
+            let content = `
+                <div class="detail-section">
+                    <h3>الصحابة الكرام</h3>
+                    <div class="characters-grid">
+            `;
+            
+            data.companions.forEach(companion => {
+                content += `
+                    <div class="character-card">
+                        <h4>${companion.name}</h4>
+                        <p>${companion.info}</p>
+                        <span class="character-role">${companion.role}</span>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>أهل بيت النبي ﷺ</h3>
+                    <div class="characters-grid">
+            `;
+            
+            data.ahlulBayt.forEach(person => {
+                content += `
+                    <div class="character-card">
+                        <h4>${person.name}</h4>
+                        <p>${person.info}</p>
+                        <span class="character-role">${person.role}</span>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>المنافقون</h3>
+                    <div class="characters-grid">
+            `;
+            
+            data.hypocrites.forEach(person => {
+                content += `
+                    <div class="character-card">
+                        <h4>${person.name}</h4>
+                        <p>${person.info}</p>
+                        <span class="character-role">${person.role}</span>
+                    </div>
+                `;
+            });
+            
+            content += `
+                    </div>
+                </div>
+            `;
+            
+            return content;
         }
         
         // عرض الصفحة الرئيسية
         function showMainPage() {
-            document.querySelector('.mindmaps-section').style.display = 'block';
-            document.querySelector('.journey-section').style.display = 'block';
-            document.querySelector('.stages-section').style.display = 'block';
-            document.querySelector('.quote-section').style.display = 'block';
+            // إظهار جميع الأقسام الرئيسية
             document.getElementById('heroSection').style.display = 'block';
-            document.getElementById('stage-detail-container').style.display = 'none';
+            document.getElementById('timeline').style.display = 'block';
+            document.getElementById('sections').style.display = 'block';
             
-            // التمرير للأعلى
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // إخفاء جميع صفحات التفاصيل
+            document.getElementById('family-detail').style.display = 'none';
+            document.getElementById('battles-detail').style.display = 'none';
+            document.getElementById('miracles-detail').style.display = 'none';
+            document.getElementById('characters-detail').style.display = 'none';
         }
         
         // التمرير إلى قسم معين
