@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DEENWAY Seerah: سيرة النبي محمد ﷺ كاملة - كل التفاصيل عن حياته، أزواجه، أبنائه، أحفاده، غزواته، أخلاقه، معجزاته، كتب السيرة">
+    <meta name="description" content="DEENWAY Seerah: سيرة النبي محمد ﷺ كاملة">
     
     <!-- SEO Meta Tags -->
     <title>DEENWAY Seerah | السيرة النبوية الكاملة</title>
     <meta name="title" content="DEENWAY Seerah | السيرة النبوية الكاملة">
-    <meta name="description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل: حياته، أزواجه، أبنائه، أحفاده، غزواته، أخلاقه، معجزاته، كتب السيرة">
-    <meta name="keywords" content="سيرة النبي محمد, حياة الرسول, أزواج النبي, أبناء النبي, أحفاد النبي, غزوات النبي, أخلاق النبي, معجزات النبي, كتب السيرة النبوية, مصادر السيرة">
+    <meta name="description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل">
+    <meta name="keywords" content="سيرة النبي محمد, حياة الرسول">
     <meta property="og:title" content="DEENWAY Seerah | السيرة النبوية الكاملة">
     <meta property="og:description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل">
     <meta property="og:url" content="https://seerah.ondeenway.org">
@@ -26,7 +26,7 @@
       "name": "DEENWAY Seerah",
       "alternateName": "السيرة النبوية الكاملة",
       "url": "https://seerah.ondeenway.org",
-      "description": "سيرة النبي محمد ﷺ كاملة مع كل التفاصيل: حياته، أزواجه، أبنائه، أحفاده، غزواته، أخلاقه، معجزاته، كتب السيرة",
+      "description": "سيرة النبي محمد ﷺ كاملة مع كل التفاصيل",
       "publisher": {
         "@type": "Organization",
         "name": "DEENWAY",
@@ -292,41 +292,6 @@
             padding: 0 20px;
         }
 
-        /* المصادر المتحركة */
-        .sources-marquee {
-            background: var(--secondary-color);
-            color: white;
-            padding: 15px 0;
-            overflow: hidden;
-            position: relative;
-            font-size: 1.1rem;
-        }
-
-        .marquee-content {
-            display: flex;
-            animation: marquee 40s linear infinite;
-            padding: 10px 0;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .marquee-item {
-            padding: 0 40px;
-            white-space: nowrap;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .marquee-item i {
-            color: var(--accent-color);
-        }
-
         /* الخريطة الذهنية البسيطة */
         .mindmap-section {
             background-color: #f8f5e6;
@@ -391,7 +356,6 @@
             border: 1px solid var(--light-gray);
             text-align: center;
             height: 100%;
-            cursor: pointer;
         }
 
         .section-card:hover {
@@ -939,40 +903,6 @@
             border-left: 4px solid var(--accent-color);
         }
 
-        /* مصادر المعلومات */
-        .sources-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            margin: 50px 0;
-        }
-
-        .sources-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .source-item {
-            background: white;
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-
-        .source-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-        }
-
-        .source-item h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
         /* التجاوب مع الشاشات */
         @media (max-width: 1200px) {
             .container {
@@ -1144,33 +1074,6 @@
         </div>
     </section>
 
-    <!-- شريط المصادر المتحركة -->
-    <div class="sources-marquee">
-        <div class="marquee-content">
-            <div class="marquee-item"><i class="fas fa-book-quran"></i> القرآن الكريم</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> صحيح البخاري</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> صحيح مسلم</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> سيرة ابن هشام</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> الرحيق المختوم</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> زاد المعاد</div>
-            <div class="marquee-item"><i class="fas fa-globe"></i> إسلام ويب</div>
-            <div class="marquee-item"><i class="fas fa-globe"></i> الإسلام سؤال وجواب</div>
-            <div class="marquee-item"><i class="fas fa-globe"></i> دار الإفتاء المصرية</div>
-            <div class="marquee-item"><i class="fas fa-globe"></i> الموسوعة الشاملة</div>
-            <!-- تكرار -->
-            <div class="marquee-item"><i class="fas fa-book-quran"></i> القرآن الكريم</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> صحيح البخاري</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> صحيح مسلم</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> سيرة ابن هشام</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> الرحيق المختوم</div>
-            <div class="marquee-item"><i class="fas fa-book"></i> زاد المعاد</div>
-            <div class="marquee-item"><i class="fas fa-globe"></i> إسلام ويب</div>
-            <div class="marquee-item"><i class="fas fa-globe"></i> الإسلام سؤال وجواب</div>
-            <div class="marquee-item"><i class="fas fa-globe"></i> دار الإفتاء المصرية</div>
-            <div class="marquee-item"><i class="fas fa-globe"></i> الموسوعة الشاملة</div>
-        </div>
-    </div>
-
     <!-- الخط الزمني البسيط -->
     <section id="timeline" class="section">
         <div class="container">
@@ -1186,7 +1089,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>الميلاد (571 م)</h3>
-                        <p>ولد النبي محمد ﷺ في مكة يوم الإثنين في شهر ربيع الأول عام الفيل. <strong>اختلف العلماء في تحديد اليوم</strong> بين 8، 9، 10، 12، 17 ربيع الأول. توفي أبوه عبد الله قبل ولادته، وربته أمه آمنة بنت وهب ثم جده عبد المطلب.</p>
+                        <p>ولد النبي محمد ﷺ في مكة يوم الإثنين في شهر ربيع الأول عام الفيل. توفي أبوه عبد الله قبل ولادته، وربته أمه آمنة بنت وهب ثم جده عبد المطلب.</p>
                     </div>
                 </div>
                 
@@ -1194,7 +1097,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>حادثة شق الصدر (575 م)</h3>
-                        <p>شق جبريل صدر النبي ﷺ وهو طفل وغسل قلبه <strong>بماء زمزم</strong> في إناء من ذهب، ثم أعاده إلى مكانه.</p>
+                        <p>شق جبريل صدر النبي ﷺ وهو طفل وغسل قلبه بماء زمزم في إناء من ذهب، ثم أعاده إلى مكانه.</p>
                     </div>
                 </div>
                 
@@ -1257,83 +1160,94 @@
                 <p class="section-subtitle">استكشف كل جوانب حياة النبي ﷺ بالتفصيل</p>
             </div>
             <div class="sections-grid">
-                <div class="section-card" onclick="loadSection('family')">
+                <a href="#family" class="section-card">
                     <div class="section-icon">
                         <i class="fas fa-home"></i>
                     </div>
                     <h3>الأسرة النبوية</h3>
                     <p>أزواج النبي ﷺ وأبناؤه وأحفاده وسيرتهم</p>
-                    <span class="section-count">13 زوجة</span>
-                </div>
+                </a>
                 
-                <div class="section-card" onclick="loadSection('battles')">
+                <a href="#battles" class="section-card">
                     <div class="section-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>الغزوات والمعارك</h3>
                     <p>غزوات النبي ﷺ وسراياه وأهم الأحداث العسكرية</p>
-                    <span class="section-count">28 غزوة</span>
-                </div>
+                </a>
                 
-                <div class="section-card" onclick="loadSection('ethics')">
+                <a href="#ethics" class="section-card">
                     <div class="section-icon">
                         <i class="fas fa-heart"></i>
                     </div>
                     <h3>أخلاق النبي ﷺ</h3>
                     <p>صفات النبي الخُلُقية والخَلقية ومكارم أخلاقه</p>
-                    <span class="section-count">+50 صفة</span>
-                </div>
+                </a>
                 
-                <div class="section-card" onclick="loadSection('miracles')">
+                <a href="#miracles" class="section-card">
                     <div class="section-icon">
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>معجزات النبي ﷺ</h3>
                     <p>معجزات النبي ﷺ الحسية والقلبية</p>
-                    <span class="section-count">+50 معجزة</span>
-                </div>
+                </a>
                 
-                <div class="section-card" onclick="loadSection('characters')">
+                <a href="#characters" class="section-card">
                     <div class="section-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>شخصيات السيرة</h3>
                     <p>الصحابة الكرام وأهل بيت النبي والمنافقين</p>
-                    <span class="section-count">+100 شخصية</span>
-                </div>
+                </a>
                 
-                <div class="section-card" onclick="loadSection('books')">
+                <a href="#books" class="section-card">
                     <div class="section-icon">
                         <i class="fas fa-book"></i>
                     </div>
                     <h3>كتب السيرة النبوية</h3>
                     <p>أهم المصادر والمراجع في السيرة النبوية</p>
-                    <span class="section-count">+20 كتاب</span>
-                </div>
-                
-                <div class="section-card" onclick="loadSection('birth')">
-                    <div class="section-icon">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <h3>ميلاد النبي ونشأته</h3>
-                    <p>قصة ميلاد النبي ﷺ ونشأته في مكة المكرمة</p>
-                    <span class="section-count">40 سنة</span>
-                </div>
-                
-                <div class="section-card" onclick="loadSection('revelation')">
-                    <div class="section-icon">
-                        <i class="fas fa-book-quran"></i>
-                    </div>
-                    <h3>نزول الوحي والبعثة</h3>
-                    <p>بداية نزول الوحي ودعوة النبي ﷺ في مكة</p>
-                    <span class="section-count">13 سنة</span>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- صفحة التفاصيل -->
-    <section id="detail-page" class="detail-page" style="display: none;">
+    <!-- صفحة الأسرة النبوية -->
+    <section id="family-detail" class="section detail-page" style="display: none;">
+        <div class="container">
+            <!-- سيتم ملؤها بالجافاسكريبت -->
+        </div>
+    </section>
+
+    <!-- صفحة الغزوات -->
+    <section id="battles-detail" class="section detail-page" style="display: none;">
+        <div class="container">
+            <!-- سيتم ملؤها بالجافاسكريبت -->
+        </div>
+    </section>
+
+    <!-- صفحة الأخلاق -->
+    <section id="ethics-detail" class="section detail-page" style="display: none;">
+        <div class="container">
+            <!-- سيتم ملؤها بالجافاسكريبت -->
+        </div>
+    </section>
+
+    <!-- صفحة المعجزات -->
+    <section id="miracles-detail" class="section detail-page" style="display: none;">
+        <div class="container">
+            <!-- سيتم ملؤها بالجافاسكريبت -->
+        </div>
+    </section>
+
+    <!-- صفحة الشخصيات -->
+    <section id="characters-detail" class="section detail-page" style="display: none;">
+        <div class="container">
+            <!-- سيتم ملؤها بالجافاسكريبت -->
+        </div>
+    </section>
+
+    <!-- صفحة كتب السيرة -->
+    <section id="books-detail" class="section detail-page" style="display: none;">
         <div class="container">
             <!-- سيتم ملؤها بالجافاسكريبت -->
         </div>
@@ -1347,9 +1261,10 @@
                     <h4>روابط سريعة</h4>
                     <ul class="footer-links">
                         <li><a href="#timeline"><i class="fas fa-history"></i> الخط الزمني</a></li>
-                        <li><a href="#sections"><i class="fas fa-list"></i> أقسام السيرة</a></li>
-                        <li><a href="#" onclick="loadSection('sources')"><i class="fas fa-book"></i> مصادر المعلومات</a></li>
-                        <li><a href="#contact"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                        <li><a href="#family"><i class="fas fa-home"></i> الأسرة النبوية</a></li>
+                        <li><a href="#battles"><i class="fas fa-shield-alt"></i> الغزوات</a></li>
+                        <li><a href="#ethics"><i class="fas fa-heart"></i> الأخلاق</a></li>
+                        <li><a href="#books"><i class="fas fa-book"></i> كتب السيرة</a></li>
                     </ul>
                 </div>
                 
@@ -1358,26 +1273,22 @@
                         <h3>DEENWAY <span class="logo-highlight">Seerah</span></h3>
                         <p class="tagline">السيرة النبوية الشاملة</p>
                     </div>
-                    <p style="color: rgba(255, 255, 255, 0.8); margin-top: 20px;">
-                        جميع المعلومات مأخوذة من مصادر إسلامية موثوقة
-                    </p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>اتصل بنا</h4>
-                    <p>للمساهمة في إضافة محتوى أو للاستفسارات:</p>
-                    <p class="contact-email">contact@ondeenway.org</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/ondeenwayorg" aria-label="انستغرام" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.facebook.com/ondeenwayorg" aria-label="فيسبوك" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/212649106356" aria-label="واتساب" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
+                
+                <div class="footer-section">
+                    <h4>اتصل بنا</h4>
+                    <p>للمساهمة في إضافة محتوى أو للاستفسارات:</p>
+                    <p class="contact-email">contact@ondeenway.org</p>
+                </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2024 DEENWAY Seerah - جميع الحقوق محفوظة</p>
-                <p style="margin-top: 10px;">إن أصبت فمن الله، وإن أخطأت فمن نفسي والشيطان</p>
+                <p>إن أصبت فمن الله، وإن أخطأت فمن نفسي والشيطان</p>
             </div>
         </div>
     </footer>
@@ -1388,7 +1299,7 @@
     </div>
 
     <script>
-        // بيانات السيرة النبوية الحقيقية
+        // البيانات الحقيقية للسيرة النبوية
         const seerahData = {
             'family': {
                 title: 'الأسرة النبوية',
@@ -1402,13 +1313,13 @@
                     <div class="detail-content">
                         <div class="detail-section">
                             <h3>أزواج النبي ﷺ</h3>
-                            <p>تزوج النبي ﷺ 13 زوجة، مات عن 9 منهن، ولم يتزوج بكراً إلا عائشة رضي الله عنها:</p>
+                            <p>تزوج النبي ﷺ عدة زوجات، منهن:</p>
                             
                             <div class="wives-grid">
                                 <div class="wife-card">
                                     <h4>خديجة بنت خويلد</h4>
-                                    <p><strong>معلومات:</strong> أولى زوجات النبي ﷺ، تزوجها قبل البعثة وعمرها 40 سنة وهو 25 سنة</p>
-                                    <p><strong>الأولاد:</strong> القاسم، عبد الله، زينب، رقية، أم كلثوم، فاطمة</p>
+                                    <p>أولى زوجات النبي ﷺ، تزوجها قبل البعثة وعمرها 40 سنة وهو 25 سنة</p>
+                                    <p>أنجبت له جميع أولاده إلا إبراهيم</p>
                                     <div class="wife-info">
                                         <span class="wife-tag">التزوج: 595 م</span>
                                         <span class="wife-tag">الوفاة: 3 قبل الهجرة</span>
@@ -1416,32 +1327,12 @@
                                 </div>
                                 
                                 <div class="wife-card">
-                                    <h4>سودة بنت زمعة</h4>
-                                    <p><strong>معلومات:</strong> تزوجها النبي ﷺ بعد وفاة خديجة، كانت أرملة عن زوجها السكران بن عمرو</p>
-                                    <p><strong>الأولاد:</strong> لم تلد للنبي ﷺ</p>
-                                    <div class="wife-info">
-                                        <span class="wife-tag">التزوج: 3 قبل الهجرة</span>
-                                        <span class="wife-tag">الوفاة: 54 هـ</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="wife-card">
                                     <h4>عائشة بنت أبي بكر</h4>
-                                    <p><strong>معلومات:</strong> البكر الوحيدة التي تزوجها النبي ﷺ، بنت أبي بكر الصديق</p>
-                                    <p><strong>الأولاد:</strong> لم تلد للنبي ﷺ</p>
+                                    <p>البكر الوحيدة التي تزوجها النبي ﷺ، بنت أبي بكر الصديق</p>
+                                    <p>كانت أفقه نساء الأمة</p>
                                     <div class="wife-info">
                                         <span class="wife-tag">التزوج: 1 هـ</span>
                                         <span class="wife-tag">الوفاة: 58 هـ</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="wife-card">
-                                    <h4>حفصة بنت عمر</h4>
-                                    <p><strong>معلومات:</strong> ابنة عمر بن الخطاب، كانت أرملة عن زوجها خنيس بن حذافة</p>
-                                    <p><strong>الأولاد:</strong> لم تلد للنبي ﷺ</p>
-                                    <div class="wife-info">
-                                        <span class="wife-tag">التزوج: 3 هـ</span>
-                                        <span class="wife-tag">الوفاة: 45 هـ</span>
                                     </div>
                                 </div>
                             </div>
@@ -1449,7 +1340,7 @@
                         
                         <div class="detail-section">
                             <h3>أبناء النبي ﷺ</h3>
-                            <p>أنجب النبي ﷺ سبعة أبناء: ثلاثة ذكور وأربع إناث، كلهم من خديجة رضي الله عنها إلا إبراهيم من مارية القبطية:</p>
+                            <p>أنجب النبي ﷺ سبعة أبناء، كلهم من خديجة رضي الله عنها إلا إبراهيم من مارية القبطية:</p>
                             
                             <div class="children-grid">
                                 <div class="child-card">
@@ -1457,29 +1348,8 @@
                                         <i class="fas fa-male"></i>
                                     </div>
                                     <h4>القاسم</h4>
-                                    <p><strong>الأم:</strong> خديجة بنت خويلد</p>
-                                    <p><strong>الوفاة:</strong> 2 سنة</p>
                                     <p>به يكنى النبي ﷺ (أبو القاسم)</p>
-                                </div>
-                                
-                                <div class="child-card">
-                                    <div class="child-icon">
-                                        <i class="fas fa-male"></i>
-                                    </div>
-                                    <h4>عبد الله</h4>
-                                    <p><strong>الأم:</strong> خديجة بنت خويلد</p>
-                                    <p><strong>الوفاة:</strong> طفلاً</p>
-                                    <p>يسمى الطيب والطاهر</p>
-                                </div>
-                                
-                                <div class="child-card">
-                                    <div class="child-icon">
-                                        <i class="fas fa-female"></i>
-                                    </div>
-                                    <h4>زينب</h4>
-                                    <p><strong>الأم:</strong> خديجة بنت خويلد</p>
-                                    <p><strong>الوفاة:</strong> 8 هـ</p>
-                                    <p>كبرى بنات النبي ﷺ</p>
+                                    <p>توفي صغيراً</p>
                                 </div>
                                 
                                 <div class="child-card">
@@ -1487,63 +1357,13 @@
                                         <i class="fas fa-female"></i>
                                     </div>
                                     <h4>فاطمة الزهراء</h4>
-                                    <p><strong>الأم:</strong> خديجة بنت خويلد</p>
-                                    <p><strong>الوفاة:</strong> 11 هـ</p>
                                     <p>سيدة نساء العالمين</p>
+                                    <p>تزوجت علي بن أبي طالب</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="detail-section">
-                            <h3>أحفاد النبي ﷺ</h3>
-                            <p>للنبي ﷺ أحفاد من بناته، أشهرهم الحسن والحسين من فاطمة:</p>
-                            
-                            <div class="grandchildren-grid">
-                                <div class="grandchild-card">
-                                    <div class="grandchild-icon">
-                                        <i class="fas fa-male"></i>
-                                    </div>
-                                    <h4>الحسن بن علي</h4>
-                                    <p><strong>الوالدان:</strong> فاطمة وعلي</p>
-                                    <p><strong>الوفاة:</strong> 50 هـ</p>
-                                    <p>سبط النبي ﷺ، ريحانته</p>
-                                </div>
-                                
-                                <div class="grandchild-card">
-                                    <div class="grandchild-icon">
-                                        <i class="fas fa-male"></i>
-                                    </div>
-                                    <h4>الحسين بن علي</h4>
-                                    <p><strong>الوالدان:</strong> فاطمة وعلي</p>
-                                    <p><strong>الوفاة:</strong> 61 هـ</p>
-                                    <p>سبط النبي ﷺ، ريحانته</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="sources-section">
-                            <h3>مصادر هذا القسم:</h3>
-                            <div class="sources-list">
-                                <div class="source-item">
-                                    <h4>صحيح البخاري</h4>
-                                    <p>كتاب النكاح</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>سيرة ابن هشام</h4>
-                                    <p>الجزء الأول والثاني</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>الاستيعاب</h4>
-                                    <p>لابن عبد البر</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>أسد الغابة</h4>
-                                    <p>لابن الأثير</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="javascript:void(0)" onclick="showMainPage()" class="back-link">
+                        <a href="#sections" class="back-link">
                             <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
                         </a>
                     </div>
@@ -1562,7 +1382,6 @@
                     <div class="detail-content">
                         <div class="detail-section">
                             <h3>الغزوات الرئيسية</h3>
-                            <p>غزا النبي ﷺ 28 غزوة، قاتل في 9 منها، وكانت أول غزوة الأبواء وآخرها تبوك:</p>
                             
                             <table class="battles-table">
                                 <thead>
@@ -1570,118 +1389,39 @@
                                         <th>الغزوة</th>
                                         <th>التاريخ</th>
                                         <th>المكان</th>
-                                        <th>قوات المسلمين</th>
-                                        <th>العدو</th>
                                         <th>النتيجة</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><strong>غزوة بدر الكبرى</strong></td>
+                                        <td><strong>غزوة بدر</strong></td>
                                         <td>رمضان 2 هـ</td>
-                                        <td>بدر بين مكة والمدينة</td>
-                                        <td>313</td>
-                                        <td>قريش (1000 مقاتل)</td>
+                                        <td>بدر</td>
                                         <td><span class="battle-result victory">نصر</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>غزوة أحد</strong></td>
                                         <td>شوال 3 هـ</td>
-                                        <td>جبل أحد بالمدينة</td>
-                                        <td>700</td>
-                                        <td>قريش (3000 مقاتل)</td>
+                                        <td>أحد</td>
                                         <td><span class="battle-result">هزيمة ثم انتصار</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>غزوة الخندق</strong></td>
                                         <td>شوال 5 هـ</td>
-                                        <td>المدينة المنورة</td>
-                                        <td>3000</td>
-                                        <td>قريش وبني قريظة (10000)</td>
+                                        <td>المدينة</td>
                                         <td><span class="battle-result victory">نصر</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>فتح مكة</strong></td>
                                         <td>رمضان 8 هـ</td>
-                                        <td>مكة المكرمة</td>
-                                        <td>10000</td>
-                                        <td>قريش</td>
-                                        <td><span class="battle-result victory">نصر</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>غزوة حنين</strong></td>
-                                        <td>شوال 8 هـ</td>
-                                        <td>وادي حنين</td>
-                                        <td>12000</td>
-                                        <td>هوازن وثقيف</td>
-                                        <td><span class="battle-result victory">نصر</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>غزوة تبوك</strong></td>
-                                        <td>رجب 9 هـ</td>
-                                        <td>تبوك شمال الحجاز</td>
-                                        <td>30000</td>
-                                        <td>الروم</td>
+                                        <td>مكة</td>
                                         <td><span class="battle-result victory">نصر</span></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         
-                        <div class="detail-section">
-                            <h3>أهم الأحداث في الغزوات</h3>
-                            <div class="timeline-container">
-                                <div class="timeline-line"></div>
-                                
-                                <div class="timeline-event">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <h4>غزوة بدر (رمضان 2 هـ)</h4>
-                                        <p>أول معركة فاصلة في الإسلام، انتصر المسلمون رغم قلة عددهم. قتل من المشركين 70 وأسر 70.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="timeline-event">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <h4>غزوة أحد (شوال 3 هـ)</h4>
-                                        <p>استشهد 70 صحابياً، انتصر المسلمون بعد تراجع أولي بسبب مخالفة الرماة لأوامر النبي ﷺ.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="timeline-event">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <h4>غزوة الخندق (شوال 5 هـ)</h4>
-                                        <p>حفر الخندق حول المدينة، انتصر المسلمون دون قتال بعد حصار دام شهراً.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="sources-section">
-                            <h3>مصادر هذا القسم:</h3>
-                            <div class="sources-list">
-                                <div class="source-item">
-                                    <h4>سيرة ابن هشام</h4>
-                                    <p>الجزء الثاني والثالث</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>صحيح البخاري</h4>
-                                    <p>كتاب المغازي</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>الرحيق المختوم</h4>
-                                    <p>فصول الغزوات</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>زاد المعاد</h4>
-                                    <p>لابن القيم</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="javascript:void(0)" onclick="showMainPage()" class="back-link">
+                        <a href="#sections" class="back-link">
                             <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
                         </a>
                     </div>
@@ -1700,257 +1440,31 @@
                     <div class="detail-content">
                         <div class="detail-section">
                             <h3>الصفات الخُلُقية</h3>
-                            <p>قال تعالى: "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ". كان النبي ﷺ أجمل الناس خلقاً:</p>
                             
                             <div class="ethics-grid">
                                 <div class="ethic-card">
                                     <h4>الصدق</h4>
                                     <p>كان النبي ﷺ أصدق الناس، عرف بالصادق الأمين قبل البعثة وبعدها.</p>
-                                    <p><strong>مثال:</strong> قالت خديجة: "إني لأرجو أن تكون نبي هذه الأمة، إنك لتصل الرحم، وتصدق الحديث..."</p>
                                 </div>
                                 
                                 <div class="ethic-card">
                                     <h4>الرحمة</h4>
                                     <p>كان أرحم الناس بالناس، وبالحيوان، وبالأطفال.</p>
-                                    <p><strong>مثال:</strong> قال تعالى: "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ"</p>
                                 </div>
                                 
                                 <div class="ethic-card">
                                     <h4>التواضع</h4>
                                     <p>كان متواضعاً مع الكبير والصغير، الغني والفقير.</p>
-                                    <p><strong>مثال:</strong> كان يجلس حيث ينتهي به المجلس، ويبدأ بالمسلمين إذا لقيهم.</p>
                                 </div>
                                 
                                 <div class="ethic-card">
                                     <h4>الحلم</h4>
                                     <p>كان أحلم الناس، لا يغضب لنفسه، وإنما يغضب إذا انتهكت حرمات الله.</p>
-                                    <p><strong>مثال:</strong> عندما شتمه الأعرابي لم يزد على أن قال: "خيراً أو دع".</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="detail-section">
-                            <h3>الصفات الخَلْقية</h3>
-                            <p>كان النبي ﷺ أحسن الناس وجهاً، وأجملهم خَلقاً، كما وصفه الصحابة:</p>
-                            
-                            <div class="ethics-grid">
-                                <div class="ethic-card">
-                                    <h4>الطول والقوام</h4>
-                                    <p>كان مربوعاً، ليس بالطويل ولا بالقصير، معتدل القامة.</p>
-                                </div>
-                                
-                                <div class="ethic-card">
-                                    <h4>اللون</h4>
-                                    <p>أبيض مشرب بحمرة، ليس بالأبيض الأمهق ولا بالأسمر.</p>
-                                </div>
-                                
-                                <div class="ethic-card">
-                                    <h4>الوجه</h4>
-                                    <p>مستدير الوجه، كأنه القمر ليلة البدر.</p>
-                                </div>
-                                
-                                <div class="ethic-card">
-                                    <h4>العينان</h4>
-                                    <p>أشكل العينين، أهدب الأشفار، عيناه واسعتان.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="sources-section">
-                            <h3>مصادر هذا القسم:</h3>
-                            <div class="sources-list">
-                                <div class="source-item">
-                                    <h4>الشمائل المحمدية</h4>
-                                    <p>للترمذي</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>زاد المعاد</h4>
-                                    <p>لابن القيم</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>صفة الصفوة</h4>
-                                    <p>لابن الجوزي</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>صحيح البخاري</h4>
-                                    <p>كتاب المناقب</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="javascript:void(0)" onclick="showMainPage()" class="back-link">
-                            <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
-                        </a>
-                    </div>
-                `
-            },
-            
-            'birth': {
-                title: 'ميلاد النبي ﷺ ونشأته',
-                subtitle: 'قصة ميلاد النبي محمد ﷺ في مكة المكرمة',
-                content: `
-                    <div class="detail-header">
-                        <h1>ميلاد النبي ﷺ ونشأته</h1>
-                        <p class="subtitle">قصة ميلاد النبي محمد ﷺ في مكة المكرمة</p>
-                    </div>
-                    
-                    <div class="detail-content">
-                        <div class="detail-section">
-                            <h3>ميلاد النبي ﷺ</h3>
-                            <p>ولد النبي محمد ﷺ يوم الإثنين في شهر ربيع الأول عام الفيل (571 ميلادية) في مكة المكرمة.</p>
-                            
-                            <div class="timeline-container">
-                                <div class="timeline-line"></div>
-                                
-                                <div class="timeline-event">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <h4>الميلاد (571 م)</h4>
-                                        <p>ولد يتيم الأب، حيث توفي أبوه عبد الله قبل ولادته. ربته أمه آمنة بنت وهب.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="timeline-event">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <h4>حادثة شق الصدر (575 م)</h4>
-                                        <p>شق جبريل صدر النبي ﷺ وهو طفل وغسل قلبه بماء زمزم.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="timeline-event">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <h4>وفاة الأم (577 م)</h4>
-                                        <p>توفيت أمه آمنة وهو في السادسة من عمره في الأبواء بين مكة والمدينة.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="timeline-event">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <h4>وفاة الجد (578 م)</h4>
-                                        <p>توفي جده عبد المطلب وهو في الثامنة من عمره، فكفله عمه أبو طالب.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="sources-section">
-                            <h3>مصادر هذا القسم:</h3>
-                            <div class="sources-list">
-                                <div class="source-item">
-                                    <h4>سيرة ابن هشام</h4>
-                                    <p>الجزء الأول</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>صحيح البخاري</h4>
-                                    <p>كتاب بدء الوحي</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>الرحيق المختوم</h4>
-                                    <p>فصل الميلاد والنشأة</p>
-                                </div>
-                                <div class="source-item">
-                                    <h4>زاد المعاد</h4>
-                                    <p>لابن القيم</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="javascript:void(0)" onclick="showMainPage()" class="back-link">
-                            <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
-                        </a>
-                    </div>
-                `
-            },
-            
-            'sources': {
-                title: 'مصادر المعلومات',
-                subtitle: 'جميع المعلومات مأخوذة من مصادر إسلامية موثوقة',
-                content: `
-                    <div class="detail-header">
-                        <h1>مصادر المعلومات</h1>
-                        <p class="subtitle">جميع المعلومات مأخوذة من مصادر إسلامية موثوقة</p>
-                    </div>
-                    
-                    <div class="detail-content">
-                        <div class="detail-section">
-                            <h3>المصادر الأساسية</h3>
-                            <div class="sources-list">
-                                <div class="source-item">
-                                    <h4>القرآن الكريم</h4>
-                                    <p>المصدر الأول والأساسي للإسلام، كلام الله المنزل على النبي محمد ﷺ.</p>
-                                </div>
-                                
-                                <div class="source-item">
-                                    <h4>صحيح البخاري</h4>
-                                    <p>أصح كتاب بعد كتاب الله تعالى، جمع فيه الإمام البخاري الأحاديث الصحيحة.</p>
-                                </div>
-                                
-                                <div class="source-item">
-                                    <h4>صحيح مسلم</h4>
-                                    <p>ثاني أصح كتاب في الحديث النبوي، للإمام مسلم بن الحجاج النيسابوري.</p>
-                                </div>
-                                
-                                <div class="source-item">
-                                    <h4>سيرة ابن هشام</h4>
-                                    <p>أشهر كتب السيرة النبوية، اختصار لسيرة ابن إسحاق.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="detail-section">
-                            <h3>كتب السيرة المعتمدة</h3>
-                            <div class="sources-list">
-                                <div class="source-item">
-                                    <h4>الرحيق المختوم</h4>
-                                    <p>صفي الرحمن المباركفوري - كتاب معاصر حاز على جائزة رابطة العالم الإسلامي.</p>
-                                </div>
-                                
-                                <div class="source-item">
-                                    <h4>زاد المعاد</h4>
-                                    <p>ابن قيم الجوزية - كتاب في هدي النبي ﷺ وسننه.</p>
-                                </div>
-                                
-                                <div class="source-item">
-                                    <h4>البداية والنهاية</h4>
-                                    <p>ابن كثير - موسوعة تاريخية تشمل السيرة النبوية.</p>
-                                </div>
-                                
-                                <div class="source-item">
-                                    <h4>السيرة النبوية لابن كثير</h4>
-                                    <p>جزء من كتاب البداية والنهاية مخصص للسيرة.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="detail-section">
-                            <h3>المواقع الإسلامية الموثوقة</h3>
-                            <div class="sources-list">
-                                <div class="source-item">
-                                    <h4>إسلام ويب</h4>
-                                    <p>www.islamweb.net - من أقدم وأشهر المواقع الإسلامية.</p>
-                                </div>
-                                
-                                <div class="source-item">
-                                    <h4>الإسلام سؤال وجواب</h4>
-                                    <p>www.islamqa.info - موقع الشيخ محمد صالح المنجد.</p>
-                                </div>
-                                
-                                <div class="source-item">
-                                    <h4>دار الإفتاء المصرية</h4>
-                                    <p>www.dar-alifta.org - الموقع الرسمي لدار الإفتاء المصرية.</p>
-                                </div>
-                                
-                                <div class="source-item">
-                                    <h4>الموسوعة الشاملة</h4>
-                                    <p>www.islamport.com - أكبر مكتبة إسلامية على الإنترنت.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="javascript:void(0)" onclick="showMainPage()" class="back-link">
+                        <a href="#sections" class="back-link">
                             <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
                         </a>
                     </div>
@@ -1960,7 +1474,16 @@
 
         // تهيئة الموقع
         document.addEventListener('DOMContentLoaded', function() {
-            // إعداد زر العودة للأعلى
+            setupBackToTop();
+            setupHeaderScroll();
+            setupExploreButton();
+            setupSectionCards();
+            processHash();
+            
+            window.addEventListener('hashchange', processHash);
+        });
+        
+        function setupBackToTop() {
             const backToTopBtn = document.getElementById('backToTop');
             
             window.addEventListener('scroll', function() {
@@ -1974,8 +1497,9 @@
             backToTopBtn.addEventListener('click', function() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-            
-            // إعداد تأثير التمرير على الهيدر
+        }
+        
+        function setupHeaderScroll() {
             const header = document.getElementById('mainHeader');
             
             window.addEventListener('scroll', function() {
@@ -1985,8 +1509,9 @@
                     header.classList.remove('scrolled');
                 }
             });
-            
-            // إعداد زر الاستكشاف
+        }
+        
+        function setupExploreButton() {
             const exploreBtn = document.getElementById('exploreBtn');
             
             exploreBtn.addEventListener('click', function(e) {
@@ -1999,72 +1524,124 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // تحميل قسم معين
-        function loadSection(sectionId) {
-            // إخفاء الصفحة الرئيسية
+        }
+        
+        function setupSectionCards() {
+            document.querySelectorAll('.section-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    loadSectionDetail(targetId);
+                });
+            });
+        }
+        
+        function processHash() {
+            const hash = window.location.hash;
+            
+            if (!hash || hash === '#') {
+                showMainPage();
+                return;
+            }
+            
+            if (hash.startsWith('#family') || 
+                hash.startsWith('#battles') || 
+                hash.startsWith('#ethics') || 
+                hash.startsWith('#miracles') || 
+                hash.startsWith('#characters') ||
+                hash.startsWith('#books')) {
+                
+                const sectionId = hash.substring(1);
+                loadSectionDetail(sectionId);
+                return;
+            }
+            
+            const section = document.querySelector(hash);
+            if (section) {
+                showMainPage();
+                scrollToSection(hash.substring(1));
+            } else {
+                showMainPage();
+            }
+        }
+        
+        function loadSectionDetail(sectionId) {
+            if (seerahData[sectionId]) {
+                showDetailPage(sectionId, seerahData[sectionId]);
+            } else {
+                showDefaultDetailPage(sectionId);
+            }
+        }
+        
+        function showDetailPage(sectionId, data) {
+            hideMainSections();
+            
+            const detailPage = document.getElementById(`${sectionId}-detail`);
+            detailPage.style.display = 'block';
+            detailPage.querySelector('.container').innerHTML = data.content;
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.location.hash = `#${sectionId}`;
+        }
+        
+        function showDefaultDetailPage(sectionId) {
+            hideMainSections();
+            
+            const detailPage = document.getElementById(`${sectionId}-detail`);
+            detailPage.style.display = 'block';
+            detailPage.querySelector('.container').innerHTML = `
+                <div class="detail-header">
+                    <h1>قسم ${sectionId}</h1>
+                    <p class="subtitle">تحت التطوير</p>
+                </div>
+                
+                <div class="detail-content">
+                    <p>هذا القسم قيد التطوير وسيتم إضافة المحتوى قريباً بإذن الله.</p>
+                    
+                    <a href="#sections" class="back-link">
+                        <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
+                    </a>
+                </div>
+            `;
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.location.hash = `#${sectionId}`;
+        }
+        
+        function hideMainSections() {
             document.getElementById('heroSection').style.display = 'none';
             document.getElementById('timeline').style.display = 'none';
             document.getElementById('sections').style.display = 'none';
-            document.querySelector('.sources-marquee').style.display = 'none';
             
-            // إظهار صفحة التفاصيل
-            const detailPage = document.getElementById('detail-page');
-            detailPage.style.display = 'block';
-            
-            // تحديث محتوى الصفحة
-            if (seerahData[sectionId]) {
-                detailPage.querySelector('.container').innerHTML = seerahData[sectionId].content;
-            } else {
-                detailPage.querySelector('.container').innerHTML = `
-                    <div class="detail-header">
-                        <h1>القسم تحت التطوير</h1>
-                        <p class="subtitle">سيتم إضافة المحتوى قريباً</p>
-                    </div>
-                    <div class="detail-content">
-                        <p>هذا القسم قيد التطوير وسيتم إضافة المحتوى قريباً بإذن الله.</p>
-                        <div class="sources-section">
-                            <h3>المصادر التي سيتم الاعتماد عليها:</h3>
-                            <div class="sources-list">
-                                <div class="source-item">
-                                    <h4>القرآن الكريم</h4>
-                                </div>
-                                <div class="source-item">
-                                    <h4>صحيح البخاري</h4>
-                                </div>
-                                <div class="source-item">
-                                    <h4>صحيح مسلم</h4>
-                                </div>
-                                <div class="source-item">
-                                    <h4>سيرة ابن هشام</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="javascript:void(0)" onclick="showMainPage()" class="back-link">
-                            <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
-                        </a>
-                    </div>
-                `;
-            }
-            
-            // التمرير للأعلى
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById('family-detail').style.display = 'none';
+            document.getElementById('battles-detail').style.display = 'none';
+            document.getElementById('ethics-detail').style.display = 'none';
+            document.getElementById('miracles-detail').style.display = 'none';
+            document.getElementById('characters-detail').style.display = 'none';
+            document.getElementById('books-detail').style.display = 'none';
         }
-
-        // عرض الصفحة الرئيسية
+        
         function showMainPage() {
-            // إظهار جميع الأقسام الرئيسية
             document.getElementById('heroSection').style.display = 'block';
             document.getElementById('timeline').style.display = 'block';
             document.getElementById('sections').style.display = 'block';
-            document.querySelector('.sources-marquee').style.display = 'block';
             
-            // إخفاء صفحة التفاصيل
-            document.getElementById('detail-page').style.display = 'none';
-            
-            // التمرير للأعلى
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById('family-detail').style.display = 'none';
+            document.getElementById('battles-detail').style.display = 'none';
+            document.getElementById('ethics-detail').style.display = 'none';
+            document.getElementById('miracles-detail').style.display = 'none';
+            document.getElementById('characters-detail').style.display = 'none';
+            document.getElementById('books-detail').style.display = 'none';
+        }
+        
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
         }
     </script>
 </body>
