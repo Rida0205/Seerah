@@ -557,11 +557,14 @@
             font-size: 1.3rem;
         }
 
-        /* غزوات النبي */
+        /* غزوات النبي - تصميم جديد متجاوب */
+        .battles-container {
+            margin-top: 30px;
+        }
+
         .battles-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
             background: white;
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -571,14 +574,17 @@
         .battles-table th {
             background-color: var(--primary-color);
             color: white;
-            padding: 20px;
+            padding: 18px 15px;
             text-align: right;
             font-weight: 600;
+            font-size: 1.1rem;
+            white-space: nowrap;
         }
 
         .battles-table td {
-            padding: 20px;
+            padding: 18px 15px;
             border-bottom: 1px solid var(--light-gray);
+            vertical-align: top;
         }
 
         .battles-table tr:last-child td {
@@ -586,15 +592,17 @@
         }
 
         .battles-table tr:hover {
-            background-color: #f8f9fa;
+            background-color: rgba(26, 95, 75, 0.03);
         }
 
         .battle-result {
             display: inline-block;
-            padding: 5px 15px;
+            padding: 6px 12px;
             border-radius: 15px;
             font-size: 0.9rem;
             font-weight: 600;
+            min-width: 80px;
+            text-align: center;
         }
 
         .victory {
@@ -605,6 +613,63 @@
         .treaty {
             background-color: rgba(0, 123, 255, 0.1);
             color: #007bff;
+        }
+
+        .no-battle {
+            background-color: rgba(108, 117, 125, 0.1);
+            color: #6c757d;
+        }
+
+        /* بطاقات الغزوات للشاشات الصغيرة */
+        .battles-cards {
+            display: none;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .battle-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-right: 4px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .battle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .battle-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .battle-name {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .battle-details {
+            display: grid;
+            gap: 12px;
+        }
+
+        .battle-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            min-width: 70px;
         }
 
         /* المعجزات والأخلاق وكتب السيرة */
@@ -899,6 +964,12 @@
                 border-right: 4px solid var(--primary-color) !important;
                 border-left: none !important;
             }
+            
+            .battles-table th, 
+            .battles-table td {
+                padding: 12px 10px;
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -945,13 +1016,25 @@
                 grid-template-columns: 1fr;
             }
             
+            /* عرض الجدول كبطاقات على الشاشات الصغيرة */
             .battles-table {
-                display: block;
-                overflow-x: auto;
+                display: none;
+            }
+            
+            .battles-cards {
+                display: grid;
             }
             
             .detail-content {
                 padding: 30px;
+            }
+            
+            .battle-card {
+                padding: 20px;
+            }
+            
+            .battle-name {
+                font-size: 1.3rem;
             }
         }
 
@@ -995,6 +1078,35 @@
             .contact-email {
                 font-size: 1rem;
                 padding: 12px 20px;
+            }
+            
+            .battle-card {
+                padding: 18px;
+            }
+            
+            .detail-label {
+                min-width: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .battle-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .battle-name {
+                font-size: 1.2rem;
+            }
+            
+            .battle-result {
+                font-size: 0.85rem;
+                padding: 5px 10px;
+            }
+            
+            .detail-label {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -1516,114 +1628,372 @@
                         <div class="detail-section">
                             <h3>الغزوات الكبرى (شارك فيها النبي ﷺ)</h3>
                             
-                            <table class="battles-table">
-                                <thead>
-                                    <tr>
-                                        <th>الغزوة</th>
-                                        <th>التاريخ</th>
-                                        <th>المكان</th>
-                                        <th>السبب</th>
-                                        <th>النتيجة</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>غزوة الأبواء (ودان)</strong></td>
-                                        <td>صفر 2 هـ</td>
-                                        <td>وادي دان</td>
-                                        <td>عقد معاهدة مع بني ضمرة</td>
-                                        <td><span class="battle-result treaty">معاهدة</span></td>
-                                    </tr>
+                            <div class="battles-container">
+                                <!-- جدول للشاشات الكبيرة -->
+                                <table class="battles-table">
+                                    <thead>
+                                        <tr>
+                                            <th>الغزوة</th>
+                                            <th>التاريخ</th>
+                                            <th>المكان</th>
+                                            <th>السبب</th>
+                                            <th>النتيجة</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>غزوة الأبواء (ودان)</strong></td>
+                                            <td>صفر 2 هـ</td>
+                                            <td>وادي دان</td>
+                                            <td>عقد معاهدة مع بني ضمرة</td>
+                                            <td><span class="battle-result treaty">معاهدة</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة بواط</strong></td>
+                                            <td>ربيع الأول 2 هـ</td>
+                                            <td>بواط</td>
+                                            <td>اعتراض عير قريش</td>
+                                            <td><span class="battle-result no-battle">لم يحدث قتال</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة بدر الكبرى</strong></td>
+                                            <td>رمضان 2 هـ</td>
+                                            <td>بدر</td>
+                                            <td>قريش تحاول استعادة قافلتها</td>
+                                            <td><span class="battle-result victory">نصر عظيم</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة بني قينقاع</strong></td>
+                                            <td>شوال 2 هـ</td>
+                                            <td>المدينة</td>
+                                            <td>انتهاك بني قينقاع للعهد</td>
+                                            <td><span class="battle-result victory">طرد اليهود</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة أحد</strong></td>
+                                            <td>شوال 3 هـ</td>
+                                            <td>جبل أحد</td>
+                                            <td>ثأر قريش لهزيمة بدر</td>
+                                            <td><span class="battle-result no-battle">هزيمة أولى ثم انتصار</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة الخندق (الأحزاب)</strong></td>
+                                            <td>شوال 5 هـ</td>
+                                            <td>المدينة</td>
+                                            <td>تحالف قريش مع اليهود والغساسنة</td>
+                                            <td><span class="battle-result victory">انتصار بفضل الله</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة بني قريظة</strong></td>
+                                            <td>ذو القعدة 5 هـ</td>
+                                            <td>المدينة</td>
+                                            <td>خيانة بني قريظة في غزوة الخندق</td>
+                                            <td><span class="battle-result victory">محاكمة اليهود</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة الحديبية</strong></td>
+                                            <td>ذو القعدة 6 هـ</td>
+                                            <td>الحديبية</td>
+                                            <td>العمرة ومنع قريش المسلمين</td>
+                                            <td><span class="battle-result treaty">صلح الحديبية</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة خيبر</strong></td>
+                                            <td>محرم 7 هـ</td>
+                                            <td>خيبر</td>
+                                            <td>تحريض يهود خيبر على المسلمين</td>
+                                            <td><span class="battle-result victory">فتح خيبر</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>فتح مكة</strong></td>
+                                            <td>رمضان 8 هـ</td>
+                                            <td>مكة</td>
+                                            <td>نقض قريش لصلح الحديبية</td>
+                                            <td><span class="battle-result victory">فتح مكة</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة حنين</strong></td>
+                                            <td>شوال 8 هـ</td>
+                                            <td>وادي حنين</td>
+                                            <td>تجمع هوازن وثقيف ضد المسلمين</td>
+                                            <td><span class="battle-result victory">انتصار بعد صعوبة</span></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><strong>غزوة تبوك</strong></td>
+                                            <td>رجب 9 هـ</td>
+                                            <td>تبوك</td>
+                                            <td>استعداد الروم لغزو المسلمين</td>
+                                            <td><span class="battle-result no-battle">لم يحدث قتال</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <!-- بطاقات للشاشات الصغيرة -->
+                                <div class="battles-cards">
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة الأبواء (ودان)</div>
+                                            <span class="battle-result treaty">معاهدة</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>صفر 2 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>وادي دان</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>عقد معاهدة مع بني ضمرة</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة بواط</strong></td>
-                                        <td>ربيع الأول 2 هـ</td>
-                                        <td>بواط</td>
-                                        <td>اعتراض عير قريش</td>
-                                        <td><span class="battle-result">لم يحدث قتال</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة بواط</div>
+                                            <span class="battle-result no-battle">لم يحدث قتال</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>ربيع الأول 2 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>بواط</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>اعتراض عير قريش</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة بدر الكبرى</strong></td>
-                                        <td>رمضان 2 هـ</td>
-                                        <td>بدر</td>
-                                        <td>قريش تحاول استعادة قافلتها</td>
-                                        <td><span class="battle-result victory">نصر عظيم</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة بدر الكبرى</div>
+                                            <span class="battle-result victory">نصر عظيم</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>رمضان 2 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>بدر</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>قريش تحاول استعادة قافلتها</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة بني قينقاع</strong></td>
-                                        <td>شوال 2 هـ</td>
-                                        <td>المدينة</td>
-                                        <td>انتهاك بني قينقاع للعهد</td>
-                                        <td><span class="battle-result victory">طرد يهود بني قينقاع</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة بني قينقاع</div>
+                                            <span class="battle-result victory">طرد اليهود</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>شوال 2 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>المدينة</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>انتهاك بني قينقاع للعهد</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة أحد</strong></td>
-                                        <td>شوال 3 هـ</td>
-                                        <td>جبل أحد</td>
-                                        <td>ثأر قريش لهزيمة بدر</td>
-                                        <td><span class="battle-result">هزيمة أولى ثم انتصار</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة أحد</div>
+                                            <span class="battle-result no-battle">هزيمة أولى ثم انتصار</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>شوال 3 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>جبل أحد</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>ثأر قريش لهزيمة بدر</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة الخندق (الأحزاب)</strong></td>
-                                        <td>شوال 5 هـ</td>
-                                        <td>المدينة</td>
-                                        <td>تحالف قريش مع اليهود والغساسنة</td>
-                                        <td><span class="battle-result victory">انتصار بفضل الله</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة الخندق (الأحزاب)</div>
+                                            <span class="battle-result victory">انتصار بفضل الله</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>شوال 5 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>المدينة</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>تحالف قريش مع اليهود والغساسنة</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة بني قريظة</strong></td>
-                                        <td>ذو القعدة 5 هـ</td>
-                                        <td>المدينة</td>
-                                        <td>خيانة بني قريظة في غزوة الخندق</td>
-                                        <td><span class="battle-result victory">محاكمة اليهود</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة بني قريظة</div>
+                                            <span class="battle-result victory">محاكمة اليهود</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>ذو القعدة 5 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>المدينة</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>خيانة بني قريظة في غزوة الخندق</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة الحديبية</strong></td>
-                                        <td>ذو القعدة 6 هـ</td>
-                                        <td>الحديبية</td>
-                                        <td>العمرة ومنع قريش المسلمين</td>
-                                        <td><span class="battle-result treaty">صلح الحديبية</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة الحديبية</div>
+                                            <span class="battle-result treaty">صلح الحديبية</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>ذو القعدة 6 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>الحديبية</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>العمرة ومنع قريش المسلمين</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة خيبر</strong></td>
-                                        <td>محرم 7 هـ</td>
-                                        <td>خيبر</td>
-                                        <p>تحريض يهود خيبر على المسلمين</p>
-                                        <td><span class="battle-result victory">فتح خيبر</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة خيبر</div>
+                                            <span class="battle-result victory">فتح خيبر</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>محرم 7 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>خيبر</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>تحريض يهود خيبر على المسلمين</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>فتح مكة</strong></td>
-                                        <td>رمضان 8 هـ</td>
-                                        <td>مكة</td>
-                                        <td>نقض قريش لصلح الحديبية</td>
-                                        <td><span class="battle-result victory">فتح مكة</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">فتح مكة</div>
+                                            <span class="battle-result victory">فتح مكة</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>رمضان 8 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>مكة</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>نقض قريش لصلح الحديبية</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة حنين</strong></td>
-                                        <td>شوال 8 هـ</td>
-                                        <td>وادي حنين</td>
-                                        <td>تجمع هوازن وثقيف ضد المسلمين</td>
-                                        <td><span class="battle-result victory">انتصار بعد صعوبة</span></td>
-                                    </tr>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة حنين</div>
+                                            <span class="battle-result victory">انتصار بعد صعوبة</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>شوال 8 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>وادي حنين</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>تجمع هوازن وثقيف ضد المسلمين</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-                                    <tr>
-                                        <td><strong>غزوة تبوك</strong></td>
-                                        <td>رجب 9 هـ</td>
-                                        <td>تبوك</td>
-                                        <td>استعداد الروم لغزو المسلمين</td>
-                                        <td><span class="battle-result">لم يحدث قتال</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                    <div class="battle-card">
+                                        <div class="battle-header">
+                                            <div class="battle-name">غزوة تبوك</div>
+                                            <span class="battle-result no-battle">لم يحدث قتال</span>
+                                        </div>
+                                        <div class="battle-details">
+                                            <div class="battle-detail">
+                                                <span class="detail-label">التاريخ:</span>
+                                                <span>رجب 9 هـ</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">المكان:</span>
+                                                <span>تبوك</span>
+                                            </div>
+                                            <div class="battle-detail">
+                                                <span class="detail-label">السبب:</span>
+                                                <span>استعداد الروم لغزو المسلمين</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="detail-section">
