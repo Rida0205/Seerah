@@ -9,7 +9,7 @@
     <title>DEENWAY Seerah | السيرة النبوية الكاملة</title>
     <meta name="title" content="DEENWAY Seerah | السيرة النبوية الكاملة">
     <meta name="description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل">
-    <meta name="keywords" content="سيرة النبي محمد, حياة الرسول">
+    <meta name="keywords" content="سيرة النبي محمد, حياة الرسول, السيرة النبوية, غزوات النبي, أخلاق الرسول, معجزات النبي, كتب السيرة">
     <meta property="og:title" content="DEENWAY Seerah | السيرة النبوية الكاملة">
     <meta property="og:description" content="سيرة النبي محمد ﷺ كاملة مع كل التفاصيل">
     <meta property="og:url" content="https://seerah.ondeenway.org">
@@ -292,51 +292,66 @@
             padding: 0 20px;
         }
 
-        /* الخريطة الذهنية البسيطة */
-        .mindmap-section {
-            background-color: #f8f5e6;
-        }
-
-        .simple-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+        /* الخط الزمني البسيط */
+        .timeline-container {
+            position: relative;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 50px auto;
         }
 
-        .timeline-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 30px;
-            padding: 30px;
-            background: white;
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .timeline-event {
+            position: relative;
+            margin-bottom: 60px;
+            width: 45%;
+        }
+
+        .timeline-event:nth-child(odd) {
+            margin-right: 55%;
+        }
+
+        .timeline-event:nth-child(even) {
+            margin-left: 55%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            right: -12px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .timeline-event:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -12px;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 25px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            border-right: 5px solid var(--primary-color);
+            border-right: 4px solid var(--primary-color);
         }
 
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-
-        .timeline-year {
-            background: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            font-weight: 700;
-            font-size: 1.2rem;
-            min-width: 120px;
-            text-align: center;
-        }
-
-        .timeline-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+        .timeline-event:nth-child(even) .timeline-content {
+            border-right: none;
+            border-left: 4px solid var(--accent-color);
         }
 
         /* أقسام السيرة */
@@ -841,68 +856,6 @@
             height: 80px;
         }
 
-        /* خط زمني بسيط */
-        .timeline-container {
-            position: relative;
-            max-width: 900px;
-            margin: 50px auto;
-        }
-
-        .timeline-line {
-            position: absolute;
-            top: 0;
-            right: 50%;
-            transform: translateX(50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
-            border-radius: 2px;
-        }
-
-        .timeline-event {
-            position: relative;
-            margin-bottom: 60px;
-            width: 45%;
-        }
-
-        .timeline-event:nth-child(odd) {
-            margin-right: 55%;
-        }
-
-        .timeline-event:nth-child(even) {
-            margin-left: 55%;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            top: 20px;
-            right: -12px;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 4px solid var(--primary-color);
-            border-radius: 50%;
-            z-index: 2;
-        }
-
-        .timeline-event:nth-child(even) .timeline-dot {
-            right: auto;
-            left: -12px;
-        }
-
-        .timeline-content {
-            background-color: white;
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            border-right: 4px solid var(--primary-color);
-        }
-
-        .timeline-event:nth-child(even) .timeline-content {
-            border-right: none;
-            border-left: 4px solid var(--accent-color);
-        }
-
         /* التجاوب مع الشاشات */
         @media (max-width: 1200px) {
             .container {
@@ -1303,36 +1256,116 @@
         const seerahData = {
             'family': {
                 title: 'الأسرة النبوية',
-                subtitle: 'أزواج النبي ﷺ وأبناؤه وأحفاده',
+                subtitle: 'أزواج النبي ﷺ وأبناؤه وأحفاده وأهل بيته',
                 content: `
                     <div class="detail-header">
                         <h1>الأسرة النبوية</h1>
-                        <p class="subtitle">أزواج النبي ﷺ وأبناؤه وأحفاده</p>
+                        <p class="subtitle">أزواج النبي ﷺ وأبناؤه وأحفاده وأهل بيته</p>
                     </div>
                     
                     <div class="detail-content">
                         <div class="detail-section">
-                            <h3>أزواج النبي ﷺ</h3>
-                            <p>تزوج النبي ﷺ عدة زوجات، منهن:</p>
+                            <h3>أزواج النبي ﷺ (أمهات المؤمنين)</h3>
+                            <p>تزوج النبي ﷺ إحدى عشرة زوجة، وكان له منهن سبع عند وفاته:</p>
                             
                             <div class="wives-grid">
                                 <div class="wife-card">
                                     <h4>خديجة بنت خويلد</h4>
-                                    <p>أولى زوجات النبي ﷺ، تزوجها قبل البعثة وعمرها 40 سنة وهو 25 سنة</p>
-                                    <p>أنجبت له جميع أولاده إلا إبراهيم</p>
+                                    <p>أولى زوجات النبي ﷺ، تزوجها قبل البعثة وعمرها 40 سنة وهو 25 سنة. لقبت بـ "الطاهرة" و"سيدة نساء قريش". دعمت النبي ﷺ مادياً ومعنوياً وكانت نعم الزوجة</p>
                                     <div class="wife-info">
                                         <span class="wife-tag">التزوج: 595 م</span>
                                         <span class="wife-tag">الوفاة: 3 قبل الهجرة</span>
+                                        <span class="wife-tag">مدة الزواج: 25 سنة</span>
                                     </div>
                                 </div>
                                 
                                 <div class="wife-card">
                                     <h4>عائشة بنت أبي بكر</h4>
-                                    <p>البكر الوحيدة التي تزوجها النبي ﷺ، بنت أبي بكر الصديق</p>
-                                    <p>كانت أفقه نساء الأمة</p>
+                                    <p>البكر الوحيدة التي تزوجها النبي ﷺ، بنت أبي بكر الصديق. تزوجها وهي في السادسة ودخل بها في التاسعة. كانت أفقه نساء الأمة وأعلمهن</p>
                                     <div class="wife-info">
                                         <span class="wife-tag">التزوج: 1 هـ</span>
                                         <span class="wife-tag">الوفاة: 58 هـ</span>
+                                        <span class="wife-tag">أم المؤمنين</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wife-card">
+                                    <h4>حفصة بنت عمر</h4>
+                                    <p>ابنة عمر بن الخطاب، تزوجها النبي ﷺ سنة 3 هـ بعد وفاة زوجها خنيس بن حذافة. كانت صوامة قوامة، حفظ عندها المصحف الأول</p>
+                                    <div class="wife-info">
+                                        <span class="wife-tag">التزوج: 3 هـ</span>
+                                        <span class="wife-tag">الوفاة: 45 هـ</span>
+                                        <span class="wife-tag">حارسة القرآن</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wife-card">
+                                    <h4>زينب بنت خزيمة</h4>
+                                    <p>لقبت بـ "أم المساكين" لكثرة إحسانها لهم. تزوجها النبي ﷺ سنة 3 هـ وتوفيت بعد شهرين أو ثلاثة فقط</p>
+                                    <div class="wife-info">
+                                        <span class="wife-tag">التزوج: 3 هـ</span>
+                                        <span class="wife-tag">الوفاة: 3 هـ</span>
+                                        <span class="wife-tag">أم المساكين</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wife-card">
+                                    <h4>أم سلمة (هند بنت أبي أمية)</h4>
+                                    <p>من أكمل النساء عقلاً وخلقاً، هاجرت إلى الحبشة ثم إلى المدينة. تزوجها النبي ﷺ سنة 4 هـ، عاشت حتى خلافة يزيد بن معاوية</p>
+                                    <div class="wife-info">
+                                        <span class="wife-tag">التزوج: 4 هـ</span>
+                                        <span class="wife-tag">الوفاة: 62 هـ</span>
+                                        <span class="wife-tag">آخر زوجات النبي وفاة</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wife-card">
+                                    <h4>زينب بنت جحش</h4>
+                                    <p>ابنة عمة النبي ﷺ، كانت زوجة لزيد بن حارثة فأطلقهـا فتزوجها النبي ﷺ سنة 5 هـ. نزل فيها قوله تعالى: "فَلَمَّا قَضَى زَيْدٌ مِّنْهَا وَطَرًا زَوَّجْنَاكَهَا"</p>
+                                    <div class="wife-info">
+                                        <span class="wife-tag">التزوج: 5 هـ</span>
+                                        <span class="wife-tag">الوفاة: 20 هـ</span>
+                                        <span class="wife-tag">أولى زوجاته وفاة بعدـه</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wife-card">
+                                    <h4>جويرية بنت الحارث</h4>
+                                    <p>سبية من بني المصطلق، تزوجها النبي ﷺ سنة 6 هـ فأعتق المسلمين مائة بيت من قومها. كانت دائمة الذكر والعبادة</p>
+                                    <div class="wife-info">
+                                        <span class="wife-tag">التزوج: 6 هـ</span>
+                                        <span class="wife-tag">الوفاة: 50 هـ</span>
+                                        <span class="wife-tag">بركة على قومها</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wife-card">
+                                    <h4>أم حبيبة (رملة بنت أبي سفيان)</h4>
+                                    <p>ابنة أبي سفيان، هاجرت إلى الحبشة مع زوجها الأول فتنصر ومات هناك. تزوجها النبي ﷺ سنة 7 هـ بواسطة النجاشي</p>
+                                    <div class="wife-info">
+                                        <span class="wife-tag">التزوج: 7 هـ</span>
+                                        <span class="wife-tag">الوفاة: 44 هـ</span>
+                                        <span class="wife-tag">هاجرت الحبشة</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wife-card">
+                                    <h4>صفية بنت حيي بن أخطب</h4>
+                                    <p>ابنة زعيم يهود بني النضير، أسلمت وتزوجها النبي ﷺ سنة 7 هـ بعد غزوة خيبر. كانت حسنة العشرة مع النبي ﷺ</p>
+                                    <div class="wife-info">
+                                        <span class="wife-tag">التزوج: 7 هـ</span>
+                                        <span class="wife-tag">الوفاة: 50 هـ</span>
+                                        <span class="wife-tag">ابنة حيي بن أخطب</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="wife-card">
+                                    <h4>ميمونة بنت الحارث</h4>
+                                    <p>آخر من تزوج النبي ﷺ سنة 7 هـ، أخت أم الفضل لبني عباس. كانت زاهدة عابدة، توفيت سنة 61 هـ</p>
+                                    <div class="wife-info">
+                                        <span class="wife-tag">التزوج: 7 هـ</span>
+                                        <span class="wife-tag">الوفاة: 61 هـ</span>
+                                        <span class="wife-tag">آخر زوجاته</span>
                                     </div>
                                 </div>
                             </div>
@@ -1349,7 +1382,48 @@
                                     </div>
                                     <h4>القاسم</h4>
                                     <p>به يكنى النبي ﷺ (أبو القاسم)</p>
-                                    <p>توفي صغيراً</p>
+                                    <p>ولد قبل البعثة وتوفي صغيراً في مكة</p>
+                                    <span class="wife-tag">الابن البكر</span>
+                                </div>
+                                
+                                <div class="child-card">
+                                    <div class="child-icon">
+                                        <i class="fas fa-male"></i>
+                                    </div>
+                                    <h4>عبد الله</h4>
+                                    <p>ولد بعد البعثة فلقب بـ "الطيب" و"الطاهر"</p>
+                                    <p>توفي صغيراً في مكة أيضاً</p>
+                                    <span class="wife-tag">لقب بالطيب</span>
+                                </div>
+                                
+                                <div class="child-card">
+                                    <div class="child-icon">
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <h4>زينب</h4>
+                                    <p>كبرى بنات النبي ﷺ</p>
+                                    <p>تزوجت ابن خالتها أبي العاص بن الربيع</p>
+                                    <span class="wife-tag">الكبرى</span>
+                                </div>
+                                
+                                <div class="child-card">
+                                    <div class="child-icon">
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <h4>رقية</h4>
+                                    <p>تزوجت عتبة بن أبي لهب قبل الإسلام فطلقها</p>
+                                    <p>ثم تزوجت عثمان بن عفان وهاجرت معه للحبشة</p>
+                                    <span class="wife-tag">زوجة عثمان</span>
+                                </div>
+                                
+                                <div class="child-card">
+                                    <div class="child-icon">
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <h4>أم كلثوم</h4>
+                                    <p>تزوجت عثمان بن عفان بعد وفاة أختها رقية</p>
+                                    <p>توفيت سنة 9 هـ في حياة النبي ﷺ</p>
+                                    <span class="wife-tag">ذات النورين</span>
                                 </div>
                                 
                                 <div class="child-card">
@@ -1357,10 +1431,69 @@
                                         <i class="fas fa-female"></i>
                                     </div>
                                     <h4>فاطمة الزهراء</h4>
-                                    <p>سيدة نساء العالمين</p>
-                                    <p>تزوجت علي بن أبي طالب</p>
+                                    <p>أصغر بنات النبي ﷺ وسيدة نساء العالمين</p>
+                                    <p>تزوجت علي بن أبي طالب وأنجبت الحسن والحسين</p>
+                                    <span class="wife-tag">سيدة نساء العالمين</span>
+                                </div>
+                                
+                                <div class="child-card">
+                                    <div class="child-icon">
+                                        <i class="fas fa-male"></i>
+                                    </div>
+                                    <h4>إبراهيم</h4>
+                                    <p>ولد بالمدينة سنة 8 هـ من مارية القبطية</p>
+                                    <p>توفي صغيراً سنة 10 هـ وعمره 16 شهراً</p>
+                                    <span class="wife-tag">آخر الأبناء</span>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>أحفاد النبي ﷺ</h3>
+                            <p>أنجب النبي ﷺ أحفاداً من بناته، وأشهرهم:</p>
+                            
+                            <div class="grandchildren-grid">
+                                <div class="grandchild-card">
+                                    <div class="grandchild-icon">
+                                        <i class="fas fa-male"></i>
+                                    </div>
+                                    <h4>الحسن بن علي</h4>
+                                    <p>سبط رسول الله ﷺ وسيد شباب أهل الجنة</p>
+                                    <p>تولى الخلافة بعد أبيه ثم تنازل لمعاوية</p>
+                                    <span class="wife-tag">السبط الأكبر</span>
+                                </div>
+                                
+                                <div class="grandchild-card">
+                                    <div class="grandchild-icon">
+                                        <i class="fas fa-male"></i>
+                                    </div>
+                                    <h4>الحسين بن علي</h4>
+                                    <p>سبط رسول الله ﷺ وسيد شباب أهل الجنة</p>
+                                    <p>استشهد في كربلاء سنة 61 هـ</p>
+                                    <span class="wife-tag">سبط رسول الله</span>
+                                </div>
+                                
+                                <div class="grandchild-card">
+                                    <div class="grandchild-icon">
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <h4>أمامة بنت أبي العاص</h4>
+                                    <p>ابنة زينب بنت النبي ﷺ</p>
+                                    <p>كان النبي ﷺ يحملها في الصلاة</p>
+                                    <span class="wife-tag">حفيدة النبي</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>عمات النبي ﷺ</h3>
+                            <p>كان للنبي ﷺ ست عمات، منهن:</p>
+                            <ul style="padding-right: 20px;">
+                                <li style="margin-bottom: 10px;"><strong>صفية بنت عبد المطلب</strong>: أسلمت وهاجرت، وهي أم الزبير بن العوام</li>
+                                <li style="margin-bottom: 10px;"><strong>عاتكة بنت عبد المطلب</strong>: اختلف في إسلامها</li>
+                                <li style="margin-bottom: 10px;"><strong>أروى بنت عبد المطلب</strong>: أسلمت وهاجرت</li>
+                                <li><strong>برة بنت عبد المطلب</strong>: والدة أبي سلمة بن عبد الأسد</li>
+                            </ul>
                         </div>
                         
                         <a href="#sections" class="back-link">
@@ -1372,16 +1505,16 @@
             
             'battles': {
                 title: 'غزوات النبي ﷺ',
-                subtitle: 'الغزوات والسرايا والمعارك التي شارك فيها النبي ﷺ',
+                subtitle: 'الغزوات والسرايا والمعارك التي شارك فيها النبي ﷺ أو أرسل فيها سرية',
                 content: `
                     <div class="detail-header">
                         <h1>غزوات النبي ﷺ</h1>
-                        <p class="subtitle">الغزوات والسرايا والمعارك التي شارك فيها النبي ﷺ</p>
+                        <p class="subtitle">الغزوات والسرايا والمعارك التي شارك فيها النبي ﷺ أو أرسل فيها سرية</p>
                     </div>
                     
                     <div class="detail-content">
                         <div class="detail-section">
-                            <h3>الغزوات الرئيسية</h3>
+                            <h3>الغزوات الكبرى (شارك فيها النبي ﷺ)</h3>
                             
                             <table class="battles-table">
                                 <thead>
@@ -1389,36 +1522,160 @@
                                         <th>الغزوة</th>
                                         <th>التاريخ</th>
                                         <th>المكان</th>
+                                        <th>السبب</th>
                                         <th>النتيجة</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><strong>غزوة بدر</strong></td>
+                                        <td><strong>غزوة الأبواء (ودان)</strong></td>
+                                        <td>صفر 2 هـ</td>
+                                        <td>وادي دان</td>
+                                        <td>عقد معاهدة مع بني ضمرة</td>
+                                        <td><span class="battle-result treaty">معاهدة</span></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><strong>غزوة بواط</strong></td>
+                                        <td>ربيع الأول 2 هـ</td>
+                                        <td>بواط</td>
+                                        <td>اعتراض عير قريش</td>
+                                        <td><span class="battle-result">لم يحدث قتال</span></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><strong>غزوة بدر الكبرى</strong></td>
                                         <td>رمضان 2 هـ</td>
                                         <td>بدر</td>
-                                        <td><span class="battle-result victory">نصر</span></td>
+                                        <td>قريش تحاول استعادة قافلتها</td>
+                                        <td><span class="battle-result victory">نصر عظيم</span></td>
                                     </tr>
+                                    
+                                    <tr>
+                                        <td><strong>غزوة بني قينقاع</strong></td>
+                                        <td>شوال 2 هـ</td>
+                                        <td>المدينة</td>
+                                        <td>انتهاك بني قينقاع للعهد</td>
+                                        <td><span class="battle-result victory">طرد يهود بني قينقاع</span></td>
+                                    </tr>
+                                    
                                     <tr>
                                         <td><strong>غزوة أحد</strong></td>
                                         <td>شوال 3 هـ</td>
-                                        <td>أحد</td>
-                                        <td><span class="battle-result">هزيمة ثم انتصار</span></td>
+                                        <td>جبل أحد</td>
+                                        <td>ثأر قريش لهزيمة بدر</td>
+                                        <td><span class="battle-result">هزيمة أولى ثم انتصار</span></td>
                                     </tr>
+                                    
                                     <tr>
-                                        <td><strong>غزوة الخندق</strong></td>
+                                        <td><strong>غزوة الخندق (الأحزاب)</strong></td>
                                         <td>شوال 5 هـ</td>
                                         <td>المدينة</td>
-                                        <td><span class="battle-result victory">نصر</span></td>
+                                        <td>تحالف قريش مع اليهود والغساسنة</td>
+                                        <td><span class="battle-result victory">انتصار بفضل الله</span></td>
                                     </tr>
+                                    
+                                    <tr>
+                                        <td><strong>غزوة بني قريظة</strong></td>
+                                        <td>ذو القعدة 5 هـ</td>
+                                        <td>المدينة</td>
+                                        <td>خيانة بني قريظة في غزوة الخندق</td>
+                                        <td><span class="battle-result victory">محاكمة اليهود</span></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><strong>غزوة الحديبية</strong></td>
+                                        <td>ذو القعدة 6 هـ</td>
+                                        <td>الحديبية</td>
+                                        <td>العمرة ومنع قريش المسلمين</td>
+                                        <td><span class="battle-result treaty">صلح الحديبية</span></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><strong>غزوة خيبر</strong></td>
+                                        <td>محرم 7 هـ</td>
+                                        <td>خيبر</td>
+                                        <p>تحريض يهود خيبر على المسلمين</p>
+                                        <td><span class="battle-result victory">فتح خيبر</span></td>
+                                    </tr>
+                                    
                                     <tr>
                                         <td><strong>فتح مكة</strong></td>
                                         <td>رمضان 8 هـ</td>
                                         <td>مكة</td>
-                                        <td><span class="battle-result victory">نصر</span></td>
+                                        <td>نقض قريش لصلح الحديبية</td>
+                                        <td><span class="battle-result victory">فتح مكة</span></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><strong>غزوة حنين</strong></td>
+                                        <td>شوال 8 هـ</td>
+                                        <td>وادي حنين</td>
+                                        <td>تجمع هوازن وثقيف ضد المسلمين</td>
+                                        <td><span class="battle-result victory">انتصار بعد صعوبة</span></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><strong>غزوة تبوك</strong></td>
+                                        <td>رجب 9 هـ</td>
+                                        <td>تبوك</td>
+                                        <td>استعداد الروم لغزو المسلمين</td>
+                                        <td><span class="battle-result">لم يحدث قتال</span></td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>السرايا والبعوث (أرسل فيها النبي ﷺ سرية)</h3>
+                            <p>بلغ عدد سرايا النبي ﷺ حوالي 38 سرية، أشهرها:</p>
+                            
+                            <div style="display: grid; gap: 20px; margin-top: 30px;">
+                                <div style="background: #f8f9fa; padding: 20px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">سرية عبد الله بن جحش</h4>
+                                    <p>أول سرية في الإسلام، في رجب 2 هـ، إلى نخلة، وأسروا عيراً لقريش</p>
+                                </div>
+                                
+                                <div style="background: #f8f9fa; padding: 20px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">سرية زيد بن حارثة</h4>
+                                    <p>إلى القردة، في جمادى الآخرة 6 هـ، أغاروا على قافلة قريش</p>
+                                </div>
+                                
+                                <div style="background: #f8f9fa; padding: 20px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">سرية عمرو بن العاص</h4>
+                                    <p>إلى ذات السلاسل، في جمادى الأولى 8 هـ، لمواجهة قضاعة</p>
+                                </div>
+                                
+                                <div style="background: #f8f9fa; padding: 20px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">سرية أسامة بن زيد</h4>
+                                    <p>آخر سرية في عهد النبي ﷺ، أرسلها إلى البلقاء بالشام</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>إحصاءات الغزوات</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                                <div style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 25px; border-radius: var(--border-radius); text-align: center;">
+                                    <h3 style="color: white; font-size: 2.5rem; margin-bottom: 10px;">27</h3>
+                                    <p>عدد الغزوات التي خرج فيها النبي ﷺ</p>
+                                </div>
+                                
+                                <div style="background: linear-gradient(135deg, var(--accent-color) 0%, #b8941f 100%); color: white; padding: 25px; border-radius: var(--border-radius); text-align: center;">
+                                    <h3 style="color: white; font-size: 2.5rem; margin-bottom: 10px;">9</h3>
+                                    <p>عدد الغزوات التي حدث فيها قتال</p>
+                                </div>
+                                
+                                <div style="background: linear-gradient(135deg, #2c786c 0%, #1a5f4b 100%); color: white; padding: 25px; border-radius: var(--border-radius); text-align: center;">
+                                    <h3 style="color: white; font-size: 2.5rem; margin-bottom: 10px;">38</h3>
+                                    <p>عدد السرايا التي أرسلها النبي ﷺ</p>
+                                </div>
+                                
+                                <div style="background: linear-gradient(135deg, #5d6d7e 0%, #3a4653 100%); color: white; padding: 25px; border-radius: var(--border-radius); text-align: center;">
+                                    <h3 style="color: white; font-size: 2.5rem; margin-bottom: 10px;">~259</h3>
+                                    <p>عدد شهداء المسلمين في جميع الغزوات</p>
+                                </div>
+                            </div>
                         </div>
                         
                         <a href="#sections" class="back-link">
@@ -1439,28 +1696,516 @@
                     
                     <div class="detail-content">
                         <div class="detail-section">
-                            <h3>الصفات الخُلُقية</h3>
+                            <h3>الصفات الخُلُقية (الأخلاق)</h3>
+                            <p>وصف الله تعالى نبيه ﷺ فقال: "وَإِنَّكَ لَعَلَى خُلُقٍ عَظِيمٍ" (القلم: 4)</p>
                             
                             <div class="ethics-grid">
                                 <div class="ethic-card">
                                     <h4>الصدق</h4>
-                                    <p>كان النبي ﷺ أصدق الناس، عرف بالصادق الأمين قبل البعثة وبعدها.</p>
+                                    <p>كان النبي ﷺ أصدق الناس، عرف بالصادق الأمين قبل البعثة وبعدها. قال: "إن الصدق يهدي إلى البر، وإن البر يهدي إلى الجنة"</p>
+                                    <span class="wife-tag">لقب بالصادق الأمين</span>
+                                </div>
+                                
+                                <div class="ethic-card">
+                                    <h4>الأمانة</h4>
+                                    <p>كان موضع ثقة قريش جميعاً، يودعون عنده أماناتهم. قال: "أد الأمانة إلى من ائتمنك، ولا تخن من خانك"</p>
+                                    <span class="wife-tag">كانت تودع عنده الأمانات</span>
                                 </div>
                                 
                                 <div class="ethic-card">
                                     <h4>الرحمة</h4>
-                                    <p>كان أرحم الناس بالناس، وبالحيوان، وبالأطفال.</p>
+                                    <p>كان أرحم الناس بالناس، وبالحيوان، وبالأطفال. قال تعالى: "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ"</p>
+                                    <span class="wife-tag">رحمة للعالمين</span>
                                 </div>
                                 
                                 <div class="ethic-card">
                                     <h4>التواضع</h4>
-                                    <p>كان متواضعاً مع الكبير والصغير، الغني والفقير.</p>
+                                    <p>كان متواضعاً مع الكبير والصغير، الغني والفقير. قال: "ما تواضع أحد لله إلا رفعه الله" وكان يجلس حيث ينتهي به المجلس</p>
+                                    <span class="wife-tag">خافض الجناح للمؤمنين</span>
                                 </div>
                                 
                                 <div class="ethic-card">
-                                    <h4>الحلم</h4>
-                                    <p>كان أحلم الناس، لا يغضب لنفسه، وإنما يغضب إذا انتهكت حرمات الله.</p>
+                                    <h4>الحلم والصبر</h4>
+                                    <p>كان أحلم الناس، لا يغضب لنفسه، وإنما يغضب إذا انتهكت حرمات الله. صبر على أذى قريش ثلاث عشرة سنة في مكة</p>
+                                    <span class="wife-tag">أشد حلمًا من الريح المرسلة</span>
                                 </div>
+                                
+                                <div class="ethic-card">
+                                    <h4>الكرم والسخاء</h4>
+                                    <p>كان أجود الناس، لا يرد سائلاً. قال جابر: "ما سئل رسول الله ﷺ شيئاً فقال: لا" وكان أجود بالخير من الريح المرسلة</p>
+                                    <span class="wife-tag">أجود الناس</span>
+                                </div>
+                                
+                                <div class="ethic-card">
+                                    <h4>العدل</h4>
+                                    <p>كان أعدل الناس، يقضي بالحق ولو على أقرب الناس إليه. قال: "لو أن فاطمة بنت محمد سرقت لقطعت يدها"</p>
+                                    <span class="wife-tag">القسطاس المستقيم</span>
+                                </div>
+                                
+                                <div class="ethic-card">
+                                    <h4>الشجاعة</h4>
+                                    <p>كان أشجع الناس، يفر منه الأبطال في المعارك. قال علي: "كنا إذا اشتد البأس نتقي به، وإنه لأقربنا إلى العدو"</p>
+                                    <span class="wife-tag">فر منه الأبطال</span>
+                                </div>
+                                
+                                <div class="ethic-card">
+                                    <h4>الحياء</h4>
+                                    <p>كان أشد حياء من العذراء في خدرها. قال: "الحياء لا يأتي إلا بخير" وكان لا يثبت بصره في وجه أحد</p>
+                                    <span class="wife-tag">كان أشد حياء من العذراء</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>الصفات الخَلقية (الشكل والمظهر)</h3>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                                <div>
+                                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">وصف هيئته ﷺ</h4>
+                                    <ul style="padding-right: 20px; line-height: 1.8;">
+                                        <li style="margin-bottom: 10px;">كان مربوع القمة، ليس بالطويل ولا بالقصير</li>
+                                        <li style="margin-bottom: 10px;">أزهر اللون (أبيض مشرب بحمرة)</li>
+                                        <li style="margin-bottom: 10px;">كثيف اللحية، أسود العينين، طويل الأشفار</li>
+                                        <li style="margin-bottom: 10px;">عظيم الفم، مفلج الأسنان (تبين من خلالها)</li>
+                                        <li style="margin-bottom: 10px;">ضخم الكفين والقدمين</li>
+                                        <li style="margin-bottom: 10px;">شعر رأسه ولحيته شديد السواد</li>
+                                        <li style="margin-bottom: 10px;">لم يكن بالجعد ولا بالسبط (معتدل الشعر)</li>
+                                        <li>كان إذا مشى كأنما ينحدر من صبب</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">وصف ملابسه ﷺ</h4>
+                                    <ul style="padding-right: 20px; line-height: 1.8;">
+                                        <li style="margin-bottom: 10px;">كان يلبس القميص (الثوب) ويرد طرفيه على صدره</li>
+                                        <li style="margin-bottom: 10px;">كان يحب الثياب البيض</li>
+                                        <li style="margin-bottom: 10px;">كان يلبس العمامة ويُرخي طرفها بين كتفيه</li>
+                                        <li style="margin-bottom: 10px;">كان له برد يماني أخضر</li>
+                                        <li style="margin-bottom: 10px;">كان يتختم في خنصره اليمين</li>
+                                        <li style="margin-bottom: 10px;">كان له نعلان لهما قبالان (شريطين)</li>
+                                        <li>كان يعتدي بردائه إذا جلس (يتوسده)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>أخلاق النبي ﷺ في بيته</h3>
+                            <div style="background: #f8f5e6; padding: 30px; border-radius: var(--border-radius); margin-top: 20px;">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                                    <div>
+                                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">مع زوجاته</h4>
+                                        <p>كان ﷺ يساعد في بيته، يخصف نعله، ويخيط ثوبه، ويحلب شاته. وكان يداعب زوجاته ويشاركهن أحزانهن وأفراحهن</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">مع الأطفال</h4>
+                                        <p>كان يحمل الحسن والحسين على ظهره، ويقبل الأطفال، ويسلم عليهم. وكان يمر على الصبيان فيسلم عليهم</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">مع الخدم</h4>
+                                        <p>قال أنس: "خدمت النبي ﷺ عشر سنين، فما قال لي: أف، ولا: لم صنعت؟ ولا: ألا صنعت؟"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#sections" class="back-link">
+                            <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
+                        </a>
+                    </div>
+                `
+            },
+            
+            'miracles': {
+                title: 'معجزات النبي ﷺ',
+                subtitle: 'معجزات النبي ﷺ الحسية والقلبية والدالة على صدق نبوته',
+                content: `
+                    <div class="detail-header">
+                        <h1>معجزات النبي ﷺ</h1>
+                        <p class="subtitle">معجزات النبي ﷺ الحسية والقلبية والدالة على صدق نبوته</p>
+                    </div>
+                    
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <h3>المعجزة العظمى: القرآن الكريم</h3>
+                            <p style="background: #f0f7f4; padding: 20px; border-radius: var(--border-radius); border-right: 4px solid var(--primary-color);">
+                                القرآن الكريم هو المعجزة الخالدة للنبي ﷺ، تحدى به العرب الفصحاء أن يأتوا بمثله فعجزوا، ثم بعشر سور مثله فعجزوا، ثم بسورة من مثله فعجزوا. وقد حفظه الله من التحريف والتبديل.
+                            </p>
+                            
+                            <div style="margin-top: 30px;">
+                                <h4>أوجه إعجاز القرآن:</h4>
+                                <div class="wife-info" style="margin-top: 15px;">
+                                    <span class="wife-tag">الإعجاز اللغوي والبلاغي</span>
+                                    <span class="wife-tag">الإخبار بالغيب</span>
+                                    <span class="wife-tag">الانسجام التام</span>
+                                    <span class="wife-tag">الشمولية</span>
+                                    <span class="wife-tag">التربية والتشريع</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>المعجزات الحسية</h3>
+                            
+                            <div class="miracles-grid">
+                                <div class="miracle-card">
+                                    <h4>انشقاق القمر</h4>
+                                    <p>انشق القمر إلى شقين عندما طلب المشركون من النبي ﷺ آية. قال تعالى: "اقْتَرَبَتِ السَّاعَةُ وَانشَقَّ الْقَمَرُ" (القمر: 1)</p>
+                                    <span class="wife-tag">مكة - قبل الهجرة</span>
+                                </div>
+                                
+                                <div class="miracle-card">
+                                    <h4>الإسراء والمعراج</h4>
+                                    <p>أسري بالنبي ﷺ من المسجد الحرام إلى المسجد الأقصى ثم عرج به إلى السماوات السبع. قال تعالى: "سُبْحَانَ الَّذِي أَسْرَى بِعَبْدِهِ لَيْلاً" (الإسراء: 1)</p>
+                                    <span class="wife-tag">ليلة الإسراء - قبل الهجرة</span>
+                                </div>
+                                
+                                <div class="miracle-card">
+                                    <h4>تفجير الماء من بين أصابعه</h4>
+                                    <p>في غزوة الحديبية، دعا النبي ﷺ بإناء فتوضأ، فجعل الماء يتفجر من بين أصابعه حتى توضأ وتشرب منه ألف وخمسمائة رجل.</p>
+                                    <span class="wife-tag">الحديبية - 6 هـ</span>
+                                </div>
+                                
+                                <div class="miracle-card">
+                                    <h4>تكثير الطعام</h4>
+                                    <p>تكثير الطعام في عدة مواطن، كتكثير الطعام عند أبي طلحة مع قلة الزيت، وعند جابر في غزوة الخندق، وغيرها.</p>
+                                    <span class="wife-tag">أحاديث متعددة</span>
+                                </div>
+                                
+                                <div class="miracle-card">
+                                    <h4>إبراء المرضى</h4>
+                                    <p>شفى الله على يديه ﷺ العديد من المرضى، كشفاء علي بن أبي طالب من رمد عينيه، وشفاء قتادة بن النعمان من جرح في عينه.</p>
+                                    <span class="wife-tag">معجزات الشفاء</span>
+                                </div>
+                                
+                                <div class="miracle-card">
+                                    <h4>تكليم الجماد والحيوان</h4>
+                                    <p>سلم الحجر عليه ﷺ، وحنين الجذع إليه، وتكليم الذراع المسمومة له، وإخبار الضب بنبوته.</p>
+                                    <span class="wife-tag">إحياء الجماد</span>
+                                </div>
+                                
+                                <div class="miracle-card">
+                                    <h4>إجابة الدعاء</h4>
+                                    <p>كان دعاؤه ﷺ مستجاباً، كدعائه لعمر بن الخطاب فأسلم، ودعائه لأنس بن مالك بكثرة المال والولد، وغيرها.</p>
+                                    <span class="wife-tag">الدعاء المستجاب</span>
+                                </div>
+                                
+                                <div class="miracle-card">
+                                    <h4>نبع الماء من بئر الحديبية</h4>
+                                    <p>عندما نزل المسلمون بالحديبية وكان الماء قليلاً، نبع الماء من البئر بعد أن بصق فيه النبي ﷺ ودعا.</p>
+                                    <span class="wife-tag">الحديبية - 6 هـ</span>
+                                </div>
+                                
+                                <div class="miracle-card">
+                                    <h4>إخباره بالغيبيات</h4>
+                                    <p>أخبر ﷺ بأمور غيبية كثيرة تحققت، كفتح القسطنطينية، وفتح فارس والروم، وظهور الفتن وغيرها.</p>
+                                    <span class="wife-tag">الإخبار بالمغيبات</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>المعجزات القلبية (المعنوية)</h3>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px;">
+                                <div style="background: #f8f5e6; padding: 25px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">صبره على الأذى</h4>
+                                    <p>صبر النبي ﷺ ثلاثة عشر سنة في مكة على أذى قريش، وكان يخرج إلى الطائف فيؤذونه، ثم يعود إلى مكة ويواصل دعوته.</p>
+                                </div>
+                                
+                                <div style="background: #f8f5e6; padding: 25px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">قبول الناس لدعوته</h4>
+                                    <p>قبلت العرب دعوته بعد أن كانت متفرقة متحاربة، فصاروا أمة واحدة، وهذا من أعظم المعجزات.</p>
+                                </div>
+                                
+                                <div style="background: #f8f5e6; padding: 25px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">محبة أصحابه له</h4>
+                                    <p>كان الصحابة يحبون النبي ﷺ أكثر من أنفسهم وأولادهم وآبائهم وأمهاتهم، وكانوا يفدونه بأرواحهم.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#sections" class="back-link">
+                            <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
+                        </a>
+                    </div>
+                `
+            },
+            
+            'characters': {
+                title: 'شخصيات السيرة النبوية',
+                subtitle: 'الصحابة الكرام وأهل بيت النبي والمنافقين والأعداء',
+                content: `
+                    <div class="detail-header">
+                        <h1>شخصيات السيرة النبوية</h1>
+                        <p class="subtitle">الصحابة الكرام وأهل بيت النبي والمنافقين والأعداء</p>
+                    </div>
+                    
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <h3>العشرة المبشرون بالجنة</h3>
+                            
+                            <div class="characters-grid">
+                                <div class="character-card">
+                                    <h4>أبو بكر الصديق</h4>
+                                    <p>أول الخلفاء الراشدين، صاحب النبي ﷺ في الهجرة، وأول من آمن من الرجال</p>
+                                    <div class="character-role">الخليفة الأول</div>
+                                </div>
+                                
+                                <div class="character-card">
+                                    <h4>عمر بن الخطاب</h4>
+                                    <p>الخليفة الثاني، الملقب بالفاروق، أسلم في السنة السادسة للبعثة</p>
+                                    <div class="character-role">الخليفة الثاني</div>
+                                </div>
+                                
+                                <div class="character-card">
+                                    <h4>عثمان بن عفان</h4>
+                                    <p>الخليفة الثالث، ذو النورين، جمع القرآن، وساهم في توسعة المسجد</p>
+                                    <div class="character-role">الخليفة الثالث</div>
+                                </div>
+                                
+                                <div class="character-card">
+                                    <h4>علي بن أبي طالب</h4>
+                                    <p>الخليفة الرابع، ابن عم النبي ﷺ، أول من أسلم من الصبيان</p>
+                                    <div class="character-role">الخليفة الرابع</div>
+                                </div>
+                                
+                                <div class="character-card">
+                                    <h4>طلحة بن عبيد الله</h4>
+                                    <p>أحد الثمانية السابقين للإسلام، شهد جميع الغزوات مع النبي ﷺ</p>
+                                    <div class="character-role">طلحة الخير</div>
+                                </div>
+                                
+                                <div class="character-card">
+                                    <h4>الزبير بن العوام</h4>
+                                    <p>ابن عمة النبي ﷺ، حواري رسول الله، أول من سل سيفه في الإسلام</p>
+                                    <div class="character-role">حواري رسول الله</div>
+                                </div>
+                                
+                                <div class="character-card">
+                                    <h4>عبد الرحمن بن عوف</h4>
+                                    <p>أحد الثمانية السابقين للإسلام، تاجر ثري تصدق بجميع ماله مرة</p>
+                                    <div class="character-role">التاجر الصدوق</div>
+                                </div>
+                                
+                                <div class="character-card">
+                                    <h4>سعد بن أبي وقاص</h4>
+                                    <p>أول من رمى بسهم في سبيل الله، فاتح العراق وقائد القادسية</p>
+                                    <div class="character-role">فاتح العراق</div>
+                                </div>
+                                
+                                <div class="character-card">
+                                    <h4>سعيد بن زيد</h4>
+                                    <p>ابن عم عمر بن الخطاب، شهد المشاهد كلها مع النبي ﷺ إلا بدراً</p>
+                                    <div class="character-role">الصحابي الجليل</div>
+                                </div>
+                                
+                                <div class="character-card">
+                                    <h4>أبو عبيدة بن الجراح</h4>
+                                    <p>أمين هذه الأمة، قائد الجيوش في عهد عمر، فاتح الشام</p>
+                                    <div class="character-role">أمين الأمة</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>أهل بيت النبي ﷺ</h3>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                                <div style="background: #f0f7f4; padding: 20px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">فاطمة الزهراء</h4>
+                                    <p>ابنة النبي ﷺ، سيدة نساء العالمين، أم الحسن والحسين</p>
+                                </div>
+                                
+                                <div style="background: #f0f7f4; padding: 20px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">الحسن بن علي</h4>
+                                    <p>السبط الأكبر، سيد شباب أهل الجنة، الخليفة الخامس</p>
+                                </div>
+                                
+                                <div style="background: #f0f7f4; padding: 20px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">الحسين بن علي</h4>
+                                    <p>السبط الأصغر، سيد شباب أهل الجنة، استشهد في كربلاء</p>
+                                </div>
+                                
+                                <div style="background: #f0f7f4; padding: 20px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">علي بن الحسين زين العابدين</h4>
+                                    <p>ابن الحسين، إمام فقيه، من سادات التابعين</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>أعداء الإسلام والمنافقون</h3>
+                            
+                            <div style="background: #f8f0f0; padding: 25px; border-radius: var(--border-radius); margin-top: 20px;">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                                    <div>
+                                        <h4 style="color: #d9534f; margin-bottom: 10px;">أبو جهل</h4>
+                                        <p>عمرو بن هشام، أشد أعداء النبي ﷺ، قتل في غزوة بدر</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 style="color: #d9534f; margin-bottom: 10px;">أبو لهب</h4>
+                                        <p>عبد العزى بن عبد المطلب، عم النبي ﷺ، نزلت فيه سورة المسد</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 style="color: #d9534f; margin-bottom: 10px;">عبد الله بن أبي بن سلول</h4>
+                                        <p>رأس المنافقين في المدينة، حاول الفتنة بين المسلمين</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#sections" class="back-link">
+                            <i class="fas fa-arrow-right"></i> العودة إلى أقسام السيرة
+                        </a>
+                    </div>
+                `
+            },
+            
+            'books': {
+                title: 'كتب السيرة النبوية',
+                subtitle: 'أهم المصادر والمراجع في السيرة النبوية عبر العصور',
+                content: `
+                    <div class="detail-header">
+                        <h1>كتب السيرة النبوية</h1>
+                        <p class="subtitle">أهم المصادر والمراجع في السيرة النبوية عبر العصور</p>
+                    </div>
+                    
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <h3>كتب السيرة المتقدمة (القرون الأولى)</h3>
+                            
+                            <div class="books-grid">
+                                <div class="book-card">
+                                    <h4>السيرة النبوية لابن إسحاق</h4>
+                                    <p class="book-author">محمد بن إسحاق بن يسار (ت 151 هـ)</p>
+                                    <p>أول كتاب جامع في السيرة النبوية، اعتمد عليه معظم من جاء بعده. جمع فيه أخبار السيرة مرتبة حسب الأحداث.</p>
+                                    <span class="book-period">القرن الثاني الهجري</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>السيرة النبوية لابن هشام</h4>
+                                    <p class="book-author">عبد الملك بن هشام (ت 213 هـ)</p>
+                                    <p>تهذيب وتلخيص لسيرة ابن إسحاق، وهو الكتاب المشهور المتداول اليوم. حذف منه الأشعار والروايات الضعيفة.</p>
+                                    <span class="book-period">القرن الثالث الهجري</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>الطبقات الكبرى</h4>
+                                    <p class="book-author">محمد بن سعد (ت 230 هـ)</p>
+                                    <p>أشمل كتاب في تراجم الصحابة والتابعين، يحتوي على جزء كبير من السيرة النبوية وتاريخ الإسلام المبكر.</p>
+                                    <span class="book-period">القرن الثالث الهجري</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>تاريخ الطبري</h4>
+                                    <p class="book-author">محمد بن جرير الطبري (ت 310 هـ)</p>
+                                    <p>أشمل كتاب في التاريخ الإسلامي، يحتوي على تفصيل دقيق لأحداث السيرة النبوية بأسانيدها.</p>
+                                    <span class="book-period">القرن الرابع الهجري</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>الدلائل والشمائل</h4>
+                                    <p class="book-author">أبو نعيم الأصبهاني (ت 430 هـ)</p>
+                                    <p>كتاب في دلائل النبوة وشمائل النبي ﷺ، يجمع بين السيرة وصفات النبي الخَلقية والخُلقية.</p>
+                                    <span class="book-period">القرن الخامس الهجري</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>السيرة النبوية لابن كثير</h4>
+                                    <p class="book-author">إسماعيل بن عمر بن كثير (ت 774 هـ)</p>
+                                    <p>جزء من كتاب البداية والنهاية، يعتبر من أجمع كتب السيرة وأصحها، جمع بين الرواية والدراية.</p>
+                                    <span class="book-period">القرن الثامن الهجري</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>كتب السيرة المعاصرة</h3>
+                            
+                            <div class="books-grid">
+                                <div class="book-card">
+                                    <h4>فقه السيرة</h4>
+                                    <p class="book-author">محمد الغزالي (ت 1996 م)</p>
+                                    <p>كتاب يجمع بين رواية السيرة واستنباط الدروس والعبر منها، بأسلوب عصري رصين.</p>
+                                    <span class="book-period">القرن العشرين</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>الرحيق المختوم</h4>
+                                    <p class="book-author">صفي الرحمن المباركفوري (ت 2006 م)</p>
+                                    <p>من أشهر كتب السيرة المعاصرة، فاز بجائزة رابطة العالم الإسلامي، وترجم للعديد من اللغات.</p>
+                                    <span class="book-period">القرن العشرين</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>السيرة النبوية (دروس وعبر)</h4>
+                                    <p class="book-author">مصطفى السباعي (ت 1964 م)</p>
+                                    <p>كتاب يركز على استخلاص الدروس والعبر من أحداث السيرة، بأسلوب تحليلي عميق.</p>
+                                    <span class="book-period">القرن العشرين</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>السيرة النبوية الصحيحة</h4>
+                                    <p class="book-author">أكرم ضياء العمري (معاصر)</p>
+                                    <p>محاولة لجمع الصحيح من سيرة النبي ﷺ مع التخريج العلمي للروايات.</p>
+                                    <span class="book-period">القرن الواحد والعشرون</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>السيرة النبوية (عرض وقائع وتحليل أحداث)</h4>
+                                    <p class="book-author">علي الصلابي (معاصر)</p>
+                                    <p>سلسلة ضخمة في السيرة النبوية تجمع بين الرواية التاريخية والتحليل السياسي والعسكري.</p>
+                                    <span class="book-period">القرن الواحد والعشرون</span>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>نور اليقين في سيرة سيد المرسلين</h4>
+                                    <p class="book-author">محمد الخضري (ت 1927 م)</p>
+                                    <p>كتاب مختصر في السيرة النبوية، سهل العبارة، يناسب المبتدئين في دراسة السيرة.</p>
+                                    <span class="book-period">القرن العشرين</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>كتب في شمائل النبي ﷺ</h3>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px;">
+                                <div style="background: #f8f5e6; padding: 25px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">الشمائل المحمدية</h4>
+                                    <p class="book-author">الترمذي (ت 279 هـ)</p>
+                                    <p>أشهر كتاب في وصف هيئة النبي ﷺ وأخلاقه وأحواله، جمعه الإمام الترمذي في جامعه.</p>
+                                </div>
+                                
+                                <div style="background: #f8f5e6; padding: 25px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">الشفا بتعريف حقوق المصطفى</h4>
+                                    <p class="book-author">القاضي عياض (ت 544 هـ)</p>
+                                    <p>كتاب عظيم في حقوق النبي ﷺ وصفاته وفضائله، من أشهر كتب المسلمين في هذا الباب.</p>
+                                </div>
+                                
+                                <div style="background: #f8f5e6; padding: 25px; border-radius: var(--border-radius);">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">زاد المعاد في هدي خير العباد</h4>
+                                    <p class="book-author">ابن قيم الجوزية (ت 751 هـ)</p>
+                                    <p>كتاب جامع في هدي النبي ﷺ في العبادات والمعاملات والأخلاق والطب النبوي.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h3>نصائح لدارس السيرة النبوية</h3>
+                            <div style="background: #f0f7f4; padding: 30px; border-radius: var(--border-radius);">
+                                <ol style="padding-right: 20px; line-height: 1.8;">
+                                    <li style="margin-bottom: 15px;">ابدأ بكتاب مختصر مثل "نور اليقين" أو "الرحيق المختوم"</li>
+                                    <li style="margin-bottom: 15px;">ثم انتقل إلى كتاب متوسط مثل "فقه السيرة" للغزالي</li>
+                                    <li style="margin-bottom: 15px;">ثم اقرأ في المصادر الأصلية مثل "سيرة ابن هشام"</li>
+                                    <li style="margin-bottom: 15px;">احرص على قراءة الكتب التي تعتني بالتحليل والاستنباط</li>
+                                    <li>اجعل دراسة السيرة للعمل والاتباع لا للمجرد المعرفة</li>
+                                </ol>
                             </div>
                         </div>
                         
