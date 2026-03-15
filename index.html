@@ -387,9 +387,9 @@
             font-size: 0.9rem;
         }
 
-        /* Free Section */
+        /* Free Section - مصغرة */
         .free-section {
-            padding: 5rem 5%;
+            padding: 3rem 5%;
             background: #0f172a;
             position: relative;
             overflow: hidden;
@@ -415,56 +415,69 @@
         }
 
         .free-content h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .free-content .hadith {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #d97706;
-            margin: 2rem 0;
-            line-height: 1.6;
+            margin: 1.5rem 0;
+            line-height: 1.5;
             font-weight: 600;
             background: rgba(255,255,255,0.03);
-            padding: 2rem;
-            border-radius: 40px;
+            padding: 1.5rem;
+            border-radius: 30px;
             border: 1px solid rgba(217,119,6,0.2);
         }
 
         .free-content p {
             color: #cbd5e1;
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .free-contact {
             background: rgba(255,255,255,0.03);
-            padding: 2rem;
-            border-radius: 30px;
+            padding: 1.5rem;
+            border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.05);
             display: inline-block;
-            min-width: 300px;
+            min-width: 280px;
         }
 
         .free-contact p {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: white;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .free-contact i {
             color: #d97706;
             margin-left: 0.75rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
-        /* Contact */
+        /* Contact - مصغرة */
         .contact {
-            padding: 5rem 5%;
+            padding: 3rem 5%;
             background: #ffffff;
+        }
+
+        .contact .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .contact .section-title {
+            font-size: 2rem;
+        }
+
+        .contact .section-subtitle {
+            font-size: 1rem;
+            margin-top: 1rem;
         }
 
         .contact-grid {
@@ -472,13 +485,13 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             max-width: 900px;
-            margin: 3rem auto 0;
+            margin: 2rem auto 0;
         }
 
         .contact-item {
             background: #f8fafc;
-            border-radius: 24px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.3s;
             border: 1px solid #f1f5f9;
@@ -491,21 +504,22 @@
         }
 
         .contact-item i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #d97706;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .contact-item h4 {
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
             color: #0f172a;
+            font-size: 1.1rem;
         }
 
         .contact-item a {
             color: #64748b;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: color 0.2s;
         }
 
@@ -515,33 +529,33 @@
 
         /* Footer */
         footer {
-            padding: 3rem 5%;
+            padding: 2.5rem 5%;
             background: #ffffff;
             border-top: 1px solid #f1f5f9;
             text-align: center;
         }
 
         .footer-logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             background: linear-gradient(135deg, #0f172a, #334155);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             letter-spacing: -0.5px;
         }
 
         .footer-hadith {
             color: #d97706;
-            font-size: 1.2rem;
-            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            margin: 1rem 0;
             font-weight: 500;
         }
 
         .footer-copy {
             color: #94a3b8;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Responsive */
@@ -596,7 +610,8 @@
             }
 
             .free-content .hadith {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
+                padding: 1rem;
             }
             
             .services-grid {
@@ -609,6 +624,10 @@
             
             .contact-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .free-content h2 {
+                font-size: 1.8rem;
             }
         }
 
@@ -624,6 +643,14 @@
             .free-contact {
                 min-width: auto;
                 width: 100%;
+            }
+            
+            .free-content .hadith {
+                font-size: 1.1rem;
+            }
+            
+            .contact-item {
+                padding: 1.2rem;
             }
         }
     </style>
@@ -740,7 +767,7 @@
         <div class="free-content">
             <h2>التسجيل المجاني</h2>
             <div class="hadith">"الله في عون العبد ما دام العبد في عون أخيه"</div>
-            <p>إذا كنت لا تستطيع الدفع مالياً، سنقوم بتسجيلك مجاناً في المباراة أو المنحة التي تختارها. لا تدع الظروف المادية تحرمك من فرصتك.</p>
+            <p>إذا كنت لا تستطيع الدفع مالياً، سنقوم بتسجيلك مجاناً في المباراة أو المنحة التي تختارها.</p>
             <div class="free-contact">
                 <p><i class="fab fa-whatsapp"></i> واتساب: [أدخل الرقم]</p>
                 <p><i class="far fa-envelope"></i> البريد: [أدخل البريد]</p>
