@@ -4,145 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>econcours.ma - التسجيل في المباريات والمنح</title>
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.6;
+            background: #ffffff;
+            color: #111827;
         }
 
-        /* Header */
+        /* Header بسيط */
         header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            padding: 1.5rem 5%;
+            background: white;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .logo h1 {
             font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 600;
+            color: #0f172a;
+            letter-spacing: -0.5px;
         }
 
         .logo p {
+            color: #6b7280;
             font-size: 0.9rem;
-            color: #94a3b8;
         }
 
         nav {
             display: flex;
             gap: 2rem;
-            align-items: center;
         }
 
         nav a {
-            color: #e2e8f0;
+            color: #374151;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
-            font-size: 1.1rem;
+            transition: color 0.2s;
         }
 
         nav a:hover {
-            color: #fbbf24;
+            color: #d97706;
         }
 
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #fbbf24;
+            color: #374151;
         }
 
-        /* Hero Section */
+        /* Hero Section - بسيط وأنيق */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
             padding: 5rem 5%;
-            text-align: center;
+            background: #f9fafb;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #fbbf24;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            color: #e2e8f0;
+            font-size: 1.2rem;
+            color: #4b5563;
+            margin-bottom: 2.5rem;
         }
 
         .hero .btn {
-            background: #fbbf24;
-            color: #0f172a;
-            padding: 1rem 3rem;
-            font-size: 1.2rem;
-            font-weight: bold;
+            background: #d97706;
+            color: white;
+            padding: 0.875rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
             border: none;
-            border-radius: 50px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: background 0.2s;
             text-decoration: none;
             display: inline-block;
         }
 
         .hero .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.4);
+            background: #b45309;
         }
 
         /* Services Section */
         .services {
             padding: 5rem 5%;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #0f172a;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.5rem;
         }
 
         .section-subtitle {
-            text-align: center;
-            color: #475569;
+            color: #6b7280;
             margin-bottom: 3rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .services-grid {
@@ -154,236 +141,262 @@
 
         .service-card {
             background: white;
-            border-radius: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            border: 1px solid #e2e8f0;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #d97706;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .service-icon {
-            font-size: 2.5rem;
-            color: #fbbf24;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: #d97706;
+            margin-bottom: 1.5rem;
         }
 
         .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #0f172a;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #111827;
         }
 
-        .service-card .badge {
-            background: #fbbf24;
-            color: #0f172a;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
+        .badge {
             display: inline-block;
+            background: #fef3c7;
+            color: #d97706;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
             margin-bottom: 1rem;
-            font-weight: bold;
+        }
+
+        .service-card p {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .service-features {
             list-style: none;
-            margin-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1.5rem;
         }
 
         .service-features li {
-            margin-bottom: 0.8rem;
+            color: #374151;
+            margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.95rem;
         }
 
         .service-features i {
             color: #10b981;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         /* Extra Services */
         .extra-services {
-            background: #f1f5f9;
-            border-radius: 20px;
+            background: #f9fafb;
+            border-radius: 16px;
             padding: 3rem;
-            margin-top: 3rem;
         }
 
         .extra-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .extra-item {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .extra-item i {
-            font-size: 2.5rem;
-            color: #fbbf24;
+            font-size: 1.8rem;
+            color: #d97706;
             margin-bottom: 1rem;
         }
 
         .extra-item h4 {
-            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
-            color: #0f172a;
+            color: #111827;
         }
 
-        /* Free Registration */
+        .extra-item p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        /* Free Section */
         .free-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 5rem 5%;
+            background: #111827;
             color: white;
-            padding: 4rem 5%;
-            text-align: center;
         }
 
         .free-content {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .free-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #fbbf24;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
         }
 
         .free-content .hadith {
             font-size: 1.8rem;
+            color: #d97706;
             margin: 2rem 0;
-            color: #fbbf24;
-            font-weight: bold;
+            line-height: 1.5;
         }
 
         .free-content p {
-            font-size: 1.2rem;
+            color: #e5e7eb;
             margin-bottom: 2rem;
-            color: #e2e8f0;
+            line-height: 1.6;
         }
 
         .free-contact {
-            background: rgba(255,255,255,0.1);
+            background: #1f2937;
             padding: 2rem;
-            border-radius: 15px;
-            display: inline-block;
+            border-radius: 12px;
+        }
+
+        .free-contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .free-contact i {
+            color: #d97706;
+            margin-left: 0.5rem;
         }
 
         /* How It Works */
         .how-it-works {
             padding: 5rem 5%;
-            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 3rem auto 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 3rem;
         }
 
         .step {
             text-align: center;
-            position: relative;
         }
 
         .step-number {
-            background: #fbbf24;
-            color: #0f172a;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            background: #fef3c7;
+            color: #d97706;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 600;
             margin: 0 auto 1rem;
         }
 
         .step h4 {
-            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
+            color: #111827;
         }
 
-        /* Contact Section */
+        .step p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
         .contact {
             padding: 5rem 5%;
-            background: #f1f5f9;
+            background: #f9fafb;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
+            gap: 1.5rem;
+            max-width: 900px;
             margin: 3rem auto 0;
         }
 
         .contact-item {
             background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
             padding: 2rem;
-            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .contact-item i {
-            font-size: 2.5rem;
-            color: #fbbf24;
+            font-size: 2rem;
+            color: #d97706;
             margin-bottom: 1rem;
         }
 
         .contact-item h4 {
-            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
+            color: #111827;
         }
 
         .contact-item a {
-            color: #0f172a;
+            color: #4b5563;
             text-decoration: none;
-            font-size: 1.1rem;
         }
 
         .contact-item a:hover {
-            color: #fbbf24;
+            color: #d97706;
         }
 
         /* Footer */
         footer {
-            background: #0f172a;
-            color: #94a3b8;
             padding: 3rem 5%;
+            background: white;
+            border-top: 1px solid #e5e7eb;
             text-align: center;
         }
 
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
         .footer-logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #fbbf24;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #111827;
             margin-bottom: 1rem;
         }
 
         .footer-hadith {
-            font-size: 1.3rem;
-            margin: 2rem 0;
-            color: #fbbf24;
+            color: #d97706;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .footer-copy {
+            color: #9ca3af;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -395,13 +408,15 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 100%;
+                top: 80px;
                 left: 0;
                 right: 0;
-                background: #1e293b;
+                background: white;
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1rem;
+                border-bottom: 1px solid #e5e7eb;
+                box-shadow: 0 4px 6px -2px rgba(0,0,0,0.05);
             }
 
             nav.active {
@@ -409,19 +424,26 @@
             }
 
             .hero h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .extra-grid {
+                grid-template-columns: 1fr;
             }
 
-            .free-content .hadith {
-                font-size: 1.3rem;
+            .steps {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -454,130 +476,118 @@
     </section>
 
     <section class="services" id="services">
-        <h2 class="section-title">خدماتنا والعروض</h2>
-        <p class="section-subtitle">اختر الخدمة التي تناسبك، ونحن نتكفل بالباقي</p>
+        <h2 class="section-title">خدماتنا</h2>
+        <p class="section-subtitle">اختر الخدمة التي تناسبك</p>
         
         <div class="services-grid">
-            <!-- Service 1: التسجيل الفوري -->
+            <!-- Service 1 -->
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
+                <div class="service-icon"><i class="fas fa-bolt"></i></div>
                 <span class="badge">خدمة فورية</span>
                 <h3>التسجيل الفوري</h3>
-                <p>هي خدمة يختار فيها الزائر مباراة، منحة دراسية، كلية، أو أي فرصة متاحة (أياً كانت)، ونحن نقوم بتسجيله فيها مباشرة.</p>
+                <p>يختار الزائر مباراة، منحة دراسية، كلية، أو أي فرصة متاحة، ونحن نسجله فيها مباشرة.</p>
                 <ul class="service-features">
-                    <li><i class="fas fa-check-circle"></i> تسجيل كامل ودقيق في الفرصة المختارة</li>
-                    <li><i class="fas fa-check-circle"></i> تعبئة جميع الاستمارات الإلكترونية</li>
-                    <li><i class="fas fa-check-circle"></i> رفع الوثائق المطلوبة بالصيغ المناسبة</li>
-                    <li><i class="fas fa-check-circle"></i> تأكيد التسجيل وإرسال إثباته</li>
+                    <li><i class="fas fa-check"></i> تسجيل كامل في الفرصة المختارة</li>
+                    <li><i class="fas fa-check"></i> تعبئة جميع الاستمارات</li>
+                    <li><i class="fas fa-check"></i> رفع الوثائق بالصيغ المطلوبة</li>
+                    <li><i class="fas fa-check"></i> إرسال إثبات التسجيل</li>
                 </ul>
             </div>
 
-            <!-- Service 2: اشتراك 6 أشهر -->
+            <!-- Service 2 -->
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-calendar-alt"></i>
-                </div>
+                <div class="service-icon"><i class="fas fa-calendar-alt"></i></div>
                 <span class="badge">الأكثر طلباً</span>
                 <h3>اشتراك 6 أشهر</h3>
-                <p>خدمة نوفر فيها للزائر التسجيل في <strong>جميع المباريات</strong> التي تنشر خلال مدة 6 أشهر، مع ضمان تتبع المباريات التي تناسب شهاداته.</p>
+                <p>نسجل لك في جميع المباريات المنشورة خلال 6 أشهر، مع تتبع المباريات التي تناسب شهاداتك.</p>
                 <ul class="service-features">
-                    <li><i class="fas fa-check-circle"></i> تسجيل غير محدود في كل المباريات المنشورة</li>
-                    <li><i class="fas fa-check-circle"></i> متابعة ذاتية للمباريات حسب مؤهلاتك</li>
-                    <li><i class="fas fa-check-circle"></i> ترشيح المباريات المناسبة لك</li>
-                    <li><i class="fas fa-check-circle"></i> جميع الخدمات الإضافية مشمولة</li>
+                    <li><i class="fas fa-check"></i> تسجيل غير محدود في كل المباريات</li>
+                    <li><i class="fas fa-check"></i> تتبع المباريات حسب مؤهلاتك</li>
+                    <li><i class="fas fa-check"></i> ترشيح المباريات المناسبة</li>
+                    <li><i class="fas fa-check"></i> جميع الخدمات الإضافية مشمولة</li>
                 </ul>
             </div>
 
-            <!-- Service 3: اشتراك 12 شهر -->
+            <!-- Service 3 -->
             <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-calendar-check"></i>
-                </div>
+                <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
                 <span class="badge">الأفضل قيمة</span>
                 <h3>اشتراك 12 شهر</h3>
-                <p>خدمة نوفر فيها للزائر التسجيل في <strong>جميع المباريات</strong> التي تنشر خلال مدة 12 شهراً كاملة، مع تتبع احترافي حسب تخصصك.</p>
+                <p>نسجل لك في جميع المباريات المنشورة خلال سنة كاملة، مع تتبع احترافي حسب تخصصك.</p>
                 <ul class="service-features">
-                    <li><i class="fas fa-check-circle"></i> تسجيل غير محدود طوال السنة</li>
-                    <li><i class="fas fa-check-circle"></i> تتبع احترافي لكل المباريات حسب مجالك</li>
-                    <li><i class="fas fa-check-circle"></i> تنبيهات وترشيحات مستمرة</li>
-                    <li><i class="fas fa-check-circle"></i> أولوية في المعالجة والدعم</li>
+                    <li><i class="fas fa-check"></i> تسجيل غير محدود طوال السنة</li>
+                    <li><i class="fas fa-check"></i> تتبع احترافي لكل المباريات</li>
+                    <li><i class="fas fa-check"></i> تنبيهات وترشيحات مستمرة</li>
+                    <li><i class="fas fa-check"></i> أولوية في المعالجة</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Services supplémentaires -->
+        <!-- الخدمات الإضافية -->
         <div class="extra-services">
-            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">الخدمات الإضافية</h3>
-            <p style="text-align: center; margin-bottom: 2rem;">(مشمولة في الاشتراكات، أو يمكن طلبها بشكل منفصل)</p>
+            <h3 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem;">الخدمات الإضافية</h3>
+            <p style="color: #6b7280; margin-bottom: 2rem;">(مشمولة في الاشتراكات، أو يمكن طلبها بشكل منفصل)</p>
             
             <div class="extra-grid">
                 <div class="extra-item">
                     <i class="fas fa-file-alt"></i>
                     <h4>إنشاء السير الذاتية</h4>
-                    <p>تصميم CV احترافي ومنسق</p>
+                    <p>تصميم CV احترافي</p>
                 </div>
                 <div class="extra-item">
                     <i class="fas fa-envelope-open-text"></i>
                     <h4>الرسائل التحفيزية</h4>
-                    <p>لطلبات العمل، التدريب، المنح</p>
+                    <p>لطلبات العمل والتدريب</p>
                 </div>
                 <div class="extra-item">
                     <i class="fas fa-compass"></i>
                     <h4>التوجيه والإرشادات</h4>
-                    <p>نصائح مهنية وأكاديمية مخصصة</p>
+                    <p>نصائح مهنية مخصصة</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Free Registration Section -->
     <section class="free-section" id="free">
         <div class="free-content">
             <h2>التسجيل المجاني</h2>
-            <div class="hadith">
-                "الله في عون العبد ما دام العبد في عون أخيه"
-            </div>
-            <p>نحن هنا لنساعد الجميع. إذا كنت لا تستطيع الدفع مالياً، سنقوم بتسجيلك <strong>مجاناً</strong> في المباراة أو المنحة التي تختارها. لا تدع الظروف المادية تحرمك من فرصتك.</p>
+            <div class="hadith">"الله في عون العبد ما دام العبد في عون أخيه"</div>
+            <p>إذا كنت لا تستطيع الدفع مالياً، سنقوم بتسجيلك مجاناً في المباراة أو المنحة التي تختارها. لا تدع الظروف المادية تحرمك من فرصتك.</p>
             <div class="free-contact">
-                <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">للتواصل بخصوص التسجيل المجاني:</p>
-                <p><i class="fab fa-whatsapp" style="color: #25D366;"></i> واتساب: [أدخل الرقم]</p>
+                <p><i class="fab fa-whatsapp"></i> واتساب: [أدخل الرقم]</p>
                 <p><i class="far fa-envelope"></i> البريد: [أدخل البريد]</p>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
     <section class="how-it-works">
         <h2 class="section-title">كيف نعمل؟</h2>
-        <p class="section-subtitle">4 خطوات بسيطة تفصلك عن فرصتك</p>
+        <p class="section-subtitle">4 خطوات بسيطة</p>
         
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
                 <h4>اختر الخدمة</h4>
-                <p>فوري / اشتراك 6 أشهر / اشتراك 12 شهر / مجاني</p>
+                <p>فوري / 6 أشهر / 12 شهر / مجاني</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
                 <h4>أرسل وثائقك</h4>
-                <p>الشهادة، السيرة الذاتية، عبر واتساب</p>
+                <p>عبر واتساب</p>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
                 <h4>نؤكد الاستلام</h4>
-                <p>نراجع وثائقك ونتأكد من اكتمالها</p>
+                <p>نراجع وثائقك</p>
             </div>
             <div class="step">
                 <div class="step-number">4</div>
                 <h4>نحن نسجل لك</h4>
-                <p>ونرسل لك إثبات التسجيل النهائي</p>
+                <p>ونرسل التأكيد</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="section-title">تواصل معنا</h2>
         <p class="section-subtitle">نحن هنا للإجابة على استفساراتك</p>
@@ -586,12 +596,12 @@
             <div class="contact-item">
                 <i class="fab fa-whatsapp"></i>
                 <h4>واتساب</h4>
-                <a href="https://wa.me/yournumber">[أدخل الرقم]</a>
+                <a href="#">[أدخل الرقم]</a>
             </div>
             <div class="contact-item">
                 <i class="far fa-envelope"></i>
                 <h4>البريد الإلكتروني</h4>
-                <a href="mailto:contact@econcours.ma">[أدخل البريد]</a>
+                <a href="#">[أدخل البريد]</a>
             </div>
             <div class="contact-item">
                 <i class="fab fa-instagram"></i>
@@ -602,12 +612,9 @@
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">econcours.ma</div>
-            <div class="footer-hadith">الله في عون العبد ما دام العبد في عون أخيه</div>
-            <p>© 2024 econcours.ma - جميع الحقوق محفوظة</p>
-            <p style="margin-top: 1rem;">خدمة التسجيل في المباريات والمنح الدراسية</p>
-        </div>
+        <div class="footer-logo">econcours.ma</div>
+        <div class="footer-hadith">الله في عون العبد ما دام العبد في عون أخيه</div>
+        <div class="footer-copy">© 2024 econcours.ma - جميع الحقوق محفوظة</div>
     </footer>
 
     <script>
@@ -616,7 +623,6 @@
             nav.classList.toggle('active');
         }
 
-        // Close menu when clicking on a link (for mobile)
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('mainNav').classList.remove('active');
