@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- الفافيكون الجديد -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' id='icons' version='1.0' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%237370ff' stroke='%237370ff'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cstyle type='text/css'%3E .st0{fill:none;stroke:%23006699;stroke-width:4;stroke-miterlimit:10;} .st1{fill:none;stroke:%23006699;stroke-width:2;stroke-miterlimit:10;} .st2{fill:none;stroke:%23006699;stroke-miterlimit:10;} %3C/style%3E%3Cline class='st0' id='XMLID_42_' x1='6' x2='26' y1='13' y2='13'%3E%3C/line%3E%3Cline class='st1' id='XMLID_51_' x1='8' x2='2' y1='18' y2='18'%3E%3C/line%3E%3Cline class='st1' id='XMLID_47_' x1='3' x2='3' y1='17' y2='9'%3E%3C/line%3E%3Cline class='st2' id='XMLID_45_' x1='8.5' x2='8.5' y1='17' y2='21'%3E%3C/line%3E%3Cline class='st2' id='XMLID_44_' x1='9' x2='4' y1='21.5' y2='21.5'%3E%3C/line%3E%3Cline class='st1' id='XMLID_41_' x1='8' x2='2' y1='18' y2='18'%3E%3C/line%3E%3Cline class='st1' id='XMLID_38_' x1='3' x2='3' y1='17' y2='9'%3E%3C/line%3E%3Cline class='st1' id='XMLID_37_' x1='8' x2='8' y1='17' y2='21'%3E%3C/line%3E%3Cline class='st1' id='XMLID_36_' x1='9' x2='4' y1='22' y2='22'%3E%3C/line%3E%3Cline class='st1' id='XMLID_59_' x1='24' x2='30' y1='18' y2='18'%3E%3C/line%3E%3Cline class='st1' id='XMLID_58_' x1='29' x2='29' y1='17' y2='9'%3E%3C/line%3E%3Cline class='st1' id='XMLID_55_' x1='24' x2='24' y1='17' y2='21'%3E%3C/line%3E%3Cline class='st1' id='XMLID_54_' x1='23' x2='28' y1='22' y2='22'%3E%3C/line%3E%3Cline class='st1' id='XMLID_34_' x1='12' x2='12' y1='15' y2='23'%3E%3C/line%3E%3Cline class='st1' id='XMLID_35_' x1='20' x2='20' y1='15' y2='23'%3E%3C/line%3E%3Cg id='XMLID_386_'%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
     <style>
         * {
             margin: 0;
@@ -83,7 +85,7 @@
             color: #334155;
         }
 
-        /* Hero Section - جديدة */
+        /* Hero Section */
         .hero {
             padding: 5rem 5% 6rem;
             background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
@@ -166,7 +168,7 @@
             box-shadow: 0 8px 25px rgba(217, 119, 6, 0.2);
         }
 
-        /* Services Section */
+        /* Services Section - محسنة */
         .services {
             padding: 5rem 5%;
             max-width: 1200px;
@@ -205,9 +207,10 @@
             margin-top: 1.5rem;
         }
 
+        /* تحسين شبكة الخدمات - 3 أعمدة متساوية */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-bottom: 4rem;
         }
@@ -220,6 +223,9 @@
             border: 1px solid #f1f5f9;
             position: relative;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card::before {
@@ -290,6 +296,7 @@
             border-radius: 30px;
             margin-bottom: 1rem;
             letter-spacing: 0.3px;
+            align-self: flex-start;
         }
 
         .service-card p {
@@ -297,12 +304,14 @@
             margin-bottom: 1.5rem;
             line-height: 1.7;
             font-size: 1rem;
+            flex-grow: 1;
         }
 
         .service-features {
             list-style: none;
             border-top: 1px solid #f1f5f9;
             padding-top: 1.5rem;
+            margin-top: auto;
         }
 
         .service-features li {
@@ -342,7 +351,7 @@
 
         .extra-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
 
@@ -357,6 +366,7 @@
 
         .extra-item:hover {
             border-color: #d97706;
+            transform: translateY(-3px);
         }
 
         .extra-item i {
@@ -459,7 +469,7 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             max-width: 900px;
             margin: 3rem auto 0;
@@ -477,6 +487,7 @@
         .contact-item:hover {
             border-color: #d97706;
             background: white;
+            transform: translateY(-3px);
         }
 
         .contact-item i {
@@ -534,6 +545,20 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .extra-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -572,6 +597,18 @@
 
             .free-content .hadith {
                 font-size: 1.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .extra-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -699,7 +736,7 @@
         </div>
     </section>
 
-       <section class="free-section" id="free">
+    <section class="free-section" id="free">
         <div class="free-content">
             <h2>التسجيل المجاني</h2>
             <div class="hadith">"الله في عون العبد ما دام العبد في عون أخيه"</div>
