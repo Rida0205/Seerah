@@ -83,30 +83,45 @@
             color: #334155;
         }
 
-        /* Hero Section - أنيقة وبسيطة */
+        /* Hero Section - جديدة */
         .hero {
-            padding: 4rem 5% 5rem;
-            background: linear-gradient(to bottom, #ffffff, #fafafa);
+            padding: 5rem 5% 6rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(217,119,6,0.03) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
             color: #0f172a;
             margin-bottom: 1.5rem;
-            line-height: 1.3;
+            line-height: 1.4;
         }
 
         .hero h2 span {
             color: #d97706;
-            position: relative;
             display: inline-block;
+            position: relative;
         }
 
         .hero h2 span::after {
@@ -116,17 +131,39 @@
             left: 0;
             width: 100%;
             height: 8px;
-            background: rgba(217, 119, 6, 0.1);
+            background: rgba(217, 119, 6, 0.15);
             z-index: -1;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #475569;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 2.5rem;
-            line-height: 1.6;
+            line-height: 1.7;
             font-weight: 400;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d97706;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 0.95rem;
         }
 
         .hero .btn {
@@ -142,6 +179,7 @@
             text-decoration: none;
             display: inline-block;
             box-shadow: 0 4px 15px rgba(15, 23, 42, 0.1);
+            margin-top: 1rem;
         }
 
         .hero .btn:hover {
@@ -244,8 +282,24 @@
         .service-card h3 {
             font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             color: #0f172a;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #d97706;
+            margin: 1rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 0.25rem;
+        }
+
+        .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #64748b;
         }
 
         .badge {
@@ -256,7 +310,7 @@
             font-weight: 600;
             padding: 0.25rem 1rem;
             border-radius: 30px;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
             letter-spacing: 0.3px;
         }
 
@@ -345,7 +399,7 @@
             font-size: 0.9rem;
         }
 
-        /* Free Section - أنيقة */
+        /* Free Section */
         .free-section {
             padding: 5rem 5%;
             background: #0f172a;
@@ -534,6 +588,11 @@
                 padding: 0 1rem;
             }
 
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
             .section-title {
                 font-size: 1.8rem;
             }
@@ -581,39 +640,57 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h2>
-                <span>سجل</span> في أي مباراة أو منحة<br>تختارها.. والباقي علينا
+                <span>ضع ملفك بين أيدينا</span><br>نحن نتكفل بتسجيلك في كل الفرص
             </h2>
-            <p>خدمة متكاملة للتسجيل في المباريات العمومية والمنح الدراسية والتداريب</p>
-            <a href="#services" class="btn">اكتشف خدماتنا</a>
+            <p>فريق متخصص في التسجيل الإلكتروني للمباريات العمومية والمنح الدراسية والتدريب المهني. نوفر لك الوقت والجهد ونسهل لك الوصول إلى فرصتك</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">+200</div>
+                    <div class="stat-label">مباراة سنوياً</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+1000</div>
+                    <div class="stat-label">مستفيد</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">97%</div>
+                    <div class="stat-label">تسجيلات ناجحة</div>
+                </div>
+            </div>
+            
+            <a href="#services" class="btn">اطلع على خدماتنا</a>
         </div>
     </section>
 
     <section class="services" id="services">
         <div class="section-header">
             <h2 class="section-title">خدماتنا</h2>
-            <p class="section-subtitle">اختر الخدمة التي تناسب احتياجاتك</p>
+            <p class="section-subtitle">اختر الخدمة التي تناسب احتياجاتك وبأسعار مناسبة للجميع</p>
         </div>
         
         <div class="services-grid">
-            <!-- Service 1 -->
+            <!-- Service 1: التسجيل الفوري -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-bolt"></i></div>
                 <span class="badge">خدمة فورية</span>
                 <h3>التسجيل الفوري</h3>
-                <p>يختار الزائر مباراة، منحة دراسية، كلية، أو أي فرصة متاحة، ونحن نسجله فيها مباشرة.</p>
+                <div class="price">20 <small>درهم</small></div>
+                <p>تختار مباراة، منحة دراسية، أو أي فرصة متاحة، ونحن نسجلك فيها مباشرة.</p>
                 <ul class="service-features">
                     <li><i class="fas fa-check"></i> تسجيل كامل في الفرصة المختارة</li>
-                    <li><i class="fas fa-check"></i> تعبئة جميع الاستمارات</li>
+                    <li><i class="fas fa-check"></i> تعبئة جميع الاستمارات بدقة</li>
                     <li><i class="fas fa-check"></i> رفع الوثائق بالصيغ المطلوبة</li>
                     <li><i class="fas fa-check"></i> إرسال إثبات التسجيل</li>
                 </ul>
             </div>
 
-            <!-- Service 2 -->
+            <!-- Service 2: اشتراك 6 أشهر -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-calendar-alt"></i></div>
                 <span class="badge">الأكثر طلباً</span>
                 <h3>اشتراك 6 أشهر</h3>
+                <div class="price">50 <small>درهم</small></div>
                 <p>نسجل لك في جميع المباريات المنشورة خلال 6 أشهر، مع تتبع المباريات التي تناسب شهاداتك.</p>
                 <ul class="service-features">
                     <li><i class="fas fa-check"></i> تسجيل غير محدود في كل المباريات</li>
@@ -623,11 +700,12 @@
                 </ul>
             </div>
 
-            <!-- Service 3 -->
+            <!-- Service 3: اشتراك 12 شهر -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
                 <span class="badge">الأفضل قيمة</span>
                 <h3>اشتراك 12 شهر</h3>
+                <div class="price">100 <small>درهم</small></div>
                 <p>نسجل لك في جميع المباريات المنشورة خلال سنة كاملة، مع تتبع احترافي حسب تخصصك.</p>
                 <ul class="service-features">
                     <li><i class="fas fa-check"></i> تسجيل غير محدود طوال السنة</li>
@@ -641,9 +719,9 @@
         <!-- الخدمات الإضافية -->
         <div class="extra-services">
             <h3 class="extra-title">خدمات إضافية</h3>
-            <p class="extra-note">مشمولة في الاشتراكات، أو يمكن طلبها بشكل منفصل</p>
+            <p class="extra-note">مشمولة مجاناً في الاشتراكات (6 و12 شهر)</p>
             
-            <div class="extra-grid">
+                <div class="extra-grid">
                 <div class="extra-item">
                     <i class="fas fa-file-alt"></i>
                     <h4>السيرة الذاتية</h4>
@@ -701,7 +779,7 @@
     </section>
 
     <footer>
-               <div class="footer-logo">econcours.ma</div>
+        <div class="footer-logo">econcours.ma</div>
         <div class="footer-hadith">الله في عون العبد ما دام العبد في عون أخيه</div>
         <div class="footer-copy">© 2024 econcours.ma - جميع الحقوق محفوظة</div>
     </footer>
