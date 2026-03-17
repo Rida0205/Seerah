@@ -439,7 +439,7 @@
             line-height: 1.6;
         }
 
-        /* Contact - مصغرة */
+        /* Contact - زر واتساب احترافي بنقرة واحدة */
         .contact {
             padding: 3rem 5%;
             background: #ffffff;
@@ -459,53 +459,54 @@
         }
 
         .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 2rem auto 0;
         }
 
-        .contact-item {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s;
-            border: 1px solid #f1f5f9;
-        }
-
-        .contact-item:hover {
-            border-color: #d97706;
-            background: white;
-            transform: translateY(-3px);
-        }
-
-        .contact-item i {
-            font-size: 1.8rem;
-            color: #d97706;
-            margin-bottom: 0.8rem;
-        }
-
-        .contact-item h4 {
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-            color: #0f172a;
-            font-size: 1.1rem;
-        }
-
-        .contact-item a {
-            color: #64748b;
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 60px;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
+            font-size: 1.6rem;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: fit-content;
+            letter-spacing: 0.5px;
         }
 
-        .contact-item a:hover {
-            color: #d97706;
+        .whatsapp-button i {
+            font-size: 2.2rem;
+            transition: transform 0.2s;
         }
 
-        /* Footer */
+        .whatsapp-button:hover {
+            background: linear-gradient(135deg, #128C7E, #075E54);
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-button:hover i {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-button span {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Footer - بدون حقوق محفوظة */
         footer {
             padding: 2.5rem 5%;
             background: #ffffff;
@@ -543,10 +544,6 @@
             }
             
             .extra-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .contact-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -600,12 +597,19 @@
                 grid-template-columns: 1fr;
             }
             
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .free-content h2 {
                 font-size: 1.8rem;
+            }
+
+            .whatsapp-button {
+                padding: 1rem 2rem;
+                font-size: 1.3rem;
+            }
+            .whatsapp-button i {
+                font-size: 1.8rem;
+            }
+            .whatsapp-button span {
+                font-size: 1rem;
             }
         }
 
@@ -622,8 +626,10 @@
                 font-size: 1.1rem;
             }
             
-            .contact-item {
-                padding: 1.2rem;
+            .whatsapp-button {
+                padding: 0.9rem 1.5rem;
+                font-size: 1.2rem;
+                gap: 0.5rem;
             }
         }
     </style>
@@ -665,12 +671,12 @@
         </div>
         
         <div class="services-grid">
-            <!-- Service 1: التسجيل الفوري -->
+            <!-- Service 1: التسجيل الفوري - 30 درهم -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-bolt"></i></div>
                 <span class="badge">خدمة فورية</span>
                 <h3>التسجيل الفوري</h3>
-                <div class="price">20 <small>درهم</small></div>
+                <div class="price">30 <small>درهم</small></div>
                 <p>تختار مباراة، منحة دراسية، أو أي فرصة متاحة، ونحن نسجلك فيها مباشرة.</p>
                 <ul class="service-features">
                     <li><i class="fas fa-check"></i> تسجيل كامل في الفرصة المختارة</li>
@@ -680,12 +686,12 @@
                 </ul>
             </div>
 
-            <!-- Service 2: اشتراك 6 أشهر -->
+            <!-- Service 2: اشتراك 6 أشهر - 100 درهم -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-calendar-alt"></i></div>
                 <span class="badge">الأكثر طلباً</span>
                 <h3>اشتراك 6 أشهر</h3>
-                <div class="price">50 <small>درهم</small></div>
+                <div class="price">100 <small>درهم</small></div>
                 <p>نسجل لك في جميع المباريات المنشورة خلال 6 أشهر، مع تتبع المباريات التي تناسب شهاداتك.</p>
                 <ul class="service-features">
                     <li><i class="fas fa-check"></i> تسجيل غير محدود في كل المباريات</li>
@@ -695,12 +701,12 @@
                 </ul>
             </div>
 
-            <!-- Service 3: اشتراك 12 شهر -->
+            <!-- Service 3: اشتراك 12 شهر - 150 درهم -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
                 <span class="badge">الأفضل قيمة</span>
                 <h3>اشتراك 12 شهر</h3>
-                <div class="price">100 <small>درهم</small></div>
+                <div class="price">150 <small>درهم</small></div>
                 <p>نسجل لك في جميع المباريات المنشورة خلال سنة كاملة، مع تتبع احترافي حسب تخصصك.</p>
                 <ul class="service-features">
                     <li><i class="fas fa-check"></i> تسجيل غير محدود طوال السنة</li>
@@ -747,32 +753,23 @@
     <section class="contact" id="contact">
         <div class="section-header">
             <h2 class="section-title">تواصل معنا</h2>
-            <p class="section-subtitle">نحن هنا للإجابة على استفساراتك</p>
+            <p class="section-subtitle">اضغط على الزر لمراسلتنا فوراً على الواتساب</p>
         </div>
         
         <div class="contact-grid">
-            <div class="contact-item">
+            <a href="https://wa.me/212644455893" target="_blank" class="whatsapp-button">
                 <i class="fab fa-whatsapp"></i>
-                <h4>واتساب</h4>
-                <a href="#">[أدخل الرقم]</a>
-            </div>
-            <div class="contact-item">
-                <i class="far fa-envelope"></i>
-                <h4>البريد الإلكتروني</h4>
-                <a href="#">[أدخل البريد]</a>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-instagram"></i>
-                <h4>إنستغرام</h4>
-                <a href="#">[الحساب]</a>
-            </div>
+                واتساب
+                <span>212644455893+</span>
+            </a>
         </div>
     </section>
 
     <footer>
         <div class="footer-logo">econcours.ma</div>
         <div class="footer-hadith">الله في عون العبد ما دام العبد في عون أخيه</div>
-        <div class="footer-copy">© 2024 econcours.ma - جميع الحقوق محفوظة</div>
+        <!-- تم حذف جميع الحقوق محفوظة -->
+        <div class="footer-copy">econcours.ma</div>
     </footer>
 
     <script>
